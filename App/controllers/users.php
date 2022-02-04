@@ -7,4 +7,8 @@ class users extends controller
     {
         $this->view('users/cadastro');
     }
+    public function Logar()
+    {
+        $this->view('users/login');
+    }
 }

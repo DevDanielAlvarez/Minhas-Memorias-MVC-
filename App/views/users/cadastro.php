@@ -5,7 +5,7 @@
       <div class="row">
         <div class="input-field col s6">
         <i class="material-icons prefix">face</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input  id="icon_prefix" type="text" class="validate">
           <label for="icon_prefix">Seu nome</label>
         </div>
         <div class="input-field col s6">
@@ -98,10 +98,13 @@
           <input id="icon_telephone" type="tel" class="validate">
           <label for="icon_telephone">Confirmação de senha</label>
         </div>
+      
 
     </form>
-    
-    <i class="material-icons prefix">info_outline</i><span>Ao se cadastrar você concorda com os nosso <a href="#">termos de privacidade</a></span>
+    <button style="margin-left: 90%;" class="btn waves-effect waves-light"  >Enviar
+    <i class="material-icons right">send</i>
+  </button>
+    <i class="material-icons prefix">info_outline</i><span>Ao se cadastrar você concorda com os nosso <a href="#">termo de privacidade</a></span>
 
     </div>
 

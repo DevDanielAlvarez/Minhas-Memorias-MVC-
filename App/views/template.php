@@ -15,13 +15,15 @@
     <!-- menu bar -->
     
 <nav>
+    <div class="container">
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">Minhas Memórias</a>
+    <a href="/" class="brand-logo">Minhas Memórias</a>
     <ul class="right hide-on-med-and-down">
-      <li><a href="sass.html">Sass</a></li>
-      <li><a href="badges.html">Components</a></li>
+        <li><a href="/users/cadastrar" class="waves-effect waves-light btn">Cadastrar</a></li>
+        <li><a href="/users/logar" class="waves-effect waves-light btn">Login</a></li>
 
     </ul>
+  </div>
   </div>
 </nav>
   <!-- fim do menu bar -->
