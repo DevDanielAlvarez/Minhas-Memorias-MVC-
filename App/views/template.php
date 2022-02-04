@@ -12,6 +12,8 @@
     <title>Document</title>
 </head>
 <body>
+  <!-- Ajax-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- menu bar -->
     
 <nav>
@@ -30,6 +32,7 @@
 <?php
     require_once '../vendor/autoload.php';
     require_once '../App/views/'.$view.'.php';
+    
 ?>
 
 
@@ -39,5 +42,6 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- Compiled and minified JavaScript (Materalize) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>
