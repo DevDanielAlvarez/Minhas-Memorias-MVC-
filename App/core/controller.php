@@ -6,10 +6,12 @@ class Controller
     {
         require_once '../App/models/'.$model.".php";
         return new $model;
+
     }
 
     public function view($view,$data=[])
     {
         require '../App/views/template.php';
     }
+
 }
