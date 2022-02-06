@@ -7,6 +7,7 @@
      <!-- Compiled and minified CSS (Materalize) -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
     
             
     <title>Document</title>
@@ -43,6 +44,6 @@
 <!-- Compiled and minified JavaScript (Materalize) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-
+<script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 </body>
 </html>
