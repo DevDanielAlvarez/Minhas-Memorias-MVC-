@@ -1,5 +1,7 @@
 <?php
 use App\Core\controller;
+use App\Core\Model;
+
 class users extends controller
 {
     protected $nome;
@@ -29,9 +31,19 @@ class users extends controller
                $senha1_familiar= addslashes($_POST['senha1_familiar']);
               
                if(empty($nome_paciente)||empty($telefone_paciente)||empty($dt_paciente)||empty($email_paciente)||empty($patologia_paciente)||empty($estado_paciente) ||empty($senha1_paciente) /*family-> */|| empty($nome_familiar)|| empty($telefone_familiar) || empty($dt_familiar) || empty($email_familiar) || empty($parent_familiar) || empty($estado_familiar)|| empty($senha1_familiar)):
-                echo "n foi";
-               else:echo "foi"/*PDO AQUI*/ ;
-        
+                echo "bvbv";
+               else:
+                $user=$this->Model('user');
+                $user->nome_paciente=$nome_paciente;
+                $user->telefone_paciente=$telefone_paciente;
+                $user->dt_paciente=$dt_paciente;
+                $user->email_paciente=$email_paciente;
+                $user->patologia_paciente=$patologia_paciente;
+                $user->estado_paciente=$estado_paciente;
+                echo 
+               
+                
+               $user->cadastroUser();        
         endif;
          else:$this->view('users/cadastro');
 
