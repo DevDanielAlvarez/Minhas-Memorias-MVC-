@@ -3,13 +3,14 @@ use App\Core\controller;
 use App\Core\Model;
 use App\Auth;
 
-class users extends controller
+class painel extends controller
 {
    
 
-    public function Cadastrar()
+    public function index()
     {
-
+        $this->view('painel/home');
     }
+}
     
     

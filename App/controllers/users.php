@@ -54,12 +54,14 @@ class users extends controller
         $user=$this->model('user');
         $user->email_login=addslashes($_POST['email']);
         $user->senha_login=addslashes($_POST['senha']);
-        Auth::login($user->email,$user->senha);
         
         
+        Auth::login($user->email_login,$user->senha_login);
+          
+      
 
        else: $this->view('users/login');
-
+       
        endif;
     }
 
