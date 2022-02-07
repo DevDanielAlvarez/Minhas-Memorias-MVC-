@@ -101,7 +101,7 @@
       
 
     </form>
-    <button style="margin-left: 90%;" class="btn waves-effect waves-light" id="cadastrar" >Enviar
+    <button  class="btn waves-effect waves-light right" id="cadastrar" >Enviar
     <i class="material-icons right">send</i>
   </button>
     <i class="material-icons prefix">info_outline</i><span>Ao se cadastrar você concorda com os nosso <a href="#">termo de privacidade</a></span>

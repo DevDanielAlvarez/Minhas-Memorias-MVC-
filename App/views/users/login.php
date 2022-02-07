@@ -12,4 +12,7 @@
                 <input  id="icon_prefix" type="text" class="validate">
                 <label for="icon_prefix">Senha</label>
             </div>
+            <button  class="btn waves-effect waves-light right" id="cadastrar" >Enviar
+    <i class="material-icons right">send</i>
+  </button>
         </div>

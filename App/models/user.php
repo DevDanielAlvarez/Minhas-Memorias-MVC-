@@ -17,7 +17,7 @@ Class user extends Controller
             $stmt->bindValue(4,$this->email_paciente);
             $stmt->bindValue(5,$this->patologia_paciente);
             $stmt->bindValue(6,$this->estado_paciente);
-            $stmt->bindValue(7,"123");
+            $stmt->bindValue(7,$this->senha1_paciente);
             $stmt->execute();
             return "Sucesso ao cadastrar";
             #senha rash (cadastrar sem o uso do md5 do mysql);
@@ -28,6 +28,8 @@ Class user extends Controller
         }
 
     }
+
+
 }
 
 
