@@ -14,7 +14,11 @@
             
             success: function(retorno)
             {
-              alert(retorno);
+              if(retorno==="true")
+              {
+                window.location.href="/painel/index"
+              }
+              
             }
             
         

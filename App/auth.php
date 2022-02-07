@@ -13,7 +13,9 @@ class Auth
         if($stmt->RowCount()>=1):
             if(password_verify($senha,$resultado['senha'])):
                 $_SESSION['logado']=true;
-                header('Location:/painel/index');
+                $_SESSION['nome']=$resultado['nm_nome'];
+
+                echo "true";
             else:echo "senha incorreta";
         endif;
 

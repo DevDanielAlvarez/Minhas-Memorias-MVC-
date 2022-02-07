@@ -1,1 +1,1 @@
-<h1>dddddddd home</h1>
+<h1>Olá <?php echo $_SESSION['nome'];?></h1>
