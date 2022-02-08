@@ -18,18 +18,25 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <!-- menu bar -->
     
-<nav>
-    <div class="container">
-  <div class="nav-wrapper">
-    <a href="/" class="brand-logo">Minhas Memórias</a>
-    <ul class="right hide-on-med-and-down">
-        <li><a href="/users/cadastrar" class="waves-effect waves-light btn">Cadastrar</a></li>
-        <li><a href="/users/logar" class="waves-effect waves-light btn">Login</a></li>
+    <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="/users/cadastrar">Cadastro</a></li>
+        <li><a href="/users/logar">Login</a></li>
+        <li><a href="collapsible.html">Javascript</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    </ul>
-  </div>
-  </div>
-</nav>
+  <ul class="sidenav" id="mobile-demo">
+  <li><a href="/users/cadastrar">Cadastro</a></li>
+        <li><a href="/users/logar">Login</a></li>
+    <li><a href="collapsible.html">Javascript</a></li>
+    <li><a href="mobile.html">Mobile</a></li>
+  </ul>
   <!-- fim do menu bar -->
 <?php
     require_once '../vendor/autoload.php';
@@ -47,5 +54,17 @@
 
 <script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 <script src="<?php URL_BASE;?>/js/login_users.js"></script>
+
+<script>  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+       </script>
 </body>
 </html>
