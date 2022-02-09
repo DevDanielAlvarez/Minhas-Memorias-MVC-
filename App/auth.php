@@ -5,7 +5,7 @@ class Auth
 {
     public static function login($email,$senha)
     {
-        $sql="SELECT * FROM tb_users where email=? ";
+        $sql="SELECT * FROM tb_paciente where email=? ";
         $stmt= Model::getConn()->prepare($sql);
         $stmt->bindValue(1,$email);
         $stmt->execute();

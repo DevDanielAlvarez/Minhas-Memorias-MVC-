@@ -9,7 +9,7 @@ Class user extends Controller
     {
         try
         {
-            $sql="INSERT into tb_users (nm_nome,tel_telefone,dt_nascimento,email,patologia,estado,senha) VALUES (?,?,?,?,?,?,?);";
+            $sql="INSERT into tb_paciente (nm_nome,tel_telefone,dt_nascimento,email,patologia,estado,senha) VALUES (?,?,?,?,?,?,?);";
             $stmt= Model::getConn()->prepare($sql);
             $stmt->bindValue(1,$this->nome_paciente);
             $stmt->bindValue(2,$this->telefone_paciente);
