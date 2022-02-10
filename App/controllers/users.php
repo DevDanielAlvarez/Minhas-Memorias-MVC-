@@ -1,4 +1,5 @@
 <?php
+#chamando classes padrão para manipulação de dados
 use App\Core\controller;
 use App\Core\Model;
 use App\Auth;
@@ -6,7 +7,7 @@ use App\Auth;
 class users extends controller
 {
    
-
+  #cadastra o usario (Paciente junto ao seu familiar)
     public function Cadastrar()
     {
  
@@ -14,7 +15,7 @@ class users extends controller
         
       if(isset($_POST['nome_paciente']) ):
         $user=$this->Model('user');
-               #filtragrem de valores
+               #filtragrem de valores Paciente
                $user->nome_paciente= addslashes($_POST['nome_paciente']);
                $user->telefone_paciente= addslashes($_POST['telefone_paciente']);
                $user->dt_paciente= addslashes($_POST['dt_paciente']);
@@ -23,7 +24,7 @@ class users extends controller
                $user->estado_paciente= addslashes($_POST['estado_paciente']);
                $user->senha1_paciente= addslashes($_POST['senha1_paciente']);
               
-               //familiar
+               //filtragrem de valores familiar
                $user->nome_familiar= addslashes($_POST['nome_familiar']);
                $user->telefone_familiar= addslashes($_POST['telefone_familiar']);
                $user->dt_familiar= addslashes($_POST['dt_familiar']);
@@ -31,13 +32,14 @@ class users extends controller
                $user->parent_familiar= addslashes($_POST['parent_familiar']);
                $user->estado_familiar= addslashes($_POST['estado_familiar']);
                $user->senha1_familiar= addslashes($_POST['senha1_familiar']);
-              
+              #verificação de espaços vazios
                if(empty($user->nome_paciente)||empty($user->telefone_paciente)||empty($user->dt_paciente)||empty($user->email_paciente)||empty($user->patologia_paciente)||empty($user->estado_paciente) ||empty($user->senha1_paciente) /*family-> */|| empty($user->nome_familiar)|| empty($user->telefone_familiar) || empty($user->dt_familiar) || empty($user->email_familiar) || empty($user->parent_familiar) || empty($user->estado_familiar)|| empty($user->senha1_familiar)):
                 echo "Error";
                else:
-                
+                #criptografia de senha
                 $senha= password_hash($user->senha1_paciente,PASSWORD_DEFAULT);
                 $user->senha1_paciente=$senha;
+                #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        
         endif;
          else:$this->view('users/cadastro');

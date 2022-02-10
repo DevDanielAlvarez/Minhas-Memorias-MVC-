@@ -24,7 +24,7 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/users/cadastrar">Cadastro</a></li>
-        <li><a href="/users/logar">Login</a></li>
+        <?php if(!isset($_SESSION['logado'])):echo '<li><a href="/users/logar">Login</a></li>'; else:echo '<li><a href="/painel/logout">Logout</a></li>';endif?>
         <li><a href="collapsible.html">Javascript</a></li>
         <li><a href="mobile.html">Mobile</a></li>
       </ul>
