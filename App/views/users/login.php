@@ -1,18 +1,103 @@
-<div class="container">
-    <div class="row">
-        <h1 style="text-align: center;">Seja bem vindo(a) de volta</h1>
-        <div class="input-field col s12"  >
-            <i class="material-icons prefix">mail_outline</i>
-            <input  id="email" type="text" class="validate">
-            <label for="icon_prefix">Email</label>
-        </div>
-        <div class="row">
-            <div class="input-field col s12" >
-                <i class="material-icons prefix">lock_outline</i>
-                <input  id="senha" type="text" class="validate">
-                <label for="icon_prefix">Senha</label>
+
+    <!-- ===== Iconscout CSS ===== -->
+
+
+    <!-- ===== CSS ===== -->
+
+         
+    <link rel="stylesheet" href="<?php URL_BASE?>/css/style.css ">
+
+
+    
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Bem vindo(a)</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder=" email" required id="email_login">
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Senha" id="senha_login" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="logCheck">
+                            <label for="logCheck" class="text">Se lembre de mim</label>
+                        </div>
+                        
+                        <a href="#" class="text">Esqueceu sua senha?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" id="logar" value="Entrar">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">ainda não é um membro?
+                        <a href="#" class="text signup-link">Cadastre-se</a>
+                    </span>
+                </div>
             </div>
-            <button  class="btn waves-effect waves-light right" id="logar" >Enviar
-    <i class="material-icons right">send</i>
-  </button>
+
+            <!-- Registration Form -->
+            <div class="form signup">
+                <span class="title">Cadastro</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Seu nome" id="nome_cadastro" required>
+                        <i class="uil uil-user"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" placeholder="Seu email" required id="email_cadastro">
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="tel" placeholder="Telefone" required id="telefone_cadastro">
+                        <i class="bi bi-telephone"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="date" placeholder="Data de nascimento" required id="date_cadastro">
+                        <i class="bi bi-calendar2-week"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Senha" id="senha1_cadastro" required>
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirmar senha" id="senha2_cadastro" required>
+                        <i class="uil uil-lock icon"></i>
+                        <i class="uil uil-eye-slash showHidePw"></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="sigCheck">
+                            <label for="sigCheck" class="text">Remember me</label>
+                        </div>
+                        
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="button" id="cadastrar" value="Cadastrar">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">Not a member?
+                        <a href="#" class="text login-link">Signup now</a>
+                    </span>
+                </div>
+            </div>
         </div>
+    </div>
+    <script src="<?php URL_BASE;?>/js/vwlogin.js"></script>
+

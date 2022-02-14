@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- Compiled and minified CSS (Materalize) -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
             
     <title>Document</title>
@@ -16,29 +19,7 @@
 <body>
   <!-- Ajax-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <!-- menu bar -->
-    
-    <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="/users/cadastrar">Cadastro</a></li>
-        <?php 
-        if(!isset($_SESSION['logado'])):echo '<li><a href="/users/logar">Login</a></li>'; else:echo '<li><a href="/painel/logout">Logout</a></li>';endif
-        ?>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-  <li><a href="/users/cadastrar">Cadastro</a></li>
-        <li><a href="/users/logar">Login</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
   <!-- fim do menu bar -->
 <?php
     require_once '../vendor/autoload.php';
@@ -57,16 +38,3 @@
 <script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 <script src="<?php URL_BASE;?>/js/login_users.js"></script>
 
-<script>  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
-
-  // Or with jQuery
-
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
-       </script>
-</body>
-</html>

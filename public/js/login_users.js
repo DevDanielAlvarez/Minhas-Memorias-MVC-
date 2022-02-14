@@ -3,8 +3,8 @@
   {
     $(document).on("click","#logar", function()
       {
-          var email= document.querySelector('input#email').value;
-          var senha= document.querySelector('input#senha').value;
+          var email= document.querySelector('input#email_login').value;
+          var senha= document.querySelector('input#senha_login').value;
         $.ajax({
         
       

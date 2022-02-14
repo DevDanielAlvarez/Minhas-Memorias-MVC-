@@ -13,32 +13,26 @@ class users extends controller
  
         //verifica se o button foi acionado, e se algum campo esta vazio.
         
-      if(isset($_POST['nome_paciente']) ):
+      if(isset($_POST['nome_cadastro']) ):
         $user=$this->Model('user');
                #filtragrem de valores Paciente
-               $user->nome_paciente= addslashes($_POST['nome_paciente']);
-               $user->telefone_paciente= addslashes($_POST['telefone_paciente']);
-               $user->dt_paciente= addslashes($_POST['dt_paciente']);
-               $user->email_paciente= addslashes($_POST['email_paciente']);
-               $user->patologia_paciente= addslashes($_POST['patologia_paciente']);
-               $user->estado_paciente= addslashes($_POST['estado_paciente']);
-               $user->senha1_paciente= addslashes($_POST['senha1_paciente']);
+               $user->nome_cadastro= addslashes($_POST['nome_cadastro']);
+               $user->email_cadastro= addslashes($_POST['email_cadastro']);
+               $user->telefone_cadastro= addslashes($_POST['telefone_cadastro']);
+               $user->date_cadastro= addslashes($_POST['date_cadastro']);
+               $user->senha1_cadastro= addslashes($_POST['senha1_cadastro']);
+
+             
               
                //filtragrem de valores familiar
-               $user->nome_familiar= addslashes($_POST['nome_familiar']);
-               $user->telefone_familiar= addslashes($_POST['telefone_familiar']);
-               $user->dt_familiar= addslashes($_POST['dt_familiar']);
-               $user->email_familiar= addslashes($_POST['email_familiar']);
-               $user->parent_familiar= addslashes($_POST['parent_familiar']);
-               $user->estado_familiar= addslashes($_POST['estado_familiar']);
-               $user->senha1_familiar= addslashes($_POST['senha1_familiar']);
+               
               #verificação de espaços vazios
-               if(empty($user->nome_paciente)||empty($user->telefone_paciente)||empty($user->dt_paciente)||empty($user->email_paciente)||empty($user->patologia_paciente)||empty($user->estado_paciente) ||empty($user->senha1_paciente) /*family-> */|| empty($user->nome_familiar)|| empty($user->telefone_familiar) || empty($user->dt_familiar) || empty($user->email_familiar) || empty($user->parent_familiar) || empty($user->estado_familiar)|| empty($user->senha1_familiar)):
+               if(empty($user->nome_cadastro) && empty($user->email_cadastro)&& empty($user->telefone_cadastro) && empty($user->date_cadastro) && empty($user->senha1_cadastro)):
                 echo "Error";
                else:
                 #criptografia de senha
-                $senha= password_hash($user->senha1_paciente,PASSWORD_DEFAULT);
-                $user->senha1_paciente=$senha;
+                $senha= password_hash($user->senha1_cadastro,PASSWORD_DEFAULT);
+                $user->senha1_cadastro=$senha;
                 #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        
         endif;
