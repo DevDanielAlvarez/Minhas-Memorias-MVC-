@@ -4,8 +4,7 @@
 
     <!-- ===== CSS ===== -->
 
-         
-    <link rel="stylesheet" href="<?php URL_BASE?>/css/style.css ">
+     
 
 
     
