@@ -6,6 +6,6 @@ class home extends Controller
     #index padrao Home
     public function index()
     {
-        $this->view('home/index',$data=['sty'=>URL_BASE."/css/style.css"]);
+        $this->view('home/index',$data=['sty'=>URL_BASE."/css/home.php"]);
     }
 }

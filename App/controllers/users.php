@@ -36,7 +36,7 @@ class users extends controller
                 #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        
         endif;
-         else:$this->view('users/cadastro');
+         else:$this->view('users/cadastro',$data=['sty'=>URL_BASE."/css/style.css"]);
 
     endif;
         
@@ -56,7 +56,7 @@ class users extends controller
           
       
 
-       else: $this->view('users/login');
+       else: $this->view('users/login',$data=['sty'=>URL_BASE."/css/style.css"]);
        
        endif;
     }
