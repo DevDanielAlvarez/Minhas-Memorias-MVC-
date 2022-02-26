@@ -38,4 +38,5 @@
 <script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 <script src="<?php URL_BASE;?>/js/login_users.js"></script>
 <script src="<?php URL_BASE;?>/js/math.js"></script>
+<script src="<?php URL_BASE;?>/js/quiz.js"></script>
 

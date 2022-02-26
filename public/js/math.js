@@ -1,7 +1,7 @@
 
   $(document).ready(function()
   {
-    $(document).on("click","#start", function()
+    $(document).on("click",".start", function()
       {
 
         $.ajax({

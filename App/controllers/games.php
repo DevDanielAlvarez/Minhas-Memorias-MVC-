@@ -11,4 +11,8 @@ class games extends Controller
     {
         $this->view("games/math");
     }
+    public function quiz()
+    {
+        $this->view("games/quiz");
+    }
 }
