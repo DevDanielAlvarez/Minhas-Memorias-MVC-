@@ -6,7 +6,7 @@ class Auth
     #realiza o login (método chamado pelo App/Controllers/users.php)
     public static function login($email,$senha)
     {
-        $sql="SELECT * FROM tb_paciente where email=? ";
+        $sql="SELECT * FROM tb_paciente where nm_email=? ";
         $stmt= Model::getConn()->prepare($sql);
         $stmt->bindValue(1,$email);
         $stmt->execute();
