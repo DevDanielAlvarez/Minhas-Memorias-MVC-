@@ -96,11 +96,11 @@ class quiz
 
     public function answered()
     {
-        if($_POST['resposta_quiz']==$_SESSION['result_geo_quiz']):
+        if(strtoupper($_POST['resposta_quiz'])==$_SESSION['result_geo_quiz']):
             echo "Parabens ganhou, você digitou: ".$_POST['resposta_quiz'];
 
         else:
-            echo "You Lost";
+            echo "Você Perdeu";
         endif;
         
     }
