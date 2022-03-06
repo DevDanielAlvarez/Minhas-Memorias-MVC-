@@ -35,7 +35,7 @@ class users extends controller
                 $user->senha1_cadastro=$senha;
                 #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        
-        endif;
+         endif;
          else:$this->view('users/cadastro',$data=['sty'=>URL_BASE."/css/style.css"]);
 
     endif;
