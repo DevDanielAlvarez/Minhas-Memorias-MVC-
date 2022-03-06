@@ -31,8 +31,8 @@
         <h1>Minhas Memórias</h1>
         <h2>Toda vida vale a pena!</h2>
         <div class="social-media">
-            <a href="#">Entra</a>
-            <a href="#">Cadastro</a>
+            <a href="/users/logar">Entra</a>
+            <a href="/users/logar">Cadastro</a>
         </div>
     </header> 
     <main class="container">
