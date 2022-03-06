@@ -16,7 +16,21 @@
 
       var senha2_cadastro = document.querySelector('input#senha2_cadastro').value;
 
+      if(nome_cadastro==''){$('#alert').html('Preencha seu nome');$('#alert').addClass("alert_failed"); return false}
 
+      if(email_cadastro==''){$('#alert').html('Preencha seu email');$('#alert').addClass("alert_failed"); return false}
+
+      if(telefone_cadastro==''){$('#alert').html('Preencha seu telefone');$('#alert').addClass("alert_failed"); return false}
+
+      if(date_cadastro==''){$('#alert').html('Preencha sua data de nascimento');$('#alert').addClass("alert_failed"); return false}
+
+      if(senha1_cadastro==''){$('#alert').html('Preencha o campo senha');$('#alert').addClass("alert_failed"); return false}
+
+      if(senha2_cadastro==''){$('#alert').html('Preencha o campo senha');$('#alert').addClass("alert_failed"); return false}
+
+      if(senha1_cadastro.length<8 || senha2_cadastro.length<8){$('#alert').html('A senha deve ter pelo menos 8 caracteres');$('#alert').addClass("alert_failed"); return false}
+
+      if(senha1_cadastro!=senha2_cadastro){$('#alert').html('A senha não são iguais');$('#alert').addClass("alert_failed"); return false}
       
         
         $.ajax({
@@ -28,7 +42,11 @@
         
         success: function(retorno)
         {
-          alert(retorno);
+          
+          $('#alert').html(retorno)
+          $('#alert').removeClass("alert_failed")
+          $('#alert').addClass("alert_sucess");
+          $('form').trigger("reset");
         }
         
     

@@ -178,3 +178,16 @@ body{
     margin-top: 30px;
     text-align: center;
 }
+
+.alert_sucess
+{
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+}
+.alert_failed
+{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border-radius: 4px;
+}

@@ -48,6 +48,7 @@
 
             <!-- Registration Form -->
             <div class="form signup">
+                <p id="alert" ></p>
                 <span class="title">Cadastro</span>
 
                 <form action="#">
