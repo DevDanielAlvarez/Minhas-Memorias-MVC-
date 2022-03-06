@@ -6,16 +6,17 @@ class Auth
     #realiza o login (método chamado pelo App/Controllers/users.php)
     public static function login($email,$senha)
     {
-        $sql="SELECT * FROM tb_paciente where nm_email=? ";
+        $sql="SELECT pac.cd_paciente,pac.nm_paciente,ctt.nm_email, pac.nm_senha from tb_paciente pac inner join tb_contato ctt on pac.cd_contato=ctt.cd_contato where ctt.nm_email=?";
         $stmt= Model::getConn()->prepare($sql);
         $stmt->bindValue(1,$email);
         $stmt->execute();
         $resultado= $stmt->fetch(\PDO::FETCH_ASSOC);
-        if($stmt->RowCount()>=1):
-            if(password_verify($senha,$resultado['senha'])):
+            if($stmt->RowCount()>=1):
+            if(password_verify($senha,$resultado['nm_senha']
+            )):
                 $_SESSION['logado']=true;
-                $_SESSION['nome']=$resultado['nm_nome'];
-
+                $_SESSION['nome']=$resultado['nm_paciente'];
+                $_SESSION['id_paciente']=$resultado['cd_paciente'];
                 echo "true";
             else:echo "senha incorreta";
         endif;

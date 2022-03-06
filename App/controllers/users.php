@@ -32,6 +32,7 @@ class users extends controller
                else:
                 #criptografia de senha
                 $senha= password_hash($user->senha1_cadastro,PASSWORD_DEFAULT);
+                
                 $user->senha1_cadastro=$senha;
                 #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        

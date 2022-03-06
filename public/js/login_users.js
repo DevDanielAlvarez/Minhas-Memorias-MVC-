@@ -14,10 +14,12 @@
             
             success: function(retorno)
             {
+              
               if(retorno==="true")
               {
                 window.location.href="/painel/index"
               }
+              else{alert(retorno)}
               
             }
             

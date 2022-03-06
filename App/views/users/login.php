@@ -80,10 +80,10 @@
                     <div class="checkbox-text">
                         <div class="checkbox-content">
                             <input type="checkbox" id="sigCheck">
-                            <label for="sigCheck" class="text">Remember me</label>
+                            <label for="sigCheck" class="text">Se lembre de mim</label>
                         </div>
                         
-                        <a href="#" class="text">Forgot password?</a>
+                        <a href="#" class="text">Esqueceu a senha?</a>
                     </div>
 
                     <div class="input-field button">
@@ -92,8 +92,8 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">Not a member?
-                        <a href="#" class="text login-link">Signup now</a>
+                    <span class="text">Já possui uma conta?
+                        <a href="#" class="text login-link">Logue</a>
                     </span>
                 </div>
             </div>

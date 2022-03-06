@@ -9,27 +9,39 @@ Class user extends Controller
     {
         try
         {    #cadastro do paciente
-            $sql="INSERT into tb_paciente (nm_paciente,nm_senha) VALUES (?,?);";
+            $sql="INSERT into tb_paciente (nm_paciente,nm_senha,dt_nascimento) VALUES (?,?,?);";
             $stmt= Model::getConn()->prepare($sql);
             $stmt->bindValue(1,$this->nome_cadastro);
             $stmt->bindValue(2,$this->senha1_cadastro);
+            $stmt->bindValue(3,$this->date_cadastro);
             $stmt->execute();
             $id=Model::getConn()->lastInsertid();
-
+            
            
             $stmt=Model::getConn()->prepare("INSERT INTO tb_contato (cd_contato,tel_contato,nm_email) VALUES (?,?,?)");
             $stmt->bindValue(1,$id);
             $stmt->bindValue(2,$this->telefone_cadastro);
             $stmt->bindValue(3,$this->email_cadastro);
+            
+            if($stmt->execute()==true){
+           
+            
+            $stmt= Model::getConn()->prepare("UPDATE tb_paciente set cd_contato=? where cd_paciente=? ");
+            $stmt->bindValue(1,$id);
+            $stmt->bindValue(2,$id);
             $stmt->execute();
 
+           
 
+            
+
+            }
    
             
  
             
 
-            echo "$id.Sucesso ao cadastrar";
+            echo "Sucesso ao cadastrar";
             #senha rash (cadastrar sem o uso do md5 do mysql);
         }
         catch(Exception $error)
