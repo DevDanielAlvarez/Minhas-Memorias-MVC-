@@ -17,7 +17,7 @@
                                 <a href="#">Home</a>
                             </li>
                             <li>
-                                <a href="conato.html">Fotos</a>
+                                <a href="">Fotos</a>
                             </li>
                             <li>
                                 <a href="#">Atividades elaborais</a>
@@ -31,49 +31,46 @@
         <h1>Minhas Memórias</h1>
         <h2>Toda vida vale a pena!</h2>
         <div class="social-media">
-            <a href="/users/logar">Entra</a>
+            <a href="/users/logar">Entrar</a>
             <a href="/users/logar">Cadastro</a>
         </div>
     </header> 
     <main class="container">
         <div class="card-container">
-            <div class="card-text">
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
+            <div class="card-text" style="font-size: 20px;">
+               Nosso sistema conta com jogos incríveis, para que nosso amado úsuario possa treinar suas capacidades cognitivas
             </div>
-            <div class="card">
+            <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/cube.jpg');">
                 <div class="card-wrapper">
-                    <h2>Minhas Memórias</h2>
-                    <p>Toda uma vida </p>
-                    <p>merece ser lembrada</p>
+                    <h2>Jogos interativos</h2>
+                    <p>Um jogo que pode mudar vidas</p>
+                    <p>aproveite!</p>
                 </div>
             </div>
         </div>
         <div class="card-container">
-               <div class="card">
+               <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/tree.jpg');">
                 <div class="card-wrapper">
-                    <h2>Minhas Imagens</h2>
-                    <p>Toda minha vida</p>
+                    <h2>Um espaço seu</h2>
+                    <p>Toda minha vida em um só lugar</p>
                 </div>
             </div>
-            <div class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
+            <div class="card-text" style="font-size: 20px;">
+               Também contamos com uma maravilhosa galeria, onde nosso usuário poderá  guardar suas amadas fotos, com segurança e modestia.
             </div>
         </div>
         <div class="card-container">
-            <div class="card-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl euismod nisi, eget consectetur nisi nisl euismod nisi.
+            <div class="card-text" style="font-size: 20px;">
+             Sua família sempre estará com você nessa jornada! Sendo sempre um ombro amigo quando precisar.
             </div>
-            <div class="card">
+            <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/family.jpg');">
                 <div class="card-wrapper">
-                    <h2>Minhas Atividades</h2>
-                    <p>Tudo o que faço importa</p>
+                    <h2>Minha Família</h2>
+                    <p>Minha família sempre ao meu lado</p>
                 </div>
             </div>
         </div>
     </main> 
     <footer class="footer">
-        feito com <span>&hearts;</span> 
+        Minhas Memórias cada vez mais lembradas
     </footer>

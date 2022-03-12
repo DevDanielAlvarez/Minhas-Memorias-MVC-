@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Core;
 
 use Exception;
@@ -14,7 +13,7 @@ class Model
         if(!isset(self::$instance)):
             try
             {
-             self::$instance= new \PDO ('mysql:host=localhost;dbname=memoria_banco;charset=utf8mb4','root','');
+             self::$instance= new \PDO ('mysql:host=localhost;dbname=memoria_banco;charset=utf8mb4','root','root');
             }
             catch(PDOException $e)
             {
