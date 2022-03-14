@@ -5,7 +5,7 @@
     <!-- ===== CSS ===== -->
 
          
-    
+   
 
 
     
@@ -94,7 +94,7 @@
 
                 <div class="login-signup">
                     <span class="text">Já possui uma conta?
-                        <a href="#" class="text login-link">Logue</a>
+                        <a href="#" class="text login-link">Login</a>
                     </span>
                 </div>
             </div>

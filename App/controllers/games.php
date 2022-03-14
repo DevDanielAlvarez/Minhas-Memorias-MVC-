@@ -14,9 +14,9 @@ class games extends Controller
         Auth::CheckLogin();
         $this->view("games/math");
     }
-    public function quiz()
+    public function jogo_da_memoria()
     {
-        Auth::CheckLogin();
-        $this->view("games/quiz");
+        
+        $this->view("games/jogo_da_memoria",$data=['sty'=>URL_BASE."/css/style.prefix.css"]);
     }
 }
