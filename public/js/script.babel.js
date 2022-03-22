@@ -2,15 +2,12 @@
 var contador=0;
 var cardsArray = [{
   'name': 'mario',
-  'img': 'http://localhost:8080/img/room.jpg'
+  'img': 'http://localhost:8080/img/img2_memoria.png'
 }, {
   'name': 'luigi',
-  'img': 'http://localhost:8080/img/room.jpg'
+  'img': 'http://localhost:8080/img/img3_memoria.png'
 }, {
   'name': 'peach',
-  'img': 'http://localhost:8080/img/room.jpg'
-}, {
-  'name': 'goomba',
   'img': 'http://localhost:8080/img/room.jpg'
 }];
 
