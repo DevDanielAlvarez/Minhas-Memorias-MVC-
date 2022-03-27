@@ -18,29 +18,12 @@ Class user extends Controller
             $id=Model::getConn()->lastInsertid();
             
            
-            $stmt=Model::getConn()->prepare("INSERT INTO tb_contato (cd_contato,tel_contato,nm_email) VALUES (?,?,?)");
-            $stmt->bindValue(1,$id);
-            $stmt->bindValue(2,$this->telefone_cadastro);
-            $stmt->bindValue(3,$this->email_cadastro);
-            
-            if($stmt->execute()==true){
-           
-            
-            $stmt= Model::getConn()->prepare("UPDATE tb_paciente set cd_contato=? where cd_paciente=? ");
-            $stmt->bindValue(1,$id);
-            $stmt->bindValue(2,$id);
+            $stmt=Model::getConn()->prepare("INSERT INTO tb_contato (tel_contato,nm_email,cd_paciente) VALUES (?,?,?)");
+
+            $stmt->bindValue(1,$this->telefone_cadastro);
+            $stmt->bindValue(2,$this->email_cadastro);
+            $stmt->bindValue(3,$id);
             $stmt->execute();
-
-           
-
-            
-
-            }
-   
-            
- 
-            
-
             echo "Sucesso ao cadastrar";
             #senha rash (cadastrar sem o uso do md5 do mysql);
         }
