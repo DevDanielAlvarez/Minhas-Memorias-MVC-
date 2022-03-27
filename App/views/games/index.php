@@ -1,10 +1,15 @@
-<h1>Jogos</h1>
+<h1 class="title">Seja bem vindo(a) aos jogos dos Minhas Memórias!</h1>
 
-<div style="border: solid 9px;">
-    <h1>Jogo da memória</h1>
-   <a href="/games/math"> <button>Jogar</button></a>
+<div class="container">
+<div class="card text-center">
+  <div class="card-header">
+    Jogo de memorização
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Jogo da Memória</h5>
+    <p class="card-text">Neste jogo será dada um número especifico de cartas que terão que ser combinandas</p>
+    <a href="#" class="btn btn-primary">JOGAR</a>
+  </div>
+
 </div>
-<div style="border: solid 9px;margin-top:2px">
-    <h1>Jogo de Perguntas de Geografia</h1>
-   <a href="/games/quiz"> <button>Jogar</button></a>
 </div>

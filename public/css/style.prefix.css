@@ -7,7 +7,7 @@
 
 body {
   margin: 20px 0;
-  background: #6589F9;
+  background: #993399;
 }
 
 .grid {
@@ -48,13 +48,13 @@ body {
 }
 
 .front {
-  background: #FAB942 url('../img/bg.png') no-repeat center center / contain;
+  background-image: url('http://localhost:8080/img/Untitled (3).png');
 }
 
 .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  background-color: #6589F9;
+  background-color: #ff66c4;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;

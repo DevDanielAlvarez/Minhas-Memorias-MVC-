@@ -6,7 +6,7 @@ class Auth
     #realiza o login (método chamado pelo App/Controllers/users.php)
     public static function login($email,$senha)
     {
-        $sql="SELECT pac.cd_paciente,pac.nm_paciente,ctt.nm_email, pac.nm_senha from tb_paciente pac inner join tb_contato ctt on pac.cd_contato=ctt.cd_contato where ctt.nm_email=?";
+        $sql="select nm_email,nm_senha,nm_paciente,tb_pac.cd_paciente from tb_contato tb_ctt inner join tb_paciente tb_pac on tb_ctt.cd_paciente=tb_pac.cd_paciente where nm_email= ?";
         $stmt= Model::getConn()->prepare($sql);
         $stmt->bindValue(1,$email);
         $stmt->execute();
@@ -23,7 +23,7 @@ class Auth
 
 
 
-        else: echo  "user nao encontrado";
+        else: echo "usuário não encontrado";
     endif;
         
     }

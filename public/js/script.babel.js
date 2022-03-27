@@ -1,15 +1,28 @@
 'use strict';
 var contador=0;
 var cardsArray = [{
-  'name': 'mario',
+  'name': 'img2',
   'img': 'http://localhost:8080/img/img2_memoria.png'
 }, {
-  'name': 'luigi',
+  'name': 'img3',
   'img': 'http://localhost:8080/img/img3_memoria.png'
 }, {
-  'name': 'peach',
-  'img': 'http://localhost:8080/img/room.jpg'
-}];
+  'name': 'tree',
+  'img': 'http://localhost:8080/img/tree.jpg'
+}
+, {
+  'name': 'img4',
+  'img': 'http://localhost:8080/img/img4_memoria.jpg'
+},
+{
+  'name': 'img5',
+  'img': 'http://localhost:8080/img/img5_memoria.jpg'
+},
+{
+  'name': 'img6',
+  'img': 'http://localhost:8080/img/img6_memoria.png'
+}
+];
 
 var gameGrid = cardsArray.concat(cardsArray).sort(function () {
   return 0.5 - Math.random();
