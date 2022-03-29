@@ -1,0 +1,1315 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 30-Mar-2022 às 01:36
+-- Versão do servidor: 10.4.22-MariaDB
+-- versão do PHP: 8.1.1
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `memoria_banco`
+--
+CREATE DATABASE IF NOT EXISTS `memoria_banco` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `memoria_banco`;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_contato`
+--
+
+CREATE TABLE `tb_contato` (
+  `cd_contato` int(11) NOT NULL,
+  `tel_contato` varchar(14) DEFAULT NULL,
+  `nm_email` varchar(90) DEFAULT NULL,
+  `cd_paciente` int(11) DEFAULT NULL,
+  `cd_familiar` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_contato`
+--
+
+INSERT INTO `tb_contato` (`cd_contato`, `tel_contato`, `nm_email`, `cd_paciente`, `cd_familiar`) VALUES
+(1, '(27)3757-4472', 'skyrimdani@gmail.com', 1, NULL),
+(2, '(87)2471-6284', 'araujoFer@gmail.com', 2, NULL),
+(3, '(67) 2240-4167', 'rodrig@gmail.com', 3, NULL),
+(4, '(51) 2477-1322', 'jojo@gmail.com', 4, NULL),
+(5, '(94) 3682-3848', 'gustmori@gmail.com', 5, NULL),
+(6, '(96) 2632-7743', 'angel@gmail.com', NULL, 1),
+(7, '(18) 3512-7104', 'claudinha@gmail.com', NULL, 2),
+(12, '(16) 2524-8571', 'ferolive@gmail.com', NULL, 3),
+(13, '(13) 2226-6461', 'souz@gmail.com', NULL, 4),
+(14, '(19) 2131-5222', 'armand@gmail.com', NULL, 5),
+(15, '(38)91231554', 'magna.suspendisse@outlook.net', 6, NULL),
+(16, '(41)88533437', 'non.leo@protonmail.net', 7, NULL),
+(17, '(39)86236384', 'a.odio@aol.couk', 8, NULL),
+(18, '(97)49392266', 'lacus.vestibulum@google.ca', 9, NULL),
+(19, '(63)47434143', 'cras@protonmail.ca', 10, NULL),
+(20, '(41)88584523', 'proin@protonmail.ca', 11, NULL),
+(21, '(58)85655273', 'elit.aliquam@outlook.ca', 12, NULL),
+(22, '(84)65262776', 'amet.dapibus@outlook.com', 13, NULL),
+(23, '(58)23757632', 'fermentum.risus@google.couk', 14, NULL),
+(24, '(48)97836584', 'eleifend.egestas@yahoo.edu', 15, NULL),
+(25, '(59)32306074', 'egestas.a@google.net', 16, NULL),
+(26, '(81)85164174', 'metus.vitae@outlook.couk', 17, NULL),
+(27, '(86)13641241', 'montes.nascetur@outlook.edu', 18, NULL),
+(28, '(55)41825835', 'senectus.et.netus@yahoo.edu', 19, NULL),
+(29, '(78)18844762', 'urna.nunc.quis@google.edu', 20, NULL),
+(30, '(47)98632998', 'molestie.in@protonmail.net', 21, NULL),
+(31, '(61)25155157', 'nulla.at@protonmail.ca', 22, NULL),
+(32, '(51)27187035', 'ultrices.vivamus.rhoncus@yahoo.org', 23, NULL),
+(33, '(65)48335364', 'vehicula.et@google.edu', 24, NULL),
+(34, '(63)73226692', 'et.libero.proin@google.edu', 25, NULL),
+(35, '(63)13336464', 'sit.amet@yahoo.couk', 26, NULL),
+(36, '(32)75017764', 'erat.vivamus@protonmail.edu', 27, NULL),
+(37, '(17)06723156', 'iaculis.enim.sit@google.edu', 28, NULL),
+(38, '(53)52478075', 'fermentum@protonmail.couk', 29, NULL),
+(39, '(47)46568687', 'id@hotmail.org', 30, NULL),
+(40, '(72)42524465', 'eu.augue.porttitor@yahoo.com', 31, NULL),
+(41, '(95)11107434', 'id.nunc@aol.com', 32, NULL),
+(42, '(67)96667100', 'lectus@google.net', 33, NULL),
+(43, '(68)41782956', 'phasellus.vitae@google.net', 34, NULL),
+(44, '(44)53615122', 'nullam.lobortis@aol.couk', 35, NULL),
+(45, '(58)83716837', 'ut.erat@outlook.net', 36, NULL),
+(46, '(45)87846631', 'fames.ac@aol.net', 37, NULL),
+(47, '(18)58284996', 'nec.leo@yahoo.ca', 38, NULL),
+(48, '(76)12592877', 'dictum.eu@google.org', 39, NULL),
+(49, '(81)48688310', 'volutpat.nunc@aol.net', 40, NULL),
+(50, '(69)47511683', 'maecenas.libero@yahoo.edu', 41, NULL),
+(51, '(16)83556802', 'facilisis.lorem.tristique@outlook.org', 42, NULL),
+(52, '(16)51623792', 'donec.feugiat@icloud.com', 43, NULL),
+(53, '(86)11388812', 'fringilla.est@icloud.couk', 44, NULL),
+(54, '(10)83141601', 'tristique@outlook.couk', 45, NULL),
+(55, '(35)77783142', 'amet.consectetuer@yahoo.couk', 46, NULL),
+(56, '(69)55815443', 'dolor.sit@icloud.com', 47, NULL),
+(57, '(25)55788267', 'semper@google.org', 48, NULL),
+(58, '(84)14788303', 'tortor.nibh@yahoo.ca', 49, NULL),
+(59, '(57)86471375', 'ut.erat@icloud.edu', 50, NULL),
+(60, '(52)51677779', 'amet@google.org', 51, NULL),
+(61, '(44)24670183', 'vehicula@google.org', 52, NULL),
+(62, '(88)99378141', 'suspendisse.commodo@icloud.org', 53, NULL),
+(63, '(31)75785641', 'mauris.quis@protonmail.com', 54, NULL),
+(64, '(48)98581195', 'dictum@protonmail.couk', 55, NULL),
+(65, '(82)99215548', 'et.magnis@yahoo.org', 56, NULL),
+(66, '(04)31787723', 'sem.elit.pharetra@icloud.org', 57, NULL),
+(67, '(57)85445946', 'lorem.vehicula.et@google.couk', 58, NULL),
+(68, '(74)70135248', 'turpis.aliquam@yahoo.edu', 59, NULL),
+(69, '(83)45611421', 'cum.sociis@yahoo.couk', 60, NULL),
+(70, '(77)42664446', 'amet.ultricies@outlook.ca', 61, NULL),
+(71, '(82)21161616', 'nunc.quisque@yahoo.net', 62, NULL),
+(72, '(66)53782297', 'posuere@yahoo.com', 63, NULL),
+(73, '(34)24862469', 'eu.tellus@icloud.edu', 64, NULL),
+(74, '(36)16876539', 'diam.lorem@outlook.edu', 65, NULL),
+(75, '(57)04278186', 'tortor.nunc@yahoo.edu', 66, NULL),
+(76, '(42)13774883', 'ac@hotmail.org', 67, NULL),
+(77, '(22)27184474', 'sed@protonmail.com', 68, NULL),
+(78, '(65)35172491', 'maecenas@aol.net', 69, NULL),
+(79, '(33)78076847', 'porttitor@aol.couk', 70, NULL),
+(80, '(75)16879118', 'leo.cras@icloud.couk', 71, NULL),
+(81, '(26)10731311', 'vel.sapien@outlook.ca', 72, NULL),
+(82, '(07)17163626', 'nisi@google.org', 73, NULL),
+(83, '(10)98823883', 'eget.metus@hotmail.com', 74, NULL),
+(84, '(40)14699816', 'posuere.vulputate@yahoo.org', 75, NULL),
+(85, '(84)16973722', 'nulla.donec.non@google.com', 76, NULL),
+(86, '(74)42375656', 'lectus.pede@yahoo.couk', 77, NULL),
+(87, '(27)70948857', 'molestie.arcu.sed@icloud.com', 78, NULL),
+(88, '(77)66112658', 'libero.nec@outlook.com', 79, NULL),
+(89, '(58)12468683', 'arcu.iaculis.enim@google.ca', 80, NULL),
+(90, '(81)22927010', 'magna.ut.tincidunt@protonmail.couk', 81, NULL),
+(91, '(26)43367492', 'lectus.rutrum@icloud.net', 82, NULL),
+(92, '(30)16747174', 'nibh.dolor@yahoo.ca', 83, NULL),
+(93, '(83)95245257', 'sem.magna.nec@yahoo.edu', 84, NULL),
+(94, '(11)70812981', 'nascetur@outlook.couk', 85, NULL),
+(95, '(64)67825358', 'commodo.at.libero@protonmail.couk', 86, NULL),
+(96, '(36)66478796', 'sit.amet.orci@outlook.ca', 87, NULL),
+(97, '(43)67604758', 'vitae@google.edu', 88, NULL),
+(98, '(33)01230606', 'praesent.interdum@aol.org', 89, NULL),
+(99, '(22)57197044', 'nullam.enim@protonmail.com', 90, NULL),
+(100, '(95)21383424', 'nam.nulla@icloud.org', 91, NULL),
+(101, '(02)48782337', 'augue.ac.ipsum@protonmail.couk', 92, NULL),
+(102, '(18)90332817', 'nulla.magna@icloud.org', 93, NULL),
+(103, '(45)65877341', 'a@protonmail.edu', 94, NULL),
+(104, '(78)51611636', 'vel.sapien.imperdiet@icloud.com', 95, NULL),
+(105, '(27)45885454', 'volutpat.nulla@outlook.com', 96, NULL),
+(106, '(04)11238522', 'nunc.nulla@yahoo.com', 97, NULL),
+(107, '(55)92265246', 'feugiat.sed@protonmail.org', 98, NULL),
+(108, '(56)44637841', 'laoreet.libero@yahoo.ca', 99, NULL),
+(109, '(09)05689237', 'nulla.cras.eu@outlook.com', 100, NULL),
+(110, '(97)87835745', 'gravida.nunc@aol.couk', 101, NULL),
+(111, '(72)12226162', 'sapien@aol.edu', 102, NULL),
+(112, '(46)77834225', 'at.libero@hotmail.edu', 103, NULL),
+(113, '(77)55867334', 'vestibulum.mauris@google.org', 104, NULL),
+(114, '(64)24132622', 'diam.pellentesque.habitant@protonmail.edu', 105, NULL),
+(115, '(91)69615318', 'malesuada.integer.id@protonmail.ca', 106, NULL),
+(116, '(35)22842987', 'ligula.aliquam.erat@hotmail.net', 107, NULL),
+(117, '(52)55366784', 'ipsum@outlook.edu', 108, NULL),
+(118, '(73)32605718', 'vestibulum.lorem.sit@yahoo.couk', 109, NULL),
+(119, '(11)75005566', 'in.tempus@icloud.org', 110, NULL),
+(120, '(75)64052797', 'mi@yahoo.ca', 111, NULL),
+(121, '(61)15212753', 'risus@icloud.ca', 112, NULL),
+(122, '(01)27825744', 'in@yahoo.net', 113, NULL),
+(123, '(98)91588034', 'non.magna.nam@google.ca', 114, NULL),
+(124, '(13)17629661', 'eu.tempor@outlook.edu', 115, NULL),
+(125, '(37)80781872', 'nec.imperdiet@aol.org', 116, NULL),
+(126, '(37)17781875', 'eu@protonmail.couk', 117, NULL),
+(127, '(77)64342375', 'non.nisi.aenean@protonmail.org', 118, NULL),
+(128, '(34)24123325', 'ac.libero@outlook.edu', 119, NULL),
+(129, '(50)35366993', 'proin.vel@google.com', 120, NULL),
+(130, '(71)48358888', 'donec.tincidunt@icloud.ca', 121, NULL),
+(131, '(30)39083641', 'semper@outlook.org', 122, NULL),
+(132, '(21)15986241', 'pharetra.felis.eget@google.edu', 123, NULL),
+(133, '(52)27673849', 'at.pede@protonmail.com', 124, NULL),
+(134, '(17)75028723', 'dolor@outlook.org', 125, NULL),
+(135, '(01)65400969', 'purus.gravida@protonmail.org', 126, NULL),
+(136, '(52)71825885', 'non.hendrerit.id@icloud.net', 127, NULL),
+(137, '(88)29768846', 'in.at@yahoo.edu', 128, NULL),
+(138, '(76)93950548', 'tempus.scelerisque@hotmail.edu', 129, NULL),
+(139, '(01)11016538', 'tellus.non@icloud.org', 130, NULL),
+(140, '(87)78587834', 'nunc.est@hotmail.net', 131, NULL),
+(141, '(68)33568740', 'eget.lacus.mauris@yahoo.ca', 132, NULL),
+(142, '(34)86825802', 'rhoncus.proin@outlook.couk', 133, NULL),
+(143, '(32)11377648', 'vulputate.velit.eu@google.ca', 134, NULL),
+(144, '(06)28566359', 'vitae.erat@hotmail.org', 135, NULL),
+(145, '(36)58656736', 'in.ornare@hotmail.ca', 136, NULL),
+(146, '(23)40871565', 'nisi.magna.sed@hotmail.ca', 137, NULL),
+(147, '(18)26526779', 'semper.pretium@google.edu', 138, NULL),
+(148, '(33)32820716', 'conubia@aol.org', 139, NULL),
+(149, '(21)81515334', 'convallis.ante@icloud.couk', 140, NULL),
+(150, '(32)16176798', 'amet@protonmail.net', 141, NULL),
+(151, '(55)53744346', 'magna@google.com', 142, NULL),
+(152, '(37)47996217', 'morbi.non@hotmail.couk', 143, NULL),
+(153, '(22)70176262', 'magna.cras.convallis@hotmail.edu', 144, NULL),
+(154, '(22)38445323', 'at.auctor@outlook.com', 145, NULL),
+(155, '(23)53757264', 'diam@hotmail.edu', 146, NULL),
+(156, '(14)68435766', 'nulla.semper@aol.ca', 147, NULL),
+(157, '(76)83469722', 'tempus.lorem@yahoo.org', 148, NULL),
+(158, '(62)74766764', 'aliquet.phasellus@protonmail.net', 149, NULL),
+(159, '(48)51984735', 'nisl.quisque@aol.ca', 150, NULL),
+(160, '(48)23454322', 'daniel@gmail.com', 152, NULL),
+(163, 'yui', 'yui', 159, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_estagio`
+--
+
+CREATE TABLE `tb_estagio` (
+  `cd_estagio` int(11) NOT NULL,
+  `nm_estagio` varchar(90) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_estagio`
+--
+
+INSERT INTO `tb_estagio` (`cd_estagio`, `nm_estagio`) VALUES
+(1, 'inicial'),
+(2, 'intermediário'),
+(3, 'avançado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_familiar`
+--
+
+CREATE TABLE `tb_familiar` (
+  `cd_familiar` int(11) NOT NULL,
+  `nm_familiar` varchar(90) DEFAULT NULL,
+  `nm_senha` varchar(90) DEFAULT NULL,
+  `dt_nascimento` date DEFAULT NULL,
+  `cd_parentesco` int(11) DEFAULT NULL,
+  `cd_paciente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_familiar`
+--
+
+INSERT INTO `tb_familiar` (`cd_familiar`, `nm_familiar`, `nm_senha`, `dt_nascimento`, `cd_parentesco`, `cd_paciente`) VALUES
+(1, 'Elaine Hull', 'BIP50QKC0TJ', '1996-06-27', 6, 1),
+(2, 'Marsden Lynch', 'DHJ67SUN5TA', '1970-01-02', 5, 2),
+(3, 'Logan Wiggins', 'YZV20TEJ2EM', '1979-11-22', 2, 3),
+(4, 'Lacey Craft', 'CQI01ZWU7PD', '1989-03-15', 2, 4),
+(5, 'Kai Shepherd', 'KHR65NCW1NC', '1984-12-03', 4, 5),
+(6, 'Roanna Justice', 'GTN41HNS7CK', '1951-06-27', 4, 6),
+(7, 'Xavier Reid', 'TQI25CIY2OO', '1996-08-07', 2, 7),
+(8, 'Linda Nieves', 'OXE93REK3CL', '1977-10-02', 3, 8),
+(9, 'Forrest Goodman', 'SLM05LRJ4PI', '1980-08-10', 2, 9),
+(10, 'Yuri Noel', 'RPN49FYQ6FU', '1992-06-02', 5, 10),
+(11, 'Althea Dudley', 'BBI31FCL2TV', '1953-08-01', 2, 11),
+(12, 'Martha Brennan', 'ESS55EYJ3YU', '1995-06-15', 4, 12),
+(13, 'Sharon Roberts', 'JHP27BGY2MB', '1996-11-06', 7, 13),
+(14, 'Timon Little', 'EKW13VLD3DK', '1957-06-03', 2, 14),
+(15, 'Graiden Mitchell', 'BTJ47RLW3AI', '1980-07-31', 3, 15),
+(16, 'Dorian Barrett', 'VGY58YSY1QN', '1966-02-12', 3, 16),
+(17, 'Candice Parker', 'GSR28TOI2BQ', '1984-03-17', 1, 17),
+(18, 'Piper Mathews', 'CKM40NMA1LO', '1983-10-01', 5, 18),
+(19, 'Callie Benson', 'CQF35XIV6OO', '1952-06-25', 3, 19),
+(20, 'Stacy Garrison', 'SNU36MYV7RV', '1954-09-17', 5, 20),
+(21, 'Reed Castaneda', 'HEL42PJQ1MN', '1982-12-27', 3, 21),
+(22, 'Brandon Arnold', 'AYY74UZL3MG', '1993-01-29', 4, 22),
+(23, 'Katell Frank', 'KHX71PGO9HA', '1968-05-22', 3, 23),
+(24, 'Destiny Barr', 'MJJ03JDG8KY', '1960-12-04', 6, 24),
+(25, 'Amaya Orr', 'ECO44TSF5PM', '1977-08-24', 7, 25),
+(26, 'Dorian Hill', 'MZW69CPA8IV', '1967-04-27', 3, 26),
+(27, 'Hyacinth Evans', 'HEO21CNT7HG', '1983-08-28', 3, 27),
+(28, 'Vera Mcleod', 'EVX72UXG2UQ', '1950-09-13', 5, 28),
+(29, 'Brent Kinney', 'URQ61VJI2JR', '1990-02-28', 6, 29),
+(30, 'Britanney Ferrell', 'PJB83SKK4DK', '1966-05-21', 4, 30),
+(31, 'Stone Kirby', 'PPW21GGM3WK', '1962-01-18', 5, 31),
+(32, 'Paloma Pena', 'XII32RFU7ID', '1957-11-22', 2, 32),
+(33, 'Finn Workman', 'RSV21DGH8XN', '1959-10-07', 6, 33),
+(34, 'Drew Johnson', 'YFT00BXL3SO', '1991-05-18', 4, 34),
+(35, 'Norman Rosa', 'ASC14YGJ7PO', '1956-06-10', 2, 35),
+(36, 'Silas Valentine', 'TTG47DOX4NN', '1963-04-28', 6, 36),
+(37, 'Fitzgerald Stout', 'MIL18FKL2VM', '1962-09-26', 5, 37),
+(38, 'Geraldine Mccray', 'PYJ39BNC2FI', '1956-05-23', 6, 38),
+(39, 'Cody Watson', 'NWK59TYP2VU', '1948-03-19', 6, 39),
+(40, 'Edward Hall', 'HTW22EQQ1UN', '1977-03-11', 3, 40),
+(41, 'Eric Dalton', 'LWG88FZI9EO', '1981-02-15', 1, 41),
+(42, 'Ebony Kinney', 'BST84NTY8YK', '1985-11-03', 3, 42),
+(43, 'Castor Byers', 'HKI76HSM3TX', '1955-08-05', 7, 43),
+(44, 'Lenore Mcclain', 'GCB34BEL6DN', '1976-09-24', 5, 44),
+(45, 'Boris Knox', 'BZO35JXE8YS', '1970-02-19', 6, 45),
+(46, 'Abra Campbell', 'NWT52BZI5FJ', '1973-09-21', 4, 46),
+(47, 'Rhiannon Pugh', 'XBU72QRR6AH', '1962-05-23', 6, 47),
+(48, 'Jolie Castillo', 'FDS25VLJ3CK', '1973-01-07', 5, 48),
+(49, 'Audrey Grant', 'MBN61RBI0KP', '1987-11-13', 2, 49),
+(50, 'Kasimir Carver', 'EMP45YPK8KR', '1987-07-04', 2, 50),
+(51, 'Erica Blevins', 'NPV70SIL7KV', '1977-10-23', 5, 51),
+(52, 'Hamish Austin', 'LFP07JSW1JK', '1983-12-07', 7, 52),
+(53, 'Shoshana O\'Neill', 'SUV37UER6PI', '1955-02-20', 5, 53),
+(54, 'Paloma Park', 'YJV71UQC5HU', '1990-06-08', 5, 54),
+(55, 'Melvin Morse', 'XIN30HOJ1XH', '1946-06-01', 3, 55),
+(56, 'Joseph Justice', 'EDC18ESJ1SH', '1949-07-23', 1, 56),
+(57, 'Ignatius Cervantes', 'RBU27MXH8OI', '1965-12-06', 4, 57),
+(58, 'Nathan Mejia', 'BFF30MXX2DI', '1962-04-21', 6, 58),
+(59, 'Tate Hamilton', 'RYW78QJO7JJ', '1977-04-06', 4, 59),
+(60, 'Inez Key', 'RRM73HSY0MJ', '1992-03-23', 1, 60),
+(61, 'Kyla Rose', 'QQS18HBW9CL', '1986-12-22', 3, 61),
+(62, 'Althea Stevens', 'FZU68FBN5OJ', '1975-02-22', 1, 62),
+(63, 'Lacey Phelps', 'QUL84RVP6YG', '1972-08-12', 3, 63),
+(64, 'Yardley Snow', 'DMF15HCC0PU', '1987-02-25', 5, 64),
+(65, 'Delilah Flores', 'YKB46MHM5XO', '1958-04-16', 3, 65),
+(66, 'September Fuller', 'ETY87PXI4AS', '1953-10-31', 3, 66),
+(67, 'Yardley Short', 'LGF75KOL5CB', '1985-12-30', 4, 67),
+(68, 'Denise Harding', 'SJW04GVS2KI', '1986-04-07', 5, 68),
+(69, 'Piper Spence', 'IMS88OQS0VW', '1991-12-23', 4, 69),
+(70, 'Hermione Burgess', 'ZMM88FLS8OD', '1995-02-08', 4, 70),
+(71, 'Buffy Christensen', 'MKX13WPG7LQ', '1948-05-20', 7, 71),
+(72, 'Herrod Buckley', 'LVX61UEJ3TH', '1981-08-19', 3, 72),
+(73, 'Patience Brady', 'NDK75WLG2PX', '1987-10-20', 3, 73),
+(74, 'Jaime Hays', 'BGU77MWD1EF', '1981-03-17', 2, 74),
+(75, 'September Hester', 'QYD89QCC5KG', '1983-12-31', 1, 75),
+(76, 'Armando Roy', 'JAB22UOX0MN', '1994-07-17', 3, 76),
+(77, 'Basil Heath', 'RMM69PWV7JT', '1981-08-27', 3, 77),
+(78, 'Wanda Gallagher', 'MOD85SVS1WY', '1954-08-26', 1, 78),
+(79, 'Ella Donovan', 'VCB15NJS7XR', '1951-01-11', 3, 79),
+(80, 'Xanthus Kramer', 'PEG47XVV7PJ', '1951-03-31', 5, 80),
+(81, 'Kimberly Leon', 'ERE52FSN6ZH', '1956-04-15', 2, 81),
+(82, 'Aspen Bean', 'PSV86WXV7XO', '1945-11-19', 5, 82),
+(83, 'Shellie Boone', 'ZSJ25DNW6XS', '1999-07-02', 4, 83),
+(84, 'Rigel Parrish', 'XWQ61VAC7VE', '1974-01-13', 7, 84),
+(85, 'Janna Leach', 'MCU78CRO9GD', '1950-07-16', 3, 85),
+(86, 'Lois Gardner', 'DFT79MDS6TT', '1980-09-27', 3, 86),
+(87, 'Judah Acosta', 'XOF88ZNO5QS', '1999-08-31', 3, 87),
+(88, 'Oprah Morse', 'HTZ53XDP7WI', '1965-01-06', 2, 88),
+(89, 'Yvonne Roberts', 'HFD43QXH1RJ', '1952-08-19', 6, 89),
+(90, 'Tanya Mendoza', 'CWH73AVM4CZ', '1952-10-01', 5, 90),
+(91, 'Briar Padilla', 'QIN47WPZ1XV', '1984-09-10', 4, 91),
+(92, 'Quemby Workman', 'NKT52UFG5WZ', '1975-08-05', 5, 92),
+(93, 'Cade Carney', 'JBX67PVV6EQ', '1979-07-25', 4, 93),
+(94, 'Julian Stuart', 'YDM12FRP9DQ', '1953-09-06', 5, 94),
+(95, 'Colby Page', 'LDW67TFK2HS', '1980-11-30', 1, 95),
+(96, 'Hanna Stevens', 'PGF83NVS0UD', '1970-02-08', 3, 96),
+(97, 'Shellie Smith', 'YJQ66UQL0WP', '1966-01-30', 2, 97),
+(98, 'Drake Freeman', 'QSH82QQB8RD', '1953-09-13', 6, 98),
+(99, 'Jenette Boyer', 'WBU82GCV2YD', '1958-06-06', 6, 99),
+(100, 'Caldwell Simon', 'TOK07VGI0BK', '1968-12-06', 1, 100),
+(101, 'Giacomo Stevenson', 'YBE97JDZ9IO', '1965-12-17', 2, 101),
+(102, 'Cara Garner', 'UKB12FXL7HY', '1958-12-11', 6, 102),
+(103, 'Herman Carroll', 'VPW62IKI7CI', '1998-09-24', 4, 103),
+(104, 'Ryder Evans', 'BDI49MTD3GG', '1969-05-21', 6, 104),
+(105, 'Jorden Santiago', 'SAA05GAR8XP', '1996-01-11', 3, 105),
+(106, 'Berk Galloway', 'JMO21LJX5BD', '1965-01-16', 6, 106),
+(107, 'Tate Patrick', 'PBZ41UPS5TY', '1955-02-16', 2, 107),
+(108, 'Penelope Talley', 'EYN82SGF1OH', '1997-06-15', 5, 108),
+(109, 'Iola Abbott', 'PIA32HOX6JK', '1980-01-26', 3, 109),
+(110, 'Melissa Waller', 'OHK36EOK1UQ', '1998-07-15', 5, 110),
+(111, 'Geraldine Wyatt', 'AKE83KHS0DY', '1947-11-20', 4, 111),
+(112, 'Faith Wright', 'AIK86GEJ5BW', '1972-12-06', 7, 112),
+(113, 'Fletcher Hale', 'VGB11RTU8TL', '1979-07-22', 5, 113),
+(114, 'Constance Ferrell', 'IQP17NCR7QN', '1946-05-09', 3, 114),
+(115, 'Graham Hunt', 'VTI16QLE5NS', '1966-01-04', 4, 115),
+(116, 'Merritt Ray', 'IVY16JHS2YY', '1995-11-30', 6, 116),
+(117, 'Micah Craig', 'LWH94KKU5WQ', '1992-12-01', 7, 117),
+(118, 'Beck Hendricks', 'KIG54FFZ4WU', '1968-12-11', 2, 118),
+(119, 'Amethyst Sampson', 'VTM86UGK2YX', '1951-12-20', 5, 119),
+(120, 'Anika Deleon', 'USU83CJY2WF', '1987-06-20', 3, 120),
+(121, 'Idona Griffith', 'KRD62CNM1TA', '1946-03-31', 4, 121),
+(122, 'Garrett Merrill', 'OTN47PPT2SH', '1967-07-19', 4, 122),
+(123, 'Avram Elliott', 'YBU41FSR9ZU', '1982-09-11', 4, 123),
+(124, 'Dillon Burton', 'RKV39YQM6WK', '1998-11-13', 3, 124),
+(125, 'Sage Serrano', 'VJY82IUO8XR', '1990-03-31', 2, 125),
+(126, 'Jordan Foster', 'THC62IPT5GO', '1994-05-21', 3, 126),
+(127, 'Alec Nguyen', 'HFE33LYW5QB', '1991-02-27', 6, 127),
+(128, 'Talon Gutierrez', 'PMB90GEH3OP', '1965-10-01', 2, 128),
+(129, 'Ciaran Mays', 'LUC44CZJ5AU', '1980-07-23', 2, 129),
+(130, 'Wallace Daugherty', 'YZT65UMW5AP', '1996-04-04', 1, 130),
+(131, 'Jack Hudson', 'UIW65IAG2DM', '1953-04-16', 3, 131),
+(132, 'Sophia Dejesus', 'CML16XIF1NL', '1997-05-03', 5, 132),
+(133, 'Davis Bartlett', 'GYP52MHZ7KO', '1979-04-13', 3, 133),
+(134, 'Kirestin Hines', 'PUB21ANT2KE', '1967-11-28', 2, 134),
+(135, 'Warren Paul', 'LKF01WYY8EK', '1952-05-26', 2, 135),
+(136, 'Lael Vincent', 'RIP31NHO2DJ', '1953-07-25', 2, 136),
+(137, 'Connor Whitney', 'WSP24LPF3IH', '1974-12-02', 4, 137),
+(138, 'Merrill Salas', 'CPL30QMZ5VI', '1976-04-15', 7, 138),
+(139, 'Hanna Barber', 'PQF40RNZ8MB', '1966-12-10', 5, 139),
+(140, 'Nathan Gamble', 'TPU86YUX5UU', '1970-02-01', 5, 140),
+(141, 'Duncan Erickson', 'UPC31XLA7PB', '1978-11-23', 6, 141),
+(142, 'Channing Valdez', 'CSB78YPF1UE', '1964-09-25', 6, 142),
+(143, 'Joel Bernard', 'FJI78PUB6JQ', '1954-10-15', 3, 143),
+(144, 'Alea Haney', 'KEV00FTU6CH', '1988-06-14', 2, 144),
+(145, 'Zephania Mayer', 'TQP69KOB8BE', '1985-10-10', 5, 145),
+(146, 'Brett Lyons', 'CDD53VKW3PD', '1955-07-17', 5, 146),
+(147, 'Wade Alford', 'UTI66UET6KR', '1959-10-25', 6, 147),
+(148, 'Chadwick Kirk', 'NKS58TMV3EK', '1975-02-02', 1, 148),
+(149, 'Daquan Floyd', 'FRK72BGU8EU', '1986-06-26', 2, 149),
+(150, 'Kenyon Nieves', 'CNJ15FTH0WO', '1951-04-20', 1, 150);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_jogos`
+--
+
+CREATE TABLE `tb_jogos` (
+  `cd_jogo` int(11) NOT NULL,
+  `nm_jogo` varchar(70) DEFAULT NULL,
+  `cd_tipo_jogo` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_jogos`
+--
+
+INSERT INTO `tb_jogos` (`cd_jogo`, `nm_jogo`, `cd_tipo_jogo`) VALUES
+(1, 'jogo da memória', 1),
+(2, 'genius', 1),
+(3, 'maps', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_jogo_paciente`
+--
+
+CREATE TABLE `tb_jogo_paciente` (
+  `cd_jogo_paciente` int(11) NOT NULL,
+  `cd_jogo` int(11) DEFAULT NULL,
+  `cd_paciente` int(11) DEFAULT NULL,
+  `num_pontuacao` int(6) DEFAULT NULL,
+  `dt_partida` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_jogo_paciente`
+--
+
+INSERT INTO `tb_jogo_paciente` (`cd_jogo_paciente`, `cd_jogo`, `cd_paciente`, `num_pontuacao`, `dt_partida`) VALUES
+(1, 1, 1, 7, '2022-01-13'),
+(2, 2, 1, 10, '2022-01-13'),
+(3, 1, 2, 4, '2022-01-12'),
+(4, 1, 3, 2, '2022-01-15'),
+(5, 2, 4, 1, '2022-01-17'),
+(6, 1, 16, 19, '2021-08-20'),
+(7, 3, 18, 3, '2022-04-23'),
+(8, 1, 1, 22, '2021-07-04'),
+(9, 3, 18, 3, '2022-04-30'),
+(10, 1, 12, 23, '2022-06-22'),
+(11, 2, 3, 7, '2021-07-12'),
+(12, 1, 15, 23, '2022-05-08'),
+(13, 1, 13, 22, '2022-01-18'),
+(14, 1, 5, 12, '2022-10-01'),
+(15, 3, 12, 16, '2022-11-03'),
+(26, 1, 16, 19, '2021-08-20'),
+(27, 2, 18, 3, '2022-04-23'),
+(28, 2, 1, 22, '2021-07-04'),
+(29, 1, 18, 3, '2022-04-30'),
+(30, 1, 12, 23, '2022-06-22'),
+(31, 3, 3, 7, '2021-07-12'),
+(32, 1, 15, 23, '2022-05-08'),
+(33, 1, 13, 22, '2022-01-18'),
+(34, 3, 5, 12, '2022-10-01'),
+(35, 1, 12, 16, '2022-11-03'),
+(56, 1, 66, 17, '2021-05-14'),
+(57, 2, 78, 24, '2022-01-01'),
+(58, 1, 138, 21, '2021-04-01'),
+(59, 1, 2, 11, '2021-07-14'),
+(60, 1, 15, 15, '2021-07-22'),
+(61, 1, 70, 6, '2021-07-04'),
+(62, 1, 58, 22, '2021-12-04'),
+(63, 1, 104, 20, '2022-02-27'),
+(64, 1, 103, 14, '2021-05-05'),
+(65, 3, 103, 20, '2021-09-10'),
+(66, 1, 121, 16, '2021-09-16'),
+(67, 1, 46, 15, '2021-03-28'),
+(68, 2, 38, 8, '2022-01-27'),
+(69, 1, 120, 13, '2021-04-23'),
+(70, 1, 146, 9, '2022-02-27'),
+(71, 1, 50, 25, '2021-04-15'),
+(72, 1, 74, 18, '2021-09-09'),
+(73, 1, 82, 25, '2021-11-22'),
+(74, 1, 38, 13, '2021-06-01'),
+(75, 1, 136, 22, '2021-04-10'),
+(76, 2, 52, 13, '2021-12-19'),
+(77, 3, 39, 11, '2022-01-20'),
+(78, 1, 73, 24, '2021-09-16'),
+(79, 3, 87, 20, '2021-09-13'),
+(80, 1, 115, 14, '2022-02-10'),
+(81, 2, 2, 13, '2021-05-04'),
+(82, 1, 20, 23, '2021-12-07'),
+(83, 2, 123, 12, '2021-12-25'),
+(84, 1, 97, 10, '2022-02-20'),
+(85, 1, 134, 5, '2021-07-18'),
+(86, 1, 12, 19, '2021-05-08'),
+(87, 1, 101, 12, '2021-09-07'),
+(88, 1, 39, 8, '2021-09-01'),
+(89, 1, 110, 18, '2021-10-08'),
+(90, 3, 23, 1, '2022-01-20'),
+(91, 1, 137, 21, '2021-10-07'),
+(92, 2, 129, 12, '2021-05-23'),
+(93, 1, 24, 7, '2021-09-07'),
+(94, 1, 27, 12, '2022-03-13'),
+(95, 2, 132, 21, '2021-12-09'),
+(96, 3, 62, 22, '2021-09-29'),
+(97, 3, 148, 7, '2021-08-27'),
+(98, 3, 36, 2, '2021-08-03'),
+(99, 3, 81, 3, '2021-06-06'),
+(100, 2, 28, 24, '2022-02-23'),
+(101, 1, 83, 9, '2021-12-12'),
+(102, 2, 92, 3, '2021-04-28'),
+(103, 1, 108, 22, '2021-04-05'),
+(104, 1, 97, 8, '2021-09-18'),
+(105, 2, 137, 6, '2022-02-07'),
+(106, 1, 133, 21, '2021-07-30'),
+(107, 2, 116, 24, '2021-07-18'),
+(108, 1, 96, 9, '2021-07-15'),
+(109, 1, 126, 19, '2021-11-17'),
+(110, 2, 40, 11, '2021-07-02'),
+(111, 2, 95, 15, '2021-07-29'),
+(112, 3, 109, 7, '2021-09-04'),
+(113, 1, 50, 11, '2021-09-08'),
+(114, 1, 19, 19, '2021-10-12'),
+(115, 3, 133, 6, '2021-10-25'),
+(116, 1, 88, 11, '2021-06-28'),
+(117, 3, 145, 24, '2022-01-18'),
+(118, 1, 126, 10, '2021-09-07'),
+(119, 1, 7, 13, '2021-06-04'),
+(120, 2, 12, 21, '2022-02-18'),
+(121, 1, 127, 21, '2021-04-13'),
+(122, 2, 16, 23, '2021-05-14'),
+(123, 1, 140, 7, '2021-08-19'),
+(124, 1, 69, 3, '2021-08-02'),
+(125, 1, 131, 15, '2021-08-13'),
+(126, 3, 82, 21, '2021-08-31'),
+(127, 1, 54, 7, '2021-04-25'),
+(128, 1, 82, 18, '2021-05-24'),
+(129, 2, 17, 18, '2021-07-03'),
+(130, 1, 126, 3, '2021-06-15'),
+(131, 3, 138, 10, '2021-06-17'),
+(132, 1, 8, 8, '2021-09-25'),
+(133, 2, 31, 11, '2021-10-15'),
+(134, 1, 112, 8, '2021-12-15'),
+(135, 2, 55, 12, '2021-07-20'),
+(136, 2, 128, 18, '2021-04-16'),
+(137, 2, 75, 14, '2022-01-09'),
+(138, 1, 33, 13, '2021-05-19'),
+(139, 3, 6, 13, '2021-12-03'),
+(140, 1, 60, 21, '2022-03-11'),
+(141, 3, 24, 10, '2021-09-04'),
+(142, 1, 129, 6, '2021-07-16'),
+(143, 2, 101, 16, '2021-04-06'),
+(144, 1, 78, 15, '2021-12-31'),
+(145, 2, 6, 11, '2021-04-04'),
+(146, 1, 100, 3, '2021-05-15'),
+(147, 3, 68, 22, '2021-07-06'),
+(148, 1, 71, 20, '2021-06-21'),
+(149, 1, 105, 1, '2022-03-02'),
+(150, 1, 92, 5, '2021-09-16'),
+(151, 2, 35, 18, '2021-11-12'),
+(152, 1, 90, 23, '2021-04-25'),
+(153, 1, 48, 16, '2022-03-05'),
+(154, 3, 116, 20, '2021-06-20'),
+(155, 2, 62, 21, '2022-03-03'),
+(156, 1, 74, 10, '2021-05-05'),
+(157, 3, 15, 2, '2021-11-23'),
+(158, 1, 16, 4, '2022-01-07'),
+(159, 1, 115, 10, '2021-06-05'),
+(160, 2, 69, 20, '2021-12-23'),
+(161, 1, 6, 2, '2021-07-12'),
+(162, 1, 27, 4, '2022-01-19'),
+(163, 2, 79, 16, '2021-04-10'),
+(164, 1, 124, 9, '2021-07-18'),
+(165, 1, 124, 8, '2021-10-28'),
+(166, 1, 119, 22, '2021-10-14'),
+(167, 1, 130, 16, '2021-11-25'),
+(168, 1, 141, 16, '2021-08-06'),
+(169, 3, 18, 24, '2021-09-07'),
+(170, 1, 65, 6, '2021-05-29'),
+(171, 1, 137, 18, '2021-06-29'),
+(172, 3, 101, 5, '2022-02-08'),
+(173, 1, 74, 22, '2021-11-10'),
+(174, 2, 3, 22, '2022-01-23'),
+(175, 1, 37, 5, '2022-01-14'),
+(176, 1, 100, 8, '2021-05-15'),
+(177, 1, 120, 2, '2021-12-04'),
+(178, 2, 95, 6, '2021-09-15'),
+(179, 1, 1, 15, '2021-08-22'),
+(180, 3, 148, 13, '2021-03-21'),
+(181, 1, 146, 18, '2021-12-21'),
+(182, 2, 126, 18, '2021-03-23'),
+(183, 3, 58, 16, '2021-08-12'),
+(184, 1, 8, 12, '2021-09-20'),
+(185, 1, 130, 18, '2022-03-13'),
+(186, 3, 112, 24, '2021-09-16'),
+(187, 1, 99, 11, '2021-06-21'),
+(188, 1, 44, 22, '2021-07-19'),
+(189, 3, 82, 13, '2021-07-10'),
+(190, 1, 124, 1, '2021-05-22'),
+(191, 1, 14, 12, '2021-10-07'),
+(192, 1, 65, 10, '2021-04-21'),
+(193, 1, 105, 19, '2021-10-15'),
+(194, 2, 57, 19, '2021-06-14'),
+(195, 1, 22, 10, '2021-11-24'),
+(196, 2, 68, 1, '2021-10-06'),
+(197, 1, 127, 18, '2021-03-19'),
+(198, 1, 5, 3, '2022-01-24'),
+(199, 3, 44, 11, '2021-12-09'),
+(200, 1, 54, 8, '2021-09-14'),
+(201, 2, 149, 23, '2021-08-22'),
+(202, 3, 87, 23, '2021-06-30'),
+(203, 1, 64, 10, '2021-12-03'),
+(204, 1, 88, 20, '2022-03-11'),
+(205, 1, 130, 22, '2022-03-06');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_notes`
+--
+
+CREATE TABLE `tb_notes` (
+  `cd_notes` int(11) NOT NULL,
+  `nm_titulo` varchar(40) DEFAULT NULL,
+  `txt_note` text DEFAULT NULL,
+  `dt_criacao` date DEFAULT NULL,
+  `cd_paciente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_notes`
+--
+
+INSERT INTO `tb_notes` (`cd_notes`, `nm_titulo`, `txt_note`, `dt_criacao`, `cd_paciente`) VALUES
+(1, 'Uma Vida Amada', 'É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver examinando sua diagramação. A vantagem de usar Lorem Ipsum é que ele tem uma distribuição normal de letras, ao contrário de \"Conteúdo aqui, conteúdo aqui\", fazendo com que ele tenha uma aparência similar a de um texto legível. Muitos softwares de publicação e editores de páginas na internet agora usam Lorem Ipsum como texto-modelo padrão, e uma rápida busca por lorem ipsum mostra vários websites ainda em sua fase de construção. Várias versões novas surgiram ao longo dos anos, eventualmente por acidente, e às vezes de propósito (injetando humor, e coisas do gênero).\n', '2022-02-21', 1),
+(2, 'A última chance', 'Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.\n', '2022-01-15', 2),
+(3, 'A prmeira vista', 'O trecho padrão original de Lorem Ipsum, usado desde o século XVI, está reproduzido abaixo para os interessados. Seções 1.10.32 e 1.10.33 de \"de Finibus Bonorum et Malorum\" de Cicero também foram reproduzidas abaixo em sua forma exata original, acompanhada das versões para o inglês da tradução feita por H. Rackham em 1914.\n', '2022-05-21', 3),
+(4, 'Lista de compra', '1-Sabão,2-Arroz,3-coca\n', '2022-01-21', 4),
+(5, 'Musiquinhas', '1-Adele,2-Rise(lol),3-amber\n', '2022-03-10', 5),
+(6, 'Filmes', 'O porque vivemos\n', '2022-02-08', 2),
+(7, 'Minhas Memórias de hoje', 'Hoje fui até a padaria comprar deliciosos pães de forma que minha mãe sempre comprava no café da manhã\n', '2022-01-04', 2),
+(8, 'Memórias de ontem', 'Ontem comi uma comida muito saborosa junto ao molho bastante picante \n', '2022-02-17', 4),
+(9, 'Minha amada família', 'Minha mãe é uma deusa, meu pai é um batalhador e meu irmão é bastante dedicado', '2022-01-26', 1),
+(11, 'Shopping', 'Essa semana fui ao shopping e comprei um tênis', '2022-02-22', 2),
+(12, 'Assistir filme', 'Domingo eu assisti um filme com meu neto', '2022-02-20', 5),
+(13, 'Visita da familia', 'Hoje faz um ano que meus irmãos me visitaram', '2022-02-20', 4),
+(14, 'Casamento do Gabriel', 'Ontem eu fui ao casamento do meu filho Gabriel, foi muito legal!', '2022-03-01', 1),
+(15, 'Comer Feijoada', 'No almoço comi uma feijoada com minha filha, e a feijoada estava muito gostosa', '2022-03-11', 5),
+(16, 'Dia de Hoje', 'Hoje eu não fiz muita coisa, só fiquei em casa o dia inteiro', '2022-02-27', 5),
+(17, 'Primeira vez na praia', 'Lembrei da primeira vez que fui à praia, foi um momento espetacular', '2022-03-13', 1),
+(18, 'Primeiro Emprego', 'Estava lembrando do primeiro emprego, trabalhei em uma empresa no interior de São Paulo', '2022-03-05', 3),
+(19, 'Curitiba', 'Esse final de semana meu filho e minha nora me levaram a Curitiba, é uma bela cidade!', '2022-02-28', 4),
+(20, 'Saudade', 'Estou com saudade dos meus irmãos', '2022-03-02', 5),
+(21, 'Assistir desenho', 'Hoje eu assisti um desenho com meu neto', '2022-02-15', 2),
+(22, 'Aniversário', 'Hoje é meu aniversário, à noite meus familiares e amigos vão vir me ver', '2022-02-20', 1),
+(23, 'Celular', 'Hoje comprei um celular para mim, mas não sei mexer', '2022-02-24', 4),
+(24, 'Infância', 'Lembrei de quando eu era criança e brincava no sitio', '2022-02-08', 5),
+(25, 'Mãe', 'Hoje estava pensando na minha mãezinha, tenho muitas saudades dela', '2022-02-21', 1),
+(26, 'aliquet, metus', 'dictum. Proin eget odio. Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae', '2021-01-23', 129),
+(27, 'fames ac', 'nec ante. Maecenas mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc', '2021-11-07', 11),
+(28, 'nonummy ut,', 'nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula', '2021-09-05', 6),
+(29, 'blandit mattis.', 'ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam vel sapien imperdiet', '2022-03-01', 95),
+(30, 'auctor odio', 'Nam tempor diam dictum sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus id,', '2021-08-02', 60),
+(31, 'eleifend non,', 'enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui. Cras', '2021-02-27', 43),
+(32, 'luctus et', 'elit, dictum eu, eleifend nec, malesuada ut, sem. Nulla interdum. Curabitur dictum. Phasellus in felis.', '2021-11-22', 7),
+(33, 'lacinia. Sed', 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu', '2021-03-16', 97),
+(34, 'sem magna', 'sagittis. Duis gravida. Praesent eu nulla at sem molestie sodales. Mauris blandit enim consequat purus.', '2021-12-21', 80),
+(35, 'nonummy. Fusce', 'parturient montes, nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero', '2021-11-22', 112),
+(36, 'orci. Ut', 'malesuada. Integer id magna et ipsum cursus vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum', '2021-06-04', 20),
+(37, 'Proin non', 'erat. Vivamus nisi. Mauris nulla. Integer urna. Vivamus molestie dapibus ligula. Aliquam erat volutpat. Nulla', '2022-02-22', 81),
+(38, 'pede, malesuada', 'at arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae', '2021-09-09', 54),
+(39, 'id nunc', 'amet, faucibus ut, nulla. Cras eu tellus eu augue porttitor interdum. Sed auctor odio a', '2021-03-12', 45),
+(40, 'Nam consequat', 'nec enim. Nunc ut erat. Sed nunc est, mollis non, cursus non, egestas a, dui.', '2021-03-28', 50),
+(41, 'massa rutrum', 'consectetuer adipiscing elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu', '2021-06-09', 59),
+(42, 'eu dolor', 'eu nibh vulputate mauris sagittis placerat. Cras dictum ultricies ligula. Nullam enim. Sed nulla ante,', '2022-02-27', 117),
+(43, 'enim. Etiam', 'vitae mauris sit amet lorem semper auctor. Mauris vel turpis. Aliquam adipiscing lobortis risus. In', '2021-01-18', 94),
+(44, 'ligula. Aenean', 'Cras vulputate velit eu sem. Pellentesque ut ipsum ac mi eleifend egestas. Sed pharetra, felis', '2022-01-17', 82),
+(45, 'ultricies adipiscing,', 'metus. In nec orci. Donec nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus.', '2021-04-19', 93),
+(46, 'hendrerit. Donec', 'nec, imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce', '2022-03-02', 82),
+(47, 'dictum. Phasellus', 'Nam ligula elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in,', '2021-11-30', 65),
+(48, 'ante lectus', 'ligula. Aenean euismod mauris eu elit. Nulla facilisi. Sed neque. Sed eget lacus. Mauris non', '2021-09-26', 106),
+(49, 'at, iaculis', 'lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum sociis', '2021-11-22', 55),
+(50, 'tellus. Phasellus', 'semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras', '2021-12-29', 55),
+(51, 'porttitor eros', 'augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique senectus et netus et', '2021-12-28', 133),
+(52, 'nibh vulputate', 'mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque', '2021-09-04', 74),
+(53, 'nec tellus.', 'vel sapien imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus. Donec egestas. Duis', '2022-02-08', 137),
+(54, 'Sed neque.', 'egestas hendrerit neque. In ornare sagittis felis. Donec tempor, est ac mattis semper, dui lectus', '2021-09-29', 137),
+(55, 'consectetuer adipiscing', 'diam at pretium aliquet, metus urna convallis erat, eget tincidunt dui augue eu tellus. Phasellus', '2021-06-10', 107),
+(56, 'Donec vitae', 'euismod enim. Etiam gravida molestie arcu. Sed eu nibh vulputate mauris sagittis placerat. Cras dictum', '2021-08-08', 117),
+(57, 'laoreet lectus', 'fringilla cursus purus. Nullam scelerisque neque sed sem egestas blandit. Nam nulla magna, malesuada vel,', '2021-02-09', 31),
+(58, 'ut ipsum', 'vulputate ullamcorper magna. Sed eu eros. Nam consequat dolor vitae dolor. Donec fringilla. Donec feugiat', '2021-05-06', 54),
+(59, 'Sed pharetra,', 'porttitor eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis', '2022-02-06', 13),
+(60, 'hendrerit consectetuer,', 'sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel nisl. Quisque', '2021-02-12', 13),
+(61, 'Aenean gravida', 'ultrices posuere cubilia Curae Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque', '2022-02-07', 24),
+(62, 'posuere, enim', 'eu, placerat eget, venenatis a, magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam', '2021-07-13', 146),
+(63, 'tempor diam', 'urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam,', '2021-03-12', 57),
+(64, 'Nam consequat', 'Mauris molestie pharetra nibh. Aliquam ornare, libero at auctor ullamcorper, nisl arcu iaculis enim, sit', '2022-03-12', 109),
+(65, 'a felis', 'libero. Morbi accumsan laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper', '2021-05-20', 28),
+(66, 'magna a', 'consectetuer adipiscing elit. Aliquam auctor, velit eget laoreet posuere, enim nisl elementum purus, accumsan interdum', '2021-06-08', 8),
+(67, 'dolor quam,', 'laoreet ipsum. Curabitur consequat, lectus sit amet luctus vulputate, nisi sem semper erat, in consectetuer', '2021-02-08', 36),
+(68, 'ligula consectetuer', 'nascetur ridiculus mus. Proin vel arcu eu odio tristique pharetra. Quisque ac libero nec ligula', '2021-01-10', 1),
+(69, 'massa. Quisque', 'dolor. Quisque tincidunt pede ac urna. Ut tincidunt vehicula risus. Nulla eget metus eu erat', '2021-08-19', 142),
+(70, 'ornare, elit', 'mattis. Cras eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus vestibulum.', '2021-10-24', 33),
+(71, 'quis urna.', 'Quisque imperdiet, erat nonummy ultricies ornare, elit elit fermentum risus, at fringilla purus mauris a', '2022-01-02', 102),
+(72, 'amet, dapibus', 'mi felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras interdum. Nunc sollicitudin commodo ipsum.', '2021-01-23', 94),
+(73, 'convallis, ante', 'felis eget varius ultrices, mauris ipsum porta elit, a feugiat tellus lorem eu metus. In', '2021-03-05', 142),
+(74, 'lacus. Aliquam', 'luctus felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu,', '2021-06-19', 39),
+(75, 'Phasellus at', 'at sem molestie sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet', '2021-05-07', 35),
+(76, 'orci. Ut', 'fermentum vel, mauris. Integer sem elit, pharetra ut, pharetra sed, hendrerit a, arcu. Sed et', '2021-02-21', 28),
+(77, 'luctus sit', 'nulla. Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede', '2022-01-23', 85),
+(78, 'Cras lorem', 'non enim commodo hendrerit. Donec porttitor tellus non magna. Nam ligula elit, pretium et, rutrum', '2022-02-08', 46),
+(79, 'dui quis', 'aliquet diam. Sed diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus nisi. Mauris', '2021-03-08', 89),
+(80, 'sodales purus,', 'eros nec tellus. Nunc lectus pede, ultrices a, auctor non, feugiat nec, diam. Duis mi', '2021-12-17', 84),
+(81, 'fringilla purus', 'Duis at lacus. Quisque purus sapien, gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum', '2021-07-12', 148),
+(82, 'mattis velit', 'gravida non, sollicitudin a, malesuada id, erat. Etiam vestibulum massa rutrum magna. Cras convallis convallis', '2021-05-21', 114),
+(83, 'accumsan interdum', 'risus. Nulla eget metus eu erat semper rutrum. Fusce dolor quam, elementum at, egestas a,', '2021-01-11', 74),
+(84, 'interdum. Nunc', 'quis massa. Mauris vestibulum, neque sed dictum eleifend, nunc risus varius orci, in consequat enim', '2021-07-13', 34),
+(85, 'ut, sem.', 'Vivamus non lorem vitae odio sagittis semper. Nam tempor diam dictum sapien. Aenean massa. Integer', '2021-09-11', 15),
+(86, 'leo. Morbi', 'et, magna. Praesent interdum ligula eu enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis', '2021-08-12', 69),
+(87, 'Nunc pulvinar', 'consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc. Quisque ornare tortor', '2021-09-05', 100),
+(88, 'a, facilisis', 'et magnis dis parturient montes, nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo', '2021-05-20', 67),
+(89, 'Mauris vestibulum,', 'orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel lectus. Cum', '2021-08-20', 19),
+(90, 'Curae Phasellus', 'erat semper rutrum. Fusce dolor quam, elementum at, egestas a, scelerisque sed, sapien. Nunc pulvinar', '2021-10-25', 136),
+(91, 'dictum. Proin', 'diam. Duis mi enim, condimentum eget, volutpat ornare, facilisis eget, ipsum. Donec sollicitudin adipiscing ligula.', '2022-01-27', 22),
+(92, 'ac sem', 'Curabitur egestas nunc sed libero. Proin sed turpis nec mauris blandit mattis. Cras eget nisi', '2021-10-25', 109),
+(93, 'consectetuer mauris', 'velit. Quisque varius. Nam porttitor scelerisque neque. Nullam nisl. Maecenas malesuada fringilla est. Mauris eu', '2021-08-09', 8),
+(94, 'erat volutpat.', 'Integer vulputate, risus a ultricies adipiscing, enim mi tempor lorem, eget mollis lectus pede et', '2021-11-29', 50),
+(95, 'dictum augue', 'semper erat, in consectetuer ipsum nunc id enim. Curabitur massa. Vestibulum accumsan neque et nunc.', '2021-10-15', 74),
+(96, 'egestas blandit.', 'pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut mi.', '2021-10-26', 83),
+(97, 'aliquet. Proin', 'ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna nec quam. Curabitur vel', '2022-03-01', 18),
+(98, 'semper, dui', 'scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor,', '2021-07-14', 64),
+(99, 'non, feugiat', 'nec, cursus a, enim. Suspendisse aliquet, sem ut cursus luctus, ipsum leo elementum sem, vitae', '2021-06-27', 133),
+(100, 'Morbi accumsan', 'aliquet libero. Integer in magna. Phasellus dolor elit, pellentesque a, facilisis non, bibendum sed, est.', '2021-08-07', 25),
+(101, 'magna, malesuada', 'ut, pharetra sed, hendrerit a, arcu. Sed et libero. Proin mi. Aliquam gravida mauris ut', '2022-01-14', 72),
+(102, 'hymenaeos. Mauris', 'nibh. Quisque nonummy ipsum non arcu. Vivamus sit amet risus. Donec egestas. Aliquam nec enim.', '2021-04-20', 131),
+(103, 'lacus. Ut', 'Mauris blandit enim consequat purus. Maecenas libero est, congue a, aliquet vel, vulputate eu, odio.', '2021-09-16', 45),
+(104, 'eu tellus', 'elit. Curabitur sed tortor. Integer aliquam adipiscing lacus. Ut nec urna et arcu imperdiet ullamcorper.', '2021-07-25', 120),
+(105, 'diam at', 'nunc. Quisque ornare tortor at risus. Nunc ac sem ut dolor dapibus gravida. Aliquam tincidunt,', '2021-10-30', 36),
+(106, 'nec, eleifend', 'Donec tempus, lorem fringilla ornare placerat, orci lacus vestibulum lorem, sit amet ultricies sem magna', '2021-07-06', 124),
+(107, 'malesuada vel,', 'elit, pretium et, rutrum non, hendrerit id, ante. Nunc mauris sapien, cursus in, hendrerit consectetuer,', '2021-05-11', 147),
+(108, 'eu sem.', 'eget nisi dictum augue malesuada malesuada. Integer id magna et ipsum cursus vestibulum. Mauris magna.', '2021-06-02', 55),
+(109, 'aliquet vel,', 'in consequat enim diam vel arcu. Curabitur ut odio vel est tempor bibendum. Donec felis', '2021-10-16', 60),
+(110, 'elementum purus,', 'magna. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam laoreet, libero et tristique pellentesque,', '2021-07-16', 138),
+(111, 'elit, pellentesque', 'sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin vel arcu eu', '2021-11-03', 95),
+(112, 'lectus. Cum', 'tellus. Suspendisse sed dolor. Fusce mi lorem, vehicula et, rutrum eu, ultrices sit amet, risus.', '2021-06-14', 147),
+(113, 'nibh. Phasellus', 'vestibulum. Mauris magna. Duis dignissim tempor arcu. Vestibulum ut eros non enim commodo hendrerit. Donec', '2021-08-06', 42),
+(114, 'Nulla semper', 'scelerisque dui. Suspendisse ac metus vitae velit egestas lacinia. Sed congue, elit sed consequat auctor,', '2021-07-29', 3),
+(115, 'vulputate dui,', 'imperdiet nec, leo. Morbi neque tellus, imperdiet non, vestibulum nec, euismod in, dolor. Fusce feugiat.', '2021-01-31', 59),
+(116, 'non arcu.', 'fermentum arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae', '2021-01-12', 90),
+(117, 'non dui', 'mollis non, cursus non, egestas a, dui. Cras pellentesque. Sed dictum. Proin eget odio. Aliquam', '2021-05-22', 99),
+(118, 'vel pede', 'dis parturient montes, nascetur ridiculus mus. Aenean eget magna. Suspendisse tristique neque venenatis lacus. Etiam', '2022-01-19', 106),
+(119, 'nec orci.', 'nascetur ridiculus mus. Donec dignissim magna a tortor. Nunc commodo auctor velit. Aliquam nisl. Nulla', '2021-11-21', 76),
+(120, 'id, mollis', 'semper egestas, urna justo faucibus lectus, a sollicitudin orci sem eget massa. Suspendisse eleifend. Cras', '2021-12-10', 65),
+(121, 'amet diam', 'mauris ut mi. Duis risus odio, auctor vitae, aliquet nec, imperdiet nec, leo. Morbi neque', '2021-08-15', 13),
+(122, 'dolor sit', 'iaculis, lacus pede sagittis augue, eu tempor erat neque non quam. Pellentesque habitant morbi tristique', '2021-05-05', 18),
+(123, 'ac nulla.', 'Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed', '2021-03-20', 97),
+(124, 'ornare, facilisis', 'Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac', '2021-03-27', 83),
+(125, 'Nunc sollicitudin', 'cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non', '2021-12-09', 132);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_paciente`
+--
+
+CREATE TABLE `tb_paciente` (
+  `cd_paciente` int(11) NOT NULL,
+  `nm_paciente` varchar(90) DEFAULT NULL,
+  `nm_senha` varchar(99) DEFAULT NULL,
+  `dt_nascimento` date DEFAULT NULL,
+  `cd_estagio` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_paciente`
+--
+
+INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascimento`, `cd_estagio`) VALUES
+(1, 'Samuel Horn', 'XCO28RGC7HO', '1978-05-03', 3),
+(2, 'Adria Glenn', 'NUV73XIU4QA', '1975-10-11', 2),
+(3, 'Stacy Compton', 'LLR89ITH8RB', '1987-08-12', 1),
+(4, 'Jelani Mayo', 'MHI38BKG4HC', '1979-10-21', 2),
+(5, 'Wyoming Daugherty', 'EWF46SIE2FC', '1970-09-30', 2),
+(6, 'Valentine Burch', 'WMT74NUE6GT', '1985-03-09', 2),
+(7, 'Natalie Conner', 'GHG36RCP4FL', '1993-02-18', 2),
+(8, 'Avye Parsons', 'QOO86WTJ4BO', '1972-09-13', 2),
+(9, 'Hilel Underwood', 'TND61PMQ4QD', '1958-04-04', 3),
+(10, 'Kirby Lawrence', 'EUX05QHO7DB', '1979-05-29', 2),
+(11, 'Azalia Wheeler', 'DNX72UFG7LM', '1969-05-28', 3),
+(12, 'Alfonso Goodwin', 'XUZ81YQL5XW', '1970-11-06', 3),
+(13, 'Michael Alvarez', 'YHF41XKV4JV', '1989-10-14', 3),
+(14, 'Solomon O\'connor', 'FPW78QBJ8HU', '1974-11-30', 2),
+(15, 'Fuller Graves', 'JDY91MEE6UW', '1984-03-24', 3),
+(16, 'Ivan Kelley', 'YHH32GBG0FK', '1985-01-11', 3),
+(17, 'Fay Huber', 'YDB77ZPJ5XY', '1977-06-02', 2),
+(18, 'Halla Kidd', 'JLQ87TZQ6HN', '1989-11-08', 1),
+(19, 'Arthur Parrish', 'IKU54SNJ8PX', '1989-09-20', 1),
+(20, 'Leigh Valencia', 'TOO10EWH4LI', '1990-05-21', 2),
+(21, 'Isadora Rodriguez', 'RMO33ABP8TR', '1957-12-31', 2),
+(22, 'Isaiah Jones', 'QVC67YEM8VH', '1971-11-21', 2),
+(23, 'Angela Chase', 'QHP83LFZ0MB', '1971-10-06', 1),
+(24, 'Whilemina Petersen', 'LEF72JWO4CU', '1966-06-04', 2),
+(25, 'Amena Davis', 'GYP36KXQ5FU', '1989-01-12', 3),
+(26, 'Blythe Walsh', 'JPV79QVA3XJ', '1970-05-18', 2),
+(27, 'Kennan Lawrence', 'JLZ84KJF1CP', '1952-05-30', 2),
+(28, 'Olga Camacho', 'WRC56IHC2KO', '1963-10-23', 2),
+(29, 'Karen Tyson', 'DDV68VRJ0BE', '1952-05-09', 1),
+(30, 'Gareth Crane', 'FPF13PZR1PE', '1972-03-25', 2),
+(31, 'Paki Swanson', 'BRB25AGQ4AL', '1950-05-18', 1),
+(32, 'Graham Doyle', 'QGB38XPL5QD', '1982-01-31', 2),
+(33, 'Eagan Jensen', 'UKF82RYT3AK', '1971-08-25', 2),
+(34, 'Emerson Mcdaniel', 'BOM85FKJ0JX', '1962-05-07', 3),
+(35, 'Nolan Cobb', 'RHU49ELI5RU', '1952-03-29', 2),
+(36, 'Chandler Pugh', 'LPQ86QRB1NH', '1992-04-18', 1),
+(37, 'Kevin England', 'PZY15NEE1ZD', '1961-10-08', 2),
+(38, 'Elijah Reilly', 'QHT72JFO6JO', '1978-01-26', 3),
+(39, 'Dustin Strong', 'WHP53OWD6VF', '1952-07-25', 1),
+(40, 'Carter Tillman', 'WLB21EOQ3EB', '1962-07-01', 2),
+(41, 'Kyla Gallagher', 'ZTV13KYM1YP', '1984-05-26', 1),
+(42, 'Mona Burt', 'URP51WYV1IX', '1963-12-22', 2),
+(43, 'Kaseem Hunter', 'OLN02GYP7YF', '1970-10-15', 3),
+(44, 'Melyssa Walters', 'PQV38AXI1TW', '1977-07-04', 3),
+(45, 'Stewart House', 'LGE72KIJ3RU', '1961-01-30', 3),
+(46, 'David Deleon', 'JJN28ITH6SR', '1958-08-30', 2),
+(47, 'Isadora Cooper', 'MHR11FWB5OB', '1972-08-27', 2),
+(48, 'Lila Valdez', 'OHY07OXH7XN', '1985-07-30', 2),
+(49, 'Desirae Rose', 'ILC08INW3TH', '1982-04-26', 3),
+(50, 'Elvis Emerson', 'QPS04RFG2CF', '1975-09-16', 3),
+(51, 'Jana Huffman', 'NMD04UOT3II', '1977-05-27', 1),
+(52, 'Kelsey Peterson', 'DUC47JOT2DE', '1967-11-13', 3),
+(53, 'Rae Moran', 'SAY73IWJ0XL', '1970-09-07', 1),
+(54, 'Quamar Buchanan', 'ZBX38PSM0YL', '1950-05-21', 2),
+(55, 'Bradley Calderon', 'VYL68FCC3BK', '1958-04-14', 1),
+(56, 'Lila Tanner', 'BXK63SBW5CO', '1975-11-08', 3),
+(57, 'Sybil Hoover', 'ZLU03WUB5ST', '1978-01-05', 1),
+(58, 'Vance Sanders', 'RSO14RBU9LK', '1956-04-15', 1),
+(59, 'Noelani Manning', 'UOT43NNF5NA', '1993-06-14', 3),
+(60, 'Brody Richmond', 'SEX76WWT6KG', '1984-10-16', 2),
+(61, 'Cody Kidd', 'TGC87QUU2KB', '1968-04-05', 2),
+(62, 'Juliet Soto', 'NIJ43OOO2SF', '1974-06-25', 1),
+(63, 'Alice Flynn', 'UYQ27PEU7VB', '1984-09-01', 3),
+(64, 'Eve Garza', 'HTB71WGF4BN', '1980-12-24', 1),
+(65, 'Finn Larsen', 'FFP05FKJ8CP', '1984-06-07', 2),
+(66, 'Jacqueline Atkinson', 'JON24VVB2HT', '1954-12-15', 2),
+(67, 'Christian Perkins', 'MNW78STT3RH', '1977-08-17', 2),
+(68, 'Diana Riggs', 'YTB80OLS5OI', '1965-04-23', 3),
+(69, 'Jarrod Short', 'QBQ83WIL8LW', '1967-09-01', 2),
+(70, 'Madaline Calhoun', 'EUI33UAQ2HA', '1974-05-04', 3),
+(71, 'Chaim Stanley', 'YHH17VED7BX', '1969-08-28', 2),
+(72, 'Maile Stone', 'QLH18KXI8BF', '1959-03-21', 2),
+(73, 'Kareem Guzman', 'HWJ88WIQ0LO', '1991-10-05', 2),
+(74, 'Hasad Cook', 'HOU71OZV4WG', '1955-10-30', 2),
+(75, 'Clark Banks', 'FEK62EKP1XO', '1954-09-12', 2),
+(76, 'Kimberley Tate', 'JFH66VMY3WL', '1969-01-13', 2),
+(77, 'Bianca Ramos', 'ZTJ43VFA1HR', '1984-10-13', 2),
+(78, 'Fritz Wong', 'XGO80SIP1EN', '1976-02-10', 3),
+(79, 'Oliver Merrill', 'CDM38LAM2DC', '1970-12-16', 3),
+(80, 'Carson Snow', 'HGG01FPF8YR', '1961-06-14', 2),
+(81, 'Gannon Santos', 'COG11HDL4WQ', '1989-04-18', 2),
+(82, 'Porter Craig', 'AKY18CXO3FR', '1970-01-20', 3),
+(83, 'Nita Knight', 'RXV18JYN6JB', '1981-02-20', 2),
+(84, 'Buckminster Shaw', 'LSW35QWW5LB', '1960-01-23', 2),
+(85, 'Ciaran Ware', 'KZJ52THM3QF', '1979-01-04', 3),
+(86, 'Mechelle Mercado', 'QVR14TQN7DW', '1992-06-26', 2),
+(87, 'Aristotle Bishop', 'GJX42ONF2LH', '1980-09-08', 1),
+(88, 'Yoshio Figueroa', 'AZY66QZX4TD', '1973-12-15', 2),
+(89, 'Ann Ruiz', 'QNI61IMT3AW', '1958-08-01', 2),
+(90, 'Coby Sullivan', 'KKV78UKU5JI', '1986-02-23', 1),
+(91, 'Maryam Garner', 'QIS38NRP8SP', '1978-01-06', 1),
+(92, 'Mary Franklin', 'NIG80AJN4JF', '1969-07-28', 2),
+(93, 'Tanner Boyd', 'HCT15EFH3FT', '1960-08-17', 3),
+(94, 'Edward Price', 'VVK30TNT6YX', '1958-08-03', 3),
+(95, 'Inez Rowe', 'BQI20RQL1GW', '1964-12-08', 2),
+(96, 'Gareth Cox', 'KDK75NDQ3BE', '1980-08-11', 1),
+(97, 'Reed Henry', 'LPJ83WQD7MS', '1983-03-18', 2),
+(98, 'Dacey Mercado', 'VLF69KOC8MJ', '1967-11-09', 2),
+(99, 'Meredith Sosa', 'JGT68NWC4CU', '1953-11-30', 1),
+(100, 'Louis Bird', 'DJZ54SDY3QR', '1952-02-16', 2),
+(101, 'Christian Barber', 'RAW15YBL8RG', '1987-09-17', 3),
+(102, 'Eagan Henderson', 'DQR86JEP4II', '1964-05-10', 1),
+(103, 'Camilla Roach', 'ZOF40EVL8GR', '1973-10-22', 3),
+(104, 'Clio Solis', 'IPN22TYY2UL', '1992-11-18', 3),
+(105, 'Elton Curtis', 'LLD94YBC5UC', '1986-06-09', 2),
+(106, 'Philip Bolton', 'BMV10WIE8FF', '1993-06-09', 2),
+(107, 'Basil Young', 'MAF06TBU7ED', '1971-04-23', 2),
+(108, 'Prescott Patton', 'EFN53GKM7CG', '1976-08-07', 2),
+(109, 'Ali Hart', 'ITF52UPO3XE', '1967-06-17', 1),
+(110, 'Galena Wall', 'NIV74CXG1YJ', '1982-09-07', 2),
+(111, 'Travis Luna', 'EDC86LFX8VO', '1981-05-02', 2),
+(112, 'Conan Savage', 'FIK46XEA2SL', '1962-01-08', 1),
+(113, 'Jemima Cervantes', 'SBQ74FCR5SW', '1968-10-12', 1),
+(114, 'Lisandra Stein', 'EBS46SXU2TX', '1953-05-15', 2),
+(115, 'Shoshana Schneider', 'XTG29ZNS4PN', '1951-06-19', 3),
+(116, 'Adria Banks', 'MMO82IVQ2IE', '1971-02-13', 2),
+(117, 'Teagan Mathews', 'NJF48OLB2EN', '1983-01-01', 1),
+(118, 'Kieran Harper', 'PQL22UEP3FP', '1980-01-10', 2),
+(119, 'Shad Reyes', 'YQF42OML8PI', '1988-02-01', 2),
+(120, 'Dustin Dennis', 'ADC83SNP1XM', '1974-05-30', 2),
+(121, 'Brenden Green', 'RPD54ZCC6ST', '1955-06-23', 3),
+(122, 'Mariam Frost', 'SQD96KKQ9NX', '1988-10-15', 2),
+(123, 'Ronan Mcbride', 'DDX71RPJ6UR', '1958-08-18', 2),
+(124, 'Leah Graves', 'XVA44KOY3ST', '1970-05-12', 2),
+(125, 'Jordan Emerson', 'ICT66RDT1TS', '1969-03-17', 2),
+(126, 'Rooney Barber', 'EFS45MMG4PQ', '1993-02-27', 3),
+(127, 'Noel Mendoza', 'PFR73HOQ8ZC', '1973-03-15', 2),
+(128, 'Emi Boyd', 'BUU38TMP3GK', '1954-01-01', 3),
+(129, 'Miriam Robbins', 'LVJ34VPU7UG', '1981-06-05', 1),
+(130, 'Frances Stokes', 'TAJ35USR1SS', '1954-09-13', 1),
+(131, 'Dominic Gaines', 'YBK50WGC8EW', '1960-01-31', 2),
+(132, 'Marah Strickland', 'ZXN45KBH6WR', '1962-12-19', 2),
+(133, 'Lionel Slater', 'PXC87FHY6LH', '1978-05-19', 3),
+(134, 'Helen Bush', 'CQM07LMF5ML', '1961-04-19', 3),
+(135, 'Francesca Duran', 'XMI21CDC3CX', '1990-09-23', 2),
+(136, 'Faith Saunders', 'XLW22KUH6JX', '1969-10-05', 3),
+(137, 'Nelle Weber', 'BJH26PIH4TG', '1962-04-21', 3),
+(138, 'Dane Ramsey', 'OXG67CYU3WP', '1990-07-05', 1),
+(139, 'Candice Hernandez', 'NYT63WJD3WH', '1968-12-15', 2),
+(140, 'Gareth Hobbs', 'UTS54IVS1CG', '1981-02-23', 3),
+(141, 'Dai Pittman', 'OZV48QKR0FY', '1967-01-29', 3),
+(142, 'Sydnee Byers', 'GIO25IZU3TB', '1979-07-30', 3),
+(143, 'Callie Carter', 'NNL71VDU3UX', '1950-11-08', 1),
+(144, 'Elliott Heath', 'SCO50VNT1EU', '1953-12-11', 3),
+(145, 'Carly Jones', 'SNK48HPH8NI', '1950-12-02', 2),
+(146, 'Plato Ramirez', 'HWY53FBU2FE', '1980-12-18', 2),
+(147, 'Cherokee Lane', 'BSE79FWB6LH', '1963-05-16', 1),
+(148, 'Alice Mills', 'CBJ48VDJ2II', '1973-08-16', 3),
+(149, 'Graiden Mcguire', 'ESS75BLE4GM', '1971-02-12', 2),
+(150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3),
+(152, 'Daniel Alvarez', '$2y$10$VU9FNOl/Zf.La35Ox7wuze5Ij2Y4yeRaMhVXsowXMTZUf6HicFqBC', '1989-11-22', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_parentesco`
+--
+
+CREATE TABLE `tb_parentesco` (
+  `cd_parentesco` int(11) NOT NULL,
+  `nm_parentesco` varchar(90) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_parentesco`
+--
+
+INSERT INTO `tb_parentesco` (`cd_parentesco`, `nm_parentesco`) VALUES
+(1, 'primo'),
+(2, 'pai'),
+(3, 'mãe'),
+(4, 'filho'),
+(5, 'tio'),
+(6, 'esposa'),
+(7, 'marido');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_tipo_jogo`
+--
+
+CREATE TABLE `tb_tipo_jogo` (
+  `cd_tipo_jogo` int(11) NOT NULL,
+  `nm_tipo_jogo` varchar(80) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_tipo_jogo`
+--
+
+INSERT INTO `tb_tipo_jogo` (`cd_tipo_jogo`, `nm_tipo_jogo`) VALUES
+(1, 'memorização'),
+(2, 'geografia'),
+(3, 'aventura');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_avancado`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_avancado` (
+`nome do familiar` varchar(90)
+,`nome do paciente` varchar(90)
+,`estagio` varchar(90)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_idade`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_idade` (
+`nome do familiar` varchar(90)
+,`idade do familiar` int(10)
+,`nome do paciente` varchar(90)
+,`idade do paciente` int(10)
+,`pontuacao` int(6)
+,`tipo de jogo` varchar(80)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_mae`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_mae` (
+`nome do paciente` varchar(90)
+,`estagio` varchar(90)
+,`nome do familiar` varchar(90)
+,`parentesco` varchar(90)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_memorizacao`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_memorizacao` (
+`data da partida` date
+,`nome do jogo` varchar(70)
+,`tipo do jogo` varchar(80)
+,`nome do paciente` varchar(90)
+,`pontuação` int(6)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_notes_inverno`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_notes_inverno` (
+`data de criação` date
+,`nome do paciente` varchar(90)
+,`estagio` varchar(90)
+,`email` varchar(90)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_pontuacao15`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_pontuacao15` (
+`nome do jogo` varchar(70)
+,`nome do paciente` varchar(90)
+,`pontuacao` int(6)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_pontuacao_intermediario`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_pontuacao_intermediario` (
+`nome do paciente` varchar(90)
+,`estagio` varchar(90)
+,`pontuacao` int(6)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura stand-in para vista `vw_verao`
+-- (Veja abaixo para a view atual)
+--
+CREATE TABLE `vw_verao` (
+`nome do paciente` varchar(90)
+,`data` date
+,`nome do familiar` varchar(90)
+,`parentesco` varchar(90)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_avancado`
+--
+DROP TABLE IF EXISTS `vw_avancado`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_avancado`  AS SELECT `tb_fam`.`nm_familiar` AS `nome do familiar`, `tb_pac`.`nm_paciente` AS `nome do paciente`, `tb_est`.`nm_estagio` AS `estagio` FROM ((`tb_familiar` `tb_fam` join `tb_paciente` `tb_pac` on(`tb_fam`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_estagio` `tb_est` on(`tb_pac`.`cd_estagio` = `tb_est`.`cd_estagio`)) WHERE `tb_est`.`nm_estagio` = 'avancado' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_idade`
+--
+DROP TABLE IF EXISTS `vw_idade`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_idade`  AS SELECT `tb_fam`.`nm_familiar` AS `nome do familiar`, floor((to_days(current_timestamp()) - to_days(`tb_fam`.`dt_nascimento`)) / 365.25) AS `idade do familiar`, `tb_pac`.`nm_paciente` AS `nome do paciente`, floor((to_days(current_timestamp()) - to_days(`tb_pac`.`dt_nascimento`)) / 365.25) AS `idade do paciente`, `tb_pac_jogo`.`num_pontuacao` AS `pontuacao`, `tb_tipo_jogo`.`nm_tipo_jogo` AS `tipo de jogo` FROM (((`tb_familiar` `tb_fam` join `tb_paciente` `tb_pac` on(`tb_fam`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_jogo_paciente` `tb_pac_jogo` on(`tb_pac_jogo`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_tipo_jogo`) WHERE floor((to_days(current_timestamp()) - to_days(`tb_pac`.`dt_nascimento`)) / 365.25) > 60 AND `tb_pac_jogo`.`num_pontuacao` > 10 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_mae`
+--
+DROP TABLE IF EXISTS `vw_mae`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_mae`  AS SELECT `tb_pac`.`nm_paciente` AS `nome do paciente`, `tb_est`.`nm_estagio` AS `estagio`, `tb_fam`.`nm_familiar` AS `nome do familiar`, `tb_paren`.`nm_parentesco` AS `parentesco` FROM (((`tb_paciente` `tb_pac` join `tb_familiar` `tb_fam` on(`tb_fam`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_parentesco` `tb_paren` on(`tb_fam`.`cd_parentesco` = `tb_paren`.`cd_parentesco`)) join `tb_estagio` `tb_est` on(`tb_pac`.`cd_estagio` = `tb_est`.`cd_estagio`)) WHERE `tb_est`.`cd_estagio` = 1 AND `tb_paren`.`cd_parentesco` = 3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_memorizacao`
+--
+DROP TABLE IF EXISTS `vw_memorizacao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_memorizacao`  AS SELECT `jpac`.`dt_partida` AS `data da partida`, `jog`.`nm_jogo` AS `nome do jogo`, `tipjog`.`nm_tipo_jogo` AS `tipo do jogo`, `pac`.`nm_paciente` AS `nome do paciente`, `jpac`.`num_pontuacao` AS `pontuação` FROM (((`tb_tipo_jogo` `tipjog` join `tb_jogos` `jog` on(`jog`.`cd_tipo_jogo` = `tipjog`.`cd_tipo_jogo`)) join `tb_jogo_paciente` `jpac` on(`jpac`.`cd_jogo` = `jog`.`cd_jogo`)) join `tb_paciente` `pac` on(`pac`.`cd_paciente` = `jpac`.`cd_paciente`)) WHERE `jpac`.`num_pontuacao` > 20 AND `tipjog`.`cd_tipo_jogo` = '1' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_notes_inverno`
+--
+DROP TABLE IF EXISTS `vw_notes_inverno`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_notes_inverno`  AS SELECT `nt`.`dt_criacao` AS `data de criação`, `pac`.`nm_paciente` AS `nome do paciente`, `est`.`nm_estagio` AS `estagio`, `ctt`.`nm_email` AS `email` FROM (((`tb_notes` `nt` join `tb_paciente` `pac` on(`nt`.`cd_paciente` = `pac`.`cd_paciente`)) join `tb_estagio` `est` on(`pac`.`cd_estagio` = `est`.`cd_estagio`)) join `tb_contato` `ctt` on(`ctt`.`cd_paciente` = `pac`.`cd_paciente`)) WHERE `nt`.`dt_criacao` > '21-06-2021' AND `nt`.`dt_criacao` < '2021-09-22' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_pontuacao15`
+--
+DROP TABLE IF EXISTS `vw_pontuacao15`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_pontuacao15`  AS SELECT `tb_jogos`.`nm_jogo` AS `nome do jogo`, `tb_pac`.`nm_paciente` AS `nome do paciente`, `tb_jogopac`.`num_pontuacao` AS `pontuacao` FROM ((`tb_jogo_paciente` `tb_jogopac` join `tb_paciente` `tb_pac` on(`tb_jogopac`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_jogos` on(`tb_jogos`.`cd_jogo` = `tb_jogopac`.`cd_jogo`)) WHERE `tb_jogopac`.`num_pontuacao` > 15 ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_pontuacao_intermediario`
+--
+DROP TABLE IF EXISTS `vw_pontuacao_intermediario`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_pontuacao_intermediario`  AS SELECT DISTINCT `pac`.`nm_paciente` AS `nome do paciente`, `est`.`nm_estagio` AS `estagio`, `jogopac`.`num_pontuacao` AS `pontuacao` FROM ((`tb_paciente` `pac` join `tb_estagio` `est` on(`pac`.`cd_estagio` = `est`.`cd_estagio`)) join `tb_jogo_paciente` `jogopac` on(`jogopac`.`cd_paciente` = `pac`.`cd_paciente`)) WHERE `jogopac`.`num_pontuacao` > 10 AND `est`.`nm_estagio` = 'intermediario' ;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para vista `vw_verao`
+--
+DROP TABLE IF EXISTS `vw_verao`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `vw_verao`  AS SELECT `tb_pac`.`nm_paciente` AS `nome do paciente`, `tb_jogpac`.`dt_partida` AS `data`, `tb_fam`.`nm_familiar` AS `nome do familiar`, `tb_parentesco`.`nm_parentesco` AS `parentesco` FROM (((`tb_paciente` `tb_pac` join `tb_jogo_paciente` `tb_jogpac` on(`tb_jogpac`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_familiar` `tb_fam` on(`tb_fam`.`cd_paciente` = `tb_pac`.`cd_paciente`)) join `tb_parentesco` on(`tb_fam`.`cd_parentesco` = `tb_parentesco`.`cd_parentesco`)) WHERE `tb_jogpac`.`dt_partida` > '2021-12-21' AND `tb_jogpac`.`dt_partida` < '2022-03-20' ;
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `tb_contato`
+--
+ALTER TABLE `tb_contato`
+  ADD PRIMARY KEY (`cd_contato`),
+  ADD KEY `fk_paciente_idx` (`cd_paciente`),
+  ADD KEY `fk_fam_id_idx` (`cd_familiar`);
+
+--
+-- Índices para tabela `tb_estagio`
+--
+ALTER TABLE `tb_estagio`
+  ADD PRIMARY KEY (`cd_estagio`);
+
+--
+-- Índices para tabela `tb_familiar`
+--
+ALTER TABLE `tb_familiar`
+  ADD PRIMARY KEY (`cd_familiar`),
+  ADD KEY `fk_parentesco_idx` (`cd_parentesco`),
+  ADD KEY `fk_paciente_idx` (`cd_paciente`);
+
+--
+-- Índices para tabela `tb_jogos`
+--
+ALTER TABLE `tb_jogos`
+  ADD PRIMARY KEY (`cd_jogo`),
+  ADD KEY `tipoJogo` (`cd_tipo_jogo`);
+
+--
+-- Índices para tabela `tb_jogo_paciente`
+--
+ALTER TABLE `tb_jogo_paciente`
+  ADD PRIMARY KEY (`cd_jogo_paciente`),
+  ADD KEY `fk_paciente_idx` (`cd_paciente`),
+  ADD KEY `fk_jogo_idx` (`cd_jogo`);
+
+--
+-- Índices para tabela `tb_notes`
+--
+ALTER TABLE `tb_notes`
+  ADD PRIMARY KEY (`cd_notes`),
+  ADD KEY `fk_paciente` (`cd_paciente`);
+
+--
+-- Índices para tabela `tb_paciente`
+--
+ALTER TABLE `tb_paciente`
+  ADD PRIMARY KEY (`cd_paciente`),
+  ADD KEY `fk_estagio_idx` (`cd_estagio`);
+
+--
+-- Índices para tabela `tb_parentesco`
+--
+ALTER TABLE `tb_parentesco`
+  ADD PRIMARY KEY (`cd_parentesco`);
+
+--
+-- Índices para tabela `tb_tipo_jogo`
+--
+ALTER TABLE `tb_tipo_jogo`
+  ADD PRIMARY KEY (`cd_tipo_jogo`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `tb_contato`
+--
+ALTER TABLE `tb_contato`
+  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+
+--
+-- AUTO_INCREMENT de tabela `tb_estagio`
+--
+ALTER TABLE `tb_estagio`
+  MODIFY `cd_estagio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `tb_familiar`
+--
+ALTER TABLE `tb_familiar`
+  MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+
+--
+-- AUTO_INCREMENT de tabela `tb_jogos`
+--
+ALTER TABLE `tb_jogos`
+  MODIFY `cd_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `tb_jogo_paciente`
+--
+ALTER TABLE `tb_jogo_paciente`
+  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
+
+--
+-- AUTO_INCREMENT de tabela `tb_notes`
+--
+ALTER TABLE `tb_notes`
+  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=126;
+
+--
+-- AUTO_INCREMENT de tabela `tb_paciente`
+--
+ALTER TABLE `tb_paciente`
+  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+
+--
+-- AUTO_INCREMENT de tabela `tb_parentesco`
+--
+ALTER TABLE `tb_parentesco`
+  MODIFY `cd_parentesco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT de tabela `tb_tipo_jogo`
+--
+ALTER TABLE `tb_tipo_jogo`
+  MODIFY `cd_tipo_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `tb_contato`
+--
+ALTER TABLE `tb_contato`
+  ADD CONSTRAINT `fk_fam_id` FOREIGN KEY (`cd_familiar`) REFERENCES `tb_familiar` (`cd_familiar`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_pac_id` FOREIGN KEY (`cd_paciente`) REFERENCES `tb_paciente` (`cd_paciente`);
+
+--
+-- Limitadores para a tabela `tb_familiar`
+--
+ALTER TABLE `tb_familiar`
+  ADD CONSTRAINT `fk_parentesco` FOREIGN KEY (`cd_parentesco`) REFERENCES `tb_parentesco` (`cd_parentesco`);
+
+--
+-- Limitadores para a tabela `tb_jogos`
+--
+ALTER TABLE `tb_jogos`
+  ADD CONSTRAINT `tipoJogo` FOREIGN KEY (`cd_tipo_jogo`) REFERENCES `tb_tipo_jogo` (`cd_tipo_jogo`);
+
+--
+-- Limitadores para a tabela `tb_jogo_paciente`
+--
+ALTER TABLE `tb_jogo_paciente`
+  ADD CONSTRAINT `fk_jogo` FOREIGN KEY (`cd_jogo`) REFERENCES `tb_jogos` (`cd_jogo`),
+  ADD CONSTRAINT `fk_pacient` FOREIGN KEY (`cd_paciente`) REFERENCES `tb_paciente` (`cd_paciente`);
+
+--
+-- Limitadores para a tabela `tb_notes`
+--
+ALTER TABLE `tb_notes`
+  ADD CONSTRAINT `fk_paciente` FOREIGN KEY (`cd_paciente`) REFERENCES `tb_paciente` (`cd_paciente`);
+
+--
+-- Limitadores para a tabela `tb_paciente`
+--
+ALTER TABLE `tb_paciente`
+  ADD CONSTRAINT `fk_estagio` FOREIGN KEY (`cd_estagio`) REFERENCES `tb_estagio` (`cd_estagio`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
