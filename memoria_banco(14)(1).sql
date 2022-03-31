@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Mar-2022 às 01:36
+-- Tempo de geração: 18-Mar-2022 às 02:57
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.1
 
@@ -196,9 +196,7 @@ INSERT INTO `tb_contato` (`cd_contato`, `tel_contato`, `nm_email`, `cd_paciente`
 (156, '(14)68435766', 'nulla.semper@aol.ca', 147, NULL),
 (157, '(76)83469722', 'tempus.lorem@yahoo.org', 148, NULL),
 (158, '(62)74766764', 'aliquet.phasellus@protonmail.net', 149, NULL),
-(159, '(48)51984735', 'nisl.quisque@aol.ca', 150, NULL),
-(160, '(48)23454322', 'daniel@gmail.com', 152, NULL),
-(163, 'yui', 'yui', 159, NULL);
+(159, '(48)51984735', 'nisl.quisque@aol.ca', 150, NULL);
 
 -- --------------------------------------------------------
 
@@ -919,8 +917,7 @@ INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascime
 (147, 'Cherokee Lane', 'BSE79FWB6LH', '1963-05-16', 1),
 (148, 'Alice Mills', 'CBJ48VDJ2II', '1973-08-16', 3),
 (149, 'Graiden Mcguire', 'ESS75BLE4GM', '1971-02-12', 2),
-(150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3),
-(152, 'Daniel Alvarez', '$2y$10$VU9FNOl/Zf.La35Ox7wuze5Ij2Y4yeRaMhVXsowXMTZUf6HicFqBC', '1989-11-22', 1);
+(150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3);
 
 -- --------------------------------------------------------
 
@@ -1217,7 +1214,7 @@ ALTER TABLE `tb_tipo_jogo`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estagio`
@@ -1253,7 +1250,7 @@ ALTER TABLE `tb_notes`
 -- AUTO_INCREMENT de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
-  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT de tabela `tb_parentesco`
