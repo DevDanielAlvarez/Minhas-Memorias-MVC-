@@ -9,6 +9,13 @@ class Controller
 
     }
 
+    public function call_conn()
+    {
+        require_once '../App/core/model.php';
+        return new $model;
+
+    }
+
     public function view($view,$data=[],$data2=[])
     {
         require '../App/views/template.php';

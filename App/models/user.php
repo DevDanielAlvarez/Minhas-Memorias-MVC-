@@ -34,6 +34,20 @@ Class user extends Controller
 
     }
 
+    public function get_all_info_user()
+    {
+        if(isset($_SESSION['logado'])){
+        $stmt=Model::getConn()->prepare("select nm_paciente,ds_resumo,nm_genero,nm_email from tb_paciente pac join tb_contato ctt on ctt.cd_paciente=pac.cd_paciente join tb_genero gen on gen.cd_genero=pac.cd_genero where pac.cd_paciente=?");
+        $stmt->bindValue(1, $_SESSION['id_paciente']);
+        $stmt->execute();
+        $result=$stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+        
+        }
+    }
+
+    public function update_user(){}
+
 
 }
 

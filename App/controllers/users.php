@@ -37,7 +37,7 @@ class users extends controller
                 #chamado do Models/user.php-> cadastro()
                 $user->cadastroUser();        
          endif;
-         else:$this->view('users/cadastro',$data=['sty'=>URL_BASE."/css/style.css"]);
+         
 
     endif;
         
