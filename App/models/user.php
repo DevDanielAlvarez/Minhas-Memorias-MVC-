@@ -46,7 +46,46 @@ Class user extends Controller
         }
     }
 
-    public function update_user(){}
+    public function update_user($name,$email,$resume,$genre)
+    {
+        // foi feito um update para cada campo, pois caso nao mude todos os campos ele não altera tupla (!provavel erro de logica ou falta de config sql!)
+
+        //name
+            $id_paciente=$_SESSION['id_paciente'];
+            $sql=Model::getConn()->prepare("update tb_paciente set nm_paciente=? where cd_paciente=?");
+            $sql->bindValue(1,$name);
+            $sql->bindValue(2,$id_paciente);
+            $sql->execute();
+
+            //resume
+            
+            $sql=Model::getConn()->prepare("update tb_paciente set ds_resumo=? where cd_paciente=?");
+            $sql->bindValue(1,$resume);
+            $sql->bindValue(2,$id_paciente);
+            $sql->execute();
+
+            //genre
+            
+            $sql=Model::getConn()->prepare("update tb_paciente set cd_genero=? where cd_paciente=?");
+            $sql->bindValue(1,$genre);
+            $sql->bindValue(2,$id_paciente);
+            $sql->execute();
+
+
+            $stmt=Model::getConn()->prepare("update tb_contato set nm_email=? where cd_paciente=?");
+            $stmt->bindValue(1,$email);
+            $stmt->bindValue(2,$id_paciente);
+            $stmt->execute();
+
+            
+            
+            
+           
+            
+      
+
+        
+    }
 
 
 }

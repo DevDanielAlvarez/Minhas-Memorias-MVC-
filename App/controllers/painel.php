@@ -37,11 +37,22 @@ class painel extends controller
     {
         if(isset($_POST['name']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['genero']) && !empty($_POST['resume'])  )
         {
-          echo "foi"  ;
+            
+            $stmt=$this->model('user');
+            $name =$_POST['name'];
+            $email=$_POST['email'];
+            $genero=$_POST['genero'];
+            $resume=$_POST['resume'];
+
+            $stmt->update_user($name,$email,$resume,$genero);
+            var_dump($_POST);
+           
+            
+ 
         }
         else
         {
-            $stmt=$this->model('user');
+           
             echo "Erro ao atualizar";
         }
     }

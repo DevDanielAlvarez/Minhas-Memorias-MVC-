@@ -15,7 +15,7 @@
             
             success: function(retorno)
             {
-               alert(retorno)
+               window.location.href="/painel/perfil";
               
             }
             
