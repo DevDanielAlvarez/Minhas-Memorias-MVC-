@@ -76,17 +76,27 @@ Class user extends Controller
             $stmt->bindValue(1,$email);
             $stmt->bindValue(2,$id_paciente);
             $stmt->execute();
-
-            
-            
-            
-           
-            
-      
-
-        
     }
 
+    public function delete_user_system()
+    {
+        //delete all information user in system
+
+        // logic for deleter one (tb_paciente)
+        $stmt_delete= Model::getConn()->query("");
+
+        // logic for delete two (tb_contato)
+        $stmt_delete= Model::getConn()->query("");
+
+        // logic for delete three (tb_jogo_paciente)
+        $stmt_delete= Model::getConn()->query("");
+
+        // logic for delete four (tb_familiar)
+        $stmt_delete= Model::getConn()->query("");
+
+        // logic for delete five(tb_notes)
+
+    }
 
 }
 

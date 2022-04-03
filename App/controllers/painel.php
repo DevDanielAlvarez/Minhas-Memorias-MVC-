@@ -56,6 +56,17 @@ class painel extends controller
             echo "Erro ao atualizar";
         }
     }
+
+    public function deletar_acount_action()
+    {
+        if (isset($_POST['senha']))
+        {
+            //logic for call verify password
+
+            //logic for call method  delete()
+
+        }
+    }
 }
     
     
