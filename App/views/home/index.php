@@ -12,18 +12,20 @@
                     </label>
                     <div class="menu"></div>
                     <nav class="menu-items">
+                    <div class="image"> </div>
                         <ul>
-                            <li>
-                                <a href="#">Home</a>
+                        <li>
+                                <a href="./quem/quem_somos.html">Quem Somos</a>
                             </li>
                             <li>
-                                <a href="">Fotos</a>
+                                <a href="./galeria/galeria.html">Galeria</a>
                             </li>
                             <li>
-                                <a href="#">Atividades elaborais</a>
+                                <a href="./jogos/jogos.html">Jogos</a>
                             </li>
                             
                         </ul>
+                        
                     </nav>
                 </div>
             </div>
