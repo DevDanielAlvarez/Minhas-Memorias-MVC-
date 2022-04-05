@@ -2,6 +2,7 @@
 
     <header class="header-wrapper">
         <div class="header">
+        <div class="menu_imagem" style="content: url('<?php "URL_BASE" ?>/img/logo.png');"></div>
             <div class="checkbox-container">
                 <div class="checkbox-wrapper">
                     <input type="checkbox" id="toggle">
@@ -12,7 +13,7 @@
                     </label>
                     <div class="menu"></div>
                     <nav class="menu-items">
-                    <div class="image"> </div>
+                    <div class="image"  style="background-image: url('<?php "URL_BASE" ?>/img/image.png');"> </div>
                         <ul>
                         <li>
                                 <a href="./quem/quem_somos.html">Quem Somos</a>

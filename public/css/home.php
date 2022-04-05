@@ -112,7 +112,7 @@ a:hover {
     display: flex;
     justify-content: center;
     cursor: pointer;
-    content: url('./logo.png');
+    content: url('<?php echo"localhost:8080"?>'/img/logo.png);
     background-color: transparent;
     color: #7a52b3;
     align-items: flex-start;
@@ -193,7 +193,7 @@ a:hover {
     position:absolute;
     opacity:30%;
     justify-content: center;
-    background-image:url('<?php echo "localhost:8080"?>'/img/image.png);
+   
     background-repeat: no-repeat;
     background-size: 100%;
     overflow: hidden;

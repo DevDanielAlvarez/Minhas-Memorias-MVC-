@@ -6,5 +6,5 @@
 
 body
 {
-    background-image: url('<?php "URL_BASE" ?>/img/bg_purple.jpg');
+    background-image: url('<?php "localhost:8080" ?>/img/bg_purple.jpg');
 }
