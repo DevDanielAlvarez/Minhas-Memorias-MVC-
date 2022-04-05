@@ -32,7 +32,7 @@
         <h2>Toda vida vale a pena!</h2>
         <div class="social-media">
             <a href="/users/logar">Entrar</a>
-            <a href="/users/logar">Cadastro</a>
+           <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
         </div>
     </header> 
     <main class="container">
