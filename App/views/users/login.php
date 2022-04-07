@@ -60,10 +60,7 @@
                         <input type="email" placeholder="Seu email" required id="email_cadastro">
                         <i class="uil uil-envelope icon"></i>
                     </div>
-                    <div class="input-field">
-                        <input type="tel" placeholder="Telefone" required id="telefone_cadastro">
-                        <i class="bi bi-telephone"></i>
-                    </div>
+                   
                     <div class="input-field">
                     <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date_cadastro" />
                         <i class="bi bi-calendar2-week"></i>

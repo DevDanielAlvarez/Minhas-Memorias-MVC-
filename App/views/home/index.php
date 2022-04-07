@@ -2,6 +2,7 @@
 
     <header class="header-wrapper">
         <div class="header">
+        <div class="menu_imagem" style="content: url('<?php "URL_BASE" ?>/img/logo.png');"></div>
             <div class="checkbox-container">
                 <div class="checkbox-wrapper">
                     <input type="checkbox" id="toggle">
@@ -12,18 +13,20 @@
                     </label>
                     <div class="menu"></div>
                     <nav class="menu-items">
+                    <div class="image"  style="background-image: url('<?php "URL_BASE" ?>/img/image.png');"> </div>
                         <ul>
-                            <li>
-                                <a href="#">Home</a>
+                        <li>
+                                <a href="./quem/quem_somos.html">Quem Somos</a>
                             </li>
                             <li>
-                                <a href="">Fotos</a>
+                                <a href="./galeria/galeria.html">Galeria</a>
                             </li>
                             <li>
-                                <a href="#">Atividades elaborais</a>
+                                <a href="./jogos/jogos.html">Jogos</a>
                             </li>
                             
                         </ul>
+                        
                     </nav>
                 </div>
             </div>
@@ -32,7 +35,7 @@
         <h2>Toda vida vale a pena!</h2>
         <div class="social-media">
             <a href="/users/logar">Entrar</a>
-            <a href="/users/logar">Cadastro</a>
+           <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
         </div>
     </header> 
     <main class="container">
