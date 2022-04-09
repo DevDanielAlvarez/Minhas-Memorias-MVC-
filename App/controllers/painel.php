@@ -9,13 +9,15 @@ use LDAP\Result;
 
 class painel extends controller
 {
+    public $nav_bar;
 
     #Index padrão PAINEL
     public function index()
     {
+        $this->nav_bar=html_components::nav_bar();
            #verifica se o user está realemnte logado ($_SESSION['logado']==True?)
         Auth::CheckLogin();
-        $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.php"]);
+        $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.php"],$components=['nav_bar'=>$this->nav_bar]);
     }
     public function logout()
     {
@@ -23,12 +25,15 @@ class painel extends controller
     }
     public function perfil()
     {
-        $component=html_components::nav_bar();
+        // call components
+        $this->nav_bar=html_components::nav_bar();
+        
+        // call model
         $dados=$this->model('user');
         $result=$dados->get_all_info_user();
         
         
-        $this->view('painel/perfil',$data=['sty' =>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", 'sty2'=>URL_BASE."/css/editar.php"],$result,$components=['nav-bar'=>$component]);  
+        $this->view('painel/perfil',$data=['sty' =>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", 'sty2'=>URL_BASE."/css/editar.php"],$result,$components=['nav-bar'=>$this->nav_bar]);  
     }
     public function editar()
     {
