@@ -18,7 +18,7 @@ class users extends controller
                #filtragrem de valores Paciente
                $user->nome_cadastro= addslashes($_POST['nome_cadastro']);
                $user->email_cadastro= addslashes($_POST['email_cadastro']);
-               $user->telefone_cadastro= addslashes($_POST['telefone_cadastro']);
+               //$user->telefone_cadastro= addslashes($_POST['telefone_cadastro']);
                $user->date_cadastro= addslashes($_POST['date_cadastro']);
                $user->senha1_cadastro= addslashes($_POST['senha1_cadastro']);
 
@@ -27,7 +27,7 @@ class users extends controller
                //filtragrem de valores familiar
                
               #verificação de espaços vazios
-               if(empty($user->nome_cadastro) && empty($user->email_cadastro)&& empty($user->telefone_cadastro) && empty($user->date_cadastro) && empty($user->senha1_cadastro)):
+               if(empty($user->nome_cadastro) && empty($user->email_cadastro)&&  empty($user->date_cadastro) && empty($user->senha1_cadastro)):
                 echo "Error";
                else:
                 #criptografia de senha
@@ -45,8 +45,10 @@ class users extends controller
     public function Logar()
     {
 
-  
-
+      if(isset($_SESSION['logado']) &&$_SESSION['logado']==true){
+       $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.php"]);
+      }
+      else{
        if(isset($_POST['email'])):
         $user=$this->model('user');
         $user->email_login=addslashes($_POST['email']);
@@ -60,6 +62,7 @@ class users extends controller
        else: $this->view('users/login',$data=['sty'=>URL_BASE."/css/style.css"]);
        
        endif;
+      }
     }
 
 }

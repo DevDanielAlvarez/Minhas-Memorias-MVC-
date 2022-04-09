@@ -35,7 +35,7 @@
 
     <h1 style="text-align: center;color:aliceblue">Mais opções</h1>
     <hr style="color:aliceblue">
-
+    <div style="text-align: center;padding-bottom: 30px;"><a  ><button  type="button" class="btn btn-primary">Adicionar Familiar</button></a></div>
     <div style="text-align: center;padding-bottom: 30px;"><a  ><button  type="button" class="btn btn-danger">Deletar conta</button></a></div>
 </div>
 

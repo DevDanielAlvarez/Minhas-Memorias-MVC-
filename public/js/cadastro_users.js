@@ -8,7 +8,7 @@
 
       var email_cadastro = document.querySelector('input#email_cadastro').value;
 
-      var telefone_cadastro = document.querySelector('input#telefone_cadastro').value;
+      //var telefone_cadastro = document.querySelector('input#telefone_cadastro').value;
 
       var date_cadastro = document.querySelector('input#date_cadastro').value;
 
@@ -20,7 +20,7 @@
 
       if(email_cadastro==''){$('#alert').html('Preencha seu email');$('#alert').addClass("alert_failed"); return false}
 
-      if(telefone_cadastro==''){$('#alert').html('Preencha seu telefone');$('#alert').addClass("alert_failed"); return false}
+      //if(telefone_cadastro==''){$('#alert').html('Preencha seu telefone');$('#alert').addClass("alert_failed"); return false}
 
       if(date_cadastro==''){$('#alert').html('Preencha sua data de nascimento');$('#alert').addClass("alert_failed"); return false}
 
@@ -37,7 +37,7 @@
         
       
         method:"POST",
-        data:{nome_cadastro,email_cadastro,telefone_cadastro,date_cadastro,senha1_cadastro,senha2_cadastro},
+        data:{nome_cadastro,email_cadastro,/*telefone_cadastro*/date_cadastro,senha1_cadastro,senha2_cadastro},
         url:'/users/cadastrar',
         
         success: function(retorno)

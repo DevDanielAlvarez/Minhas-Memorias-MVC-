@@ -62,7 +62,7 @@
                     </div>
                    
                     <div class="input-field">
-                    <input placeholder="Date" class="textbox-n" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date_cadastro" />
+                    <input placeholder="Data de nascimento" class="textbox-n" type="text" onfocus="(this.type='date')"  id="date_cadastro" />
                         <i class="bi bi-calendar2-week"></i>
                     </div>
                     <div class="input-field">
