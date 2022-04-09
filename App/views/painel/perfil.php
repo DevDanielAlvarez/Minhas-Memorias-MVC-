@@ -3,7 +3,7 @@
     <div  class="container" style="border: solid rgb(173, 28, 202); border-radius: 9px;padding: 9px;background-color: #5224FA;margin-top:3%">
        
     <div class="input-group mb-3">
-        <img style="height: 150px;" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">
+        <img style="height: 180px;" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">
 
         
    <!-- porque o texto só vai se eu colocar um name????????????-->
