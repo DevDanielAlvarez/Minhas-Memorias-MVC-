@@ -5,7 +5,7 @@
       {
         var name=document.querySelector('#name-edit').value
         var email=document.querySelector('#email-edit').value
-       var genero=document.querySelector('#inputGroupSelect02').value
+        var genero=document.querySelector('#inputGroupSelect02').value
         var resume=document.querySelector('#txt-edit-area').value
         $.ajax({
         

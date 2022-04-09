@@ -3,6 +3,8 @@
 use App\Core\controller;
 use App\Core\Model;
 use App\Auth;
+use App\components_html;
+use App\components\html_components;
 use LDAP\Result;
 
 class painel extends controller
@@ -21,11 +23,12 @@ class painel extends controller
     }
     public function perfil()
     {
+        $component=html_components::nav_bar();
         $dados=$this->model('user');
         $result=$dados->get_all_info_user();
         
         
-        $this->view('painel/perfil',$data=['sty' =>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", 'sty2'=>URL_BASE."/css/editar.php"],$result);  
+        $this->view('painel/perfil',$data=['sty' =>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css", 'sty2'=>URL_BASE."/css/editar.php"],$result,$components=['nav-bar'=>$component]);  
     }
     public function editar()
     {

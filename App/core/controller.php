@@ -16,7 +16,7 @@ class Controller
 
     }
 
-    public function view($view,$data=[],$data2=[])
+    public function view($view,$data=[],$data2=[],$components=[])
     {
         require '../App/views/template.php';
     }
