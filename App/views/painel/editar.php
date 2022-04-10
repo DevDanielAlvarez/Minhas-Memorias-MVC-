@@ -16,7 +16,7 @@
     <div class="input-group mb-3">
         <label class="input-group-text" for="inputGroupSelect02">Genêro</label>
     <select class="form-select"  class="gender-edit" id="inputGroupSelect02">
-        <option selected>Não Selecionado</option>
+        <option selected>Selecione</option>
         <option value="1">Masculino</option>
         <option value="2">feminino</option>
         <option value="3">outro</option>
