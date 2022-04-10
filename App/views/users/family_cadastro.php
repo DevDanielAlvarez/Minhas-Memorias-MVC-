@@ -5,7 +5,7 @@
                     <h2 class="title">Registrar Familiar</h2>
                 </div>
                 <div class="card-body">
-                    <form method="POST">
+                    <div id="alert" style="text-align: center;"></div>
                         <div class="form-row m-b-55">
                             <div class="name">Nome Completo</div>
                             <div class="value">
@@ -47,7 +47,6 @@
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <select id="parent">
-                                            <option disabled="disabled" selected="selected">Opções</option>
                                             <option value="1">Primo</option>
                                             <option value="2">Pai</option>
                                             <option value="3">Mãe</option>
@@ -81,9 +80,9 @@
 
 
                        
-                           <div style="margin: 0px 0px 0px 70%;"><button id="btn" class="btn btn--radius-2 btn--green" type="submit">Cadastrar</button> </div>
+                           <div style="margin: 0px 0px 0px 70%;"><button id="btn" class="btn btn--radius-2 btn--green" >Cadastrar</button> </div>
                         </div>
-                    </form>
+                    
                 </div>
             </div>
         </div>

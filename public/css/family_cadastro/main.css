@@ -777,4 +777,12 @@
     border-radius: 9px;
     
   }
+  .alert_failed
+  {
+    background-color: red;
+    color: white;
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 9px;
+  }
   
