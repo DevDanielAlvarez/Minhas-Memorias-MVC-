@@ -1,3 +1,4 @@
+
 <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -79,7 +80,7 @@
                         </div>
 
 
-                       
+                        
                            <div style="margin: 0px 0px 0px 70%;"><button id="btn" class="btn btn--radius-2 btn--green" >Cadastrar</button> </div>
                         </div>
                     
@@ -87,6 +88,7 @@
             </div>
         </div>
     </div>
+    
     <script src="<?php echo URL_BASE ?>/js/form_family/register.js"></script>
  
   

@@ -1,5 +1,6 @@
 'use strict';
 var contador=0;
+var contator_screen= document.getElementById('contador');
 var cardsArray = [{
   'name': 'img2',
   'img': 'http://localhost:8080/img/img2_memoria.png'
@@ -103,7 +104,7 @@ grid.addEventListener('click', function (event) {
       if (firstGuess === secondGuess) {
         setTimeout(match, delay);
         contador++;
-        alert(contador)
+        document.getElementById("contador").innerHTML ='Acertos:'+contador;
       }
       setTimeout(resetGuesses, delay);
 

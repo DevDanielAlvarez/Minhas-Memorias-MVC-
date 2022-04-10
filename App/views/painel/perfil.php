@@ -14,7 +14,7 @@
 
       <input style="background-color: #1178DB; color: aliceblue;margin:10px 0px 10px 0px;" class="form-control" type="text" value="Email: <?php echo $data2['nm_email'] ?>" aria-label="Disabled input example" disabled readonly>
 
-      <input style="background-color: #1178DB; color: aliceblue;margin: 10px 0px 10px 0px;" class="form-control" type="text" value="Familiar: Alessandra Alvarez" aria-label="Disabled input example" disabled readonly>
+      <input style="background-color: #1178DB; color: aliceblue;margin: 10px 0px 10px 0px;" class="form-control" type="text" value="Familiar: <?php echo $_SESSION['nome_familiar'] ?>" aria-label="Disabled input example" disabled readonly>
 
       <input style="background-color: #1178DB; color: aliceblue;margin: 10px 0px 10px 0px;" class="form-control" type="text" value="Record: 31 (Jogo da Memória)" aria-label="Disabled input example" disabled readonly>
 
@@ -25,7 +25,4 @@
    
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<?php
-var_dump($data2);
 
-?>

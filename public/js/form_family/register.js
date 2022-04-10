@@ -32,7 +32,14 @@ $(document).ready(function()
             
             success: function(retorno)
             {
-             alert(retorno)
+              $('#alert').addClass("alert_failed")
+              $('#alert').html(retorno);
+              if(retorno=="o familiar foi registrado com sucesso")
+              {
+                $('#alert').removeClass("alert_failed")
+                $('#alert').addClass("alert_success");
+                
+              }
             }
             
         

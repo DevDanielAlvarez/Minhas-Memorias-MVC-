@@ -41,8 +41,23 @@ Class user extends Controller
         $stmt->bindValue(1, $_SESSION['id_paciente']);
         $stmt->execute();
         $result=$stmt->fetch(PDO::FETCH_ASSOC);
-        return $result;
         
+            //gambiarra temporaria
+        $stmt=Model::getConn()->prepare("select nm_familiar from tb_familiar where cd_paciente=?;");
+        $stmt->bindValue(1,$_SESSION['id_paciente']);
+        $stmt->execute();
+        $result_row=$stmt->rowCount();
+        if($result_row==1)
+        {
+            $nome_familiar=$stmt->fetch(PDO::FETCH_ASSOC);
+            $_SESSION['nome_familiar']=$nome_familiar['nm_familiar'];
+        }
+        else{$_SESSION['nome_familiar']="Não cadastrado";}
+
+
+
+        // saida de dados
+        return $result;
         }
     }
 

@@ -785,4 +785,12 @@
     padding: 20px;
     border-radius: 9px;
   }
+  .alert_success
+  {
+    background-color: green;
+    color: white;
+    margin-bottom: 24px;
+    padding: 20px;
+    border-radius: 9px;
+  }
   
