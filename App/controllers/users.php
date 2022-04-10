@@ -45,7 +45,7 @@ class users extends controller
     public function Logar()
     {
 
-      if(isset($_SESSION['logado']) &&$_SESSION['logado']==true){
+      if(isset($_SESSION['logado']) && $_SESSION['logado']==true){
        $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.php"]);
       }
       else{

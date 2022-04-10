@@ -3,7 +3,6 @@
 use App\Core\controller;
 use App\Core\Model;
 use App\Auth;
-use App\components_html;
 use App\components\html_components;
 use LDAP\Result;
 

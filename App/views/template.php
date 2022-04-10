@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
             
-    <title>Document</title>
+    <title>Minhas Memórias</title>
 </head>
 <body>
   <!-- Ajax-->
@@ -39,5 +39,5 @@
 <script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 <script src="<?php URL_BASE;?>/js/login_users.js"></script>
 <script src="<?php URL_BASE;?>/js/math.js"></script>
-<script src="<?php URL_BASE;?>/js/quiz.js"></script>
+
 
