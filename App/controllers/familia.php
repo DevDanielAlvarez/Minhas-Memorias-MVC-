@@ -13,6 +13,7 @@ class familia extends controller
     protected $email;
     protected $date;
     protected $senha;
+    protected $cd_parent;
     public function index()
     {
 
@@ -31,8 +32,9 @@ class familia extends controller
             $this->email=addslashes($_POST['email']);
             $this->date=addslashes($_POST['dt']);
             $this->senha=addslashes($_POST['s1']);
+            $this->cd_parent=addslashes($_POST['cd_parent']);
             $family_model=$this->model('family_model');
-            $family_model->cadastrar_familiar($this->name,$this->email,$this->date,$this->senha);
+            $family_model->cadastrar_familiar($this->name,$this->email,$this->date,$this->senha,$this->cd_parent);
         }
     }
 }

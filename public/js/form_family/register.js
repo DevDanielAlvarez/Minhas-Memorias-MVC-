@@ -8,7 +8,7 @@ $(document).ready(function()
         var dt= document.querySelector('input#dt_nasc').value;
         var s1=document.querySelector('input#senha1').value;
         var s2=document.querySelector('input#senha2').value;
-        var parent= document.querySelector('#parent').value;
+        var cd_parent= document.querySelector('#parent').value;
         // ifs de verification
         if(name==''){$('#alert').html('Preencha seu nome');$('#alert').addClass("alert_failed"); return false} 
         
@@ -25,14 +25,14 @@ $(document).ready(function()
        return false}
 
         $.ajax({
-           data:{name,email,dt,parent,s1},
+           data:{name,email,dt,cd_parent,s1},
            method:"POST",
            url:"/familia/cadastrar",
         
             
             success: function(retorno)
             {
-               alert(retorno);
+             alert(retorno)
             }
             
         
