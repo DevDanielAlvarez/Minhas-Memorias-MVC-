@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Mar-2022 às 02:57
+-- Tempo de geração: 10-Abr-2022 às 17:39
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.1
+-- versão do PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -23,6 +23,127 @@ SET time_zone = "+00:00";
 CREATE DATABASE IF NOT EXISTS `memoria_banco` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `memoria_banco`;
 
+DELIMITER $$
+--
+-- Procedimentos
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Buscar_Idade_e_pontuacao_maior_que` (IN `idade` INT(2), IN `pontuacao` INT(2))  begin
+if(idade>6 and pontuacao>0) then
+select tb_pac_jogo.dt_partida as 'data da partida',nm_familiar as 'nome do familiar',FLOOR(DATEDIFF( NOW(),tb_fam.dt_nascimento ) / 365.25) as 'idade do familiar'
+,tb_pac.nm_paciente,FLOOR(DATEDIFF( NOW(),tb_pac.dt_nascimento ) / 365.25) as 'idade do paciente' , num_pontuacao as 'pontuação',nm_tipo_jogo as 'tipo de jogo' from tb_familiar tb_fam inner join tb_paciente tb_pac on tb_fam.cd_paciente=tb_pac.cd_paciente inner join tb_jogo_paciente tb_pac_jogo on tb_pac_jogo.cd_paciente=tb_pac.cd_paciente inner join tb_tipo_jogo where FLOOR(DATEDIFF( NOW(),tb_pac.dt_nascimento ) / 365.25)>idade and num_pontuacao>pontuacao;
+
+else select 'valores inválidos';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Buscar_Pontuacao_maior_que` (IN `pontuation` INT(2))  begin
+/* if to search based of pontuations games of users */
+if(pontuation>0) then
+select nm_jogo as 'nome do jogo',nm_paciente as 'nome do paciente',tb_jogopac.num_pontuacao as 'pontuação',dt_partida as 'data da partida'
+from tb_jogo_paciente tb_jogopac
+inner join tb_paciente tb_pac on tb_jogopac.cd_paciente= tb_pac.cd_paciente
+inner join tb_jogos tb_jogos on tb_jogos.cd_jogo=tb_jogopac.cd_jogo where tb_jogopac.num_pontuacao>pontuation;
+
+else select 'pontuação inválida';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `buscar_por_parentesco` (IN `parent` VARCHAR(35))  begin
+if(parent='primo') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=1;
+
+elseif(parent='pai') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=2;
+
+elseif(parent='mãe') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=3;
+
+elseif(parent='filho') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=4;
+
+elseif(parent='tio') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=5;
+
+elseif(parent='esposa') then
+select nm_familiar,nm_parentesco,nm_paciente from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=6;
+
+elseif(parent='marido') then
+select nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco',nm_paciente as 'nome do paciente' from tb_paciente pac inner join tb_familiar fam on fam.cd_paciente=pac.cd_paciente inner join tb_parentesco paren on paren.cd_parentesco=fam.cd_parentesco where paren.cd_parentesco=7;
+
+else select 'parentesco não encontrado';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `busca_estagio_parentesco` (IN `estagio` VARCHAR(30))  begin
+if(estagio='inicial') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'estágio',nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco' from tb_paciente tb_pac inner join tb_familiar tb_fam
+on tb_fam.cd_paciente=tb_pac.cd_paciente inner join tb_parentesco tb_paren on tb_fam.cd_parentesco=tb_paren.cd_parentesco inner join tb_estagio tb_est on tb_pac.cd_estagio=tb_est.cd_estagio where tb_est.cd_estagio=1;
+
+elseif(estagio='intermediário') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'estágio',nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco' from tb_paciente tb_pac inner join tb_familiar tb_fam
+on tb_fam.cd_paciente=tb_pac.cd_paciente inner join tb_parentesco tb_paren on tb_fam.cd_parentesco=tb_paren.cd_parentesco inner join tb_estagio tb_est on tb_pac.cd_estagio=tb_est.cd_estagio where tb_est.cd_estagio=2;
+
+elseif(estagio='avançado') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'estágio',nm_familiar as 'nome do familiar',nm_parentesco as 'parentesco' from tb_paciente tb_pac inner join tb_familiar tb_fam
+on tb_fam.cd_paciente=tb_pac.cd_paciente inner join tb_parentesco tb_paren on tb_fam.cd_parentesco=tb_paren.cd_parentesco inner join tb_estagio tb_est on tb_pac.cd_estagio=tb_est.cd_estagio where tb_est.cd_estagio=3;
+
+else
+select 'Este estágio é inexistente, use: 1- incial, 2- intermediário, 3- avançado' as 'mensagem de erro';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `criação_de_bloco_data_inicial_data_final` (IN `dt_ini` DATE, IN `dt_final` DATE)  begin
+if(dt_ini<dt_final) then
+select nt.dt_criacao as 'data da criação da nota',nm_paciente as 'nome do paciente',nm_estagio as 'estágio',nm_email as 'email' from tb_notes nt inner join tb_paciente pac on nt.cd_paciente=pac.cd_paciente inner join tb_estagio est on pac.cd_estagio=est.cd_estagio inner join tb_contato ctt on ctt.cd_paciente=pac.cd_paciente
+where nt.dt_criacao>dt_ini and nt.dt_criacao<dt_final;
+
+else select 'a data de início é menor que a final';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `jogo_jogado` (IN `jogo` VARCHAR(30))  begin
+if(jogo='jogo da memoria') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'nome do estágio',dt_partida as 'data da partida',nm_jogo as 'nome do jogo' from tb_paciente pac inner join tb_jogo_paciente pac_jogo on pac_jogo.cd_paciente=pac.cd_paciente inner join tb_estagio estag on pac.cd_estagio=estag.cd_estagio inner join tb_jogos on tb_jogos.cd_jogo=pac_jogo.cd_jogo where tb_jogos.cd_jogo=1;
+
+elseif(jogo='genius') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'nome do estágio',dt_partida as 'data da partida',nm_jogo as 'nome do jogo' from tb_paciente pac inner join tb_jogo_paciente pac_jogo on pac_jogo.cd_paciente=pac.cd_paciente inner join tb_estagio estag on pac.cd_estagio=estag.cd_estagio inner join tb_jogos on tb_jogos.cd_jogo=pac_jogo.cd_jogo where tb_jogos.cd_jogo=2;
+elseif(jogo='maps') then
+select nm_paciente as 'nome do paciente',nm_estagio as 'nome do estágio',dt_partida as 'data da partida',nm_jogo as 'nome do jogo' from tb_paciente pac inner join tb_jogo_paciente pac_jogo on pac_jogo.cd_paciente=pac.cd_paciente inner join tb_estagio estag on pac.cd_estagio=estag.cd_estagio inner join tb_jogos on tb_jogos.cd_jogo=pac_jogo.cd_jogo where tb_jogos.cd_jogo=3;
+else select 'jogo não existente';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `pesquisa_notas_por_genero` (IN `genre` VARCHAR(30))  begin
+if(genre='masculino' ) then
+select nm_titulo as 'titulo da nota',txt_note as 'texto da nota',nm_paciente as 'nome do paciente',nm_genero as 'genero',tb_notes.dt_criacao as 'data de criação' from tb_paciente pac inner join tb_genero genre on pac.cd_genero=genre.cd_genero inner join tb_notes on tb_notes.cd_paciente=pac.cd_paciente where genre.cd_genero=1;
+elseif(genre='feminino' ) then
+select nm_titulo as 'titulo da nota',txt_note as 'texto da nota',nm_paciente as 'nome do paciente',nm_genero as 'genero',tb_notes.dt_criacao as 'data de criação' from tb_paciente pac inner join tb_genero genre on pac.cd_genero=genre.cd_genero inner join tb_notes on tb_notes.cd_paciente=pac.cd_paciente where genre.cd_genero=2;
+elseif(genre='outro' ) then
+select nm_titulo as 'titulo da nota',txt_note as 'texto da nota',nm_paciente as 'nome do paciente',nm_genero as 'genero',tb_notes.dt_criacao as 'data de criação' from tb_paciente pac inner join tb_genero genre on pac.cd_genero=genre.cd_genero inner join tb_notes on tb_notes.cd_paciente=pac.cd_paciente where genre.cd_genero=3;
+elseif(genre='prefiro não dizer' ) then
+select nm_titulo as 'titulo da nota',txt_note as 'texto da nota',nm_paciente as 'nome do paciente',nm_genero as 'genero',tb_notes.dt_criacao as 'data de criação' from tb_paciente pac inner join tb_genero genre on pac.cd_genero=genre.cd_genero inner join tb_notes on tb_notes.cd_paciente=pac.cd_paciente where genre.cd_genero=4;
+
+elseif(genre='não selecionado' ) then
+select nm_titulo as 'titulo da nota',txt_note as 'texto da nota',nm_paciente as 'nome do paciente',nm_genero as 'genero',tb_notes.dt_criacao as 'data de criação' from tb_paciente pac inner join tb_genero genre on pac.cd_genero=genre.cd_genero inner join tb_notes on tb_notes.cd_paciente=pac.cd_paciente where genre.cd_genero=5;
+else select 'Genêro inexistente';
+end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `Tipo_Jogo` (IN `tp_jogo` VARCHAR(26))  begin
+
+if(tp_jogo='memorização') then
+select dt_partida as 'data da partida', nm_jogo as 'nome do jogo',nm_tipo_jogo as 'nome do tipo do jogo',nm_paciente as 'nome do paciente',jpac.num_pontuacao as 'pontuação feita' from tb_tipo_jogo tipjog inner join tb_jogos jog on jog.cd_tipo_jogo=tipjog.cd_tipo_jogo inner join tb_jogo_paciente jpac on jpac.cd_jogo=jog.cd_jogo inner join tb_paciente pac on pac.cd_paciente=jpac.cd_paciente where jpac.num_pontuacao>20 and tipjog.cd_tipo_jogo='1';
+
+elseif(tp_jogo='geografia') then
+select dt_partida as 'data da partida', nm_jogo as 'nome do jogo',nm_tipo_jogo as 'nome do tipo do jogo',nm_paciente as 'nome do paciente',jpac.num_pontuacao as 'pontuação feita' from tb_tipo_jogo tipjog inner join tb_jogos jog on jog.cd_tipo_jogo=tipjog.cd_tipo_jogo inner join tb_jogo_paciente jpac on jpac.cd_jogo=jog.cd_jogo inner join tb_paciente pac on pac.cd_paciente=jpac.cd_paciente where jpac.num_pontuacao>20 and tipjog.cd_tipo_jogo='2';
+
+else select 'tipo de jogo não existente';
+end if;
+
+end$$
+
+DELIMITER ;
+
 -- --------------------------------------------------------
 
 --
@@ -31,7 +152,7 @@ USE `memoria_banco`;
 
 CREATE TABLE `tb_contato` (
   `cd_contato` int(11) NOT NULL,
-  `tel_contato` varchar(14) DEFAULT NULL,
+  `tel_contato` varchar(14) DEFAULT 'não cadastrado',
   `nm_email` varchar(90) DEFAULT NULL,
   `cd_paciente` int(11) DEFAULT NULL,
   `cd_familiar` int(11) DEFAULT NULL
@@ -196,7 +317,12 @@ INSERT INTO `tb_contato` (`cd_contato`, `tel_contato`, `nm_email`, `cd_paciente`
 (156, '(14)68435766', 'nulla.semper@aol.ca', 147, NULL),
 (157, '(76)83469722', 'tempus.lorem@yahoo.org', 148, NULL),
 (158, '(62)74766764', 'aliquet.phasellus@protonmail.net', 149, NULL),
-(159, '(48)51984735', 'nisl.quisque@aol.ca', 150, NULL);
+(159, '(48)51984735', 'nisl.quisque@aol.ca', 150, NULL),
+(160, '(48)23454322', 'daniel@gmail.com', 152, NULL),
+(163, 'yui', 'yui', 159, NULL),
+(165, '(13) 20022525', 'gustavo@gmail.com', 162, NULL),
+(166, 'não cadastrado', 'Yuri@gmail.com', 164, NULL),
+(167, 'não cadastrado', 'kayle@gmail.com', 165, NULL);
 
 -- --------------------------------------------------------
 
@@ -388,6 +514,28 @@ INSERT INTO `tb_familiar` (`cd_familiar`, `nm_familiar`, `nm_senha`, `dt_nascime
 (148, 'Chadwick Kirk', 'NKS58TMV3EK', '1975-02-02', 1, 148),
 (149, 'Daquan Floyd', 'FRK72BGU8EU', '1986-06-26', 2, 149),
 (150, 'Kenyon Nieves', 'CNJ15FTH0WO', '1951-04-20', 1, 150);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tb_genero`
+--
+
+CREATE TABLE `tb_genero` (
+  `cd_genero` int(11) NOT NULL,
+  `nm_genero` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_genero`
+--
+
+INSERT INTO `tb_genero` (`cd_genero`, `nm_genero`) VALUES
+(1, 'masculino'),
+(2, 'feminino'),
+(3, 'outro'),
+(4, 'prefiro não dizer'),
+(5, 'não selecionado');
 
 -- --------------------------------------------------------
 
@@ -760,164 +908,172 @@ CREATE TABLE `tb_paciente` (
   `nm_paciente` varchar(90) DEFAULT NULL,
   `nm_senha` varchar(99) DEFAULT NULL,
   `dt_nascimento` date DEFAULT NULL,
-  `cd_estagio` int(11) DEFAULT NULL
+  `cd_estagio` int(11) DEFAULT NULL,
+  `cd_genero` int(11) DEFAULT 5,
+  `ds_resumo` varchar(250) DEFAULT 'oi pessoal!'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tb_paciente`
 --
 
-INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascimento`, `cd_estagio`) VALUES
-(1, 'Samuel Horn', 'XCO28RGC7HO', '1978-05-03', 3),
-(2, 'Adria Glenn', 'NUV73XIU4QA', '1975-10-11', 2),
-(3, 'Stacy Compton', 'LLR89ITH8RB', '1987-08-12', 1),
-(4, 'Jelani Mayo', 'MHI38BKG4HC', '1979-10-21', 2),
-(5, 'Wyoming Daugherty', 'EWF46SIE2FC', '1970-09-30', 2),
-(6, 'Valentine Burch', 'WMT74NUE6GT', '1985-03-09', 2),
-(7, 'Natalie Conner', 'GHG36RCP4FL', '1993-02-18', 2),
-(8, 'Avye Parsons', 'QOO86WTJ4BO', '1972-09-13', 2),
-(9, 'Hilel Underwood', 'TND61PMQ4QD', '1958-04-04', 3),
-(10, 'Kirby Lawrence', 'EUX05QHO7DB', '1979-05-29', 2),
-(11, 'Azalia Wheeler', 'DNX72UFG7LM', '1969-05-28', 3),
-(12, 'Alfonso Goodwin', 'XUZ81YQL5XW', '1970-11-06', 3),
-(13, 'Michael Alvarez', 'YHF41XKV4JV', '1989-10-14', 3),
-(14, 'Solomon O\'connor', 'FPW78QBJ8HU', '1974-11-30', 2),
-(15, 'Fuller Graves', 'JDY91MEE6UW', '1984-03-24', 3),
-(16, 'Ivan Kelley', 'YHH32GBG0FK', '1985-01-11', 3),
-(17, 'Fay Huber', 'YDB77ZPJ5XY', '1977-06-02', 2),
-(18, 'Halla Kidd', 'JLQ87TZQ6HN', '1989-11-08', 1),
-(19, 'Arthur Parrish', 'IKU54SNJ8PX', '1989-09-20', 1),
-(20, 'Leigh Valencia', 'TOO10EWH4LI', '1990-05-21', 2),
-(21, 'Isadora Rodriguez', 'RMO33ABP8TR', '1957-12-31', 2),
-(22, 'Isaiah Jones', 'QVC67YEM8VH', '1971-11-21', 2),
-(23, 'Angela Chase', 'QHP83LFZ0MB', '1971-10-06', 1),
-(24, 'Whilemina Petersen', 'LEF72JWO4CU', '1966-06-04', 2),
-(25, 'Amena Davis', 'GYP36KXQ5FU', '1989-01-12', 3),
-(26, 'Blythe Walsh', 'JPV79QVA3XJ', '1970-05-18', 2),
-(27, 'Kennan Lawrence', 'JLZ84KJF1CP', '1952-05-30', 2),
-(28, 'Olga Camacho', 'WRC56IHC2KO', '1963-10-23', 2),
-(29, 'Karen Tyson', 'DDV68VRJ0BE', '1952-05-09', 1),
-(30, 'Gareth Crane', 'FPF13PZR1PE', '1972-03-25', 2),
-(31, 'Paki Swanson', 'BRB25AGQ4AL', '1950-05-18', 1),
-(32, 'Graham Doyle', 'QGB38XPL5QD', '1982-01-31', 2),
-(33, 'Eagan Jensen', 'UKF82RYT3AK', '1971-08-25', 2),
-(34, 'Emerson Mcdaniel', 'BOM85FKJ0JX', '1962-05-07', 3),
-(35, 'Nolan Cobb', 'RHU49ELI5RU', '1952-03-29', 2),
-(36, 'Chandler Pugh', 'LPQ86QRB1NH', '1992-04-18', 1),
-(37, 'Kevin England', 'PZY15NEE1ZD', '1961-10-08', 2),
-(38, 'Elijah Reilly', 'QHT72JFO6JO', '1978-01-26', 3),
-(39, 'Dustin Strong', 'WHP53OWD6VF', '1952-07-25', 1),
-(40, 'Carter Tillman', 'WLB21EOQ3EB', '1962-07-01', 2),
-(41, 'Kyla Gallagher', 'ZTV13KYM1YP', '1984-05-26', 1),
-(42, 'Mona Burt', 'URP51WYV1IX', '1963-12-22', 2),
-(43, 'Kaseem Hunter', 'OLN02GYP7YF', '1970-10-15', 3),
-(44, 'Melyssa Walters', 'PQV38AXI1TW', '1977-07-04', 3),
-(45, 'Stewart House', 'LGE72KIJ3RU', '1961-01-30', 3),
-(46, 'David Deleon', 'JJN28ITH6SR', '1958-08-30', 2),
-(47, 'Isadora Cooper', 'MHR11FWB5OB', '1972-08-27', 2),
-(48, 'Lila Valdez', 'OHY07OXH7XN', '1985-07-30', 2),
-(49, 'Desirae Rose', 'ILC08INW3TH', '1982-04-26', 3),
-(50, 'Elvis Emerson', 'QPS04RFG2CF', '1975-09-16', 3),
-(51, 'Jana Huffman', 'NMD04UOT3II', '1977-05-27', 1),
-(52, 'Kelsey Peterson', 'DUC47JOT2DE', '1967-11-13', 3),
-(53, 'Rae Moran', 'SAY73IWJ0XL', '1970-09-07', 1),
-(54, 'Quamar Buchanan', 'ZBX38PSM0YL', '1950-05-21', 2),
-(55, 'Bradley Calderon', 'VYL68FCC3BK', '1958-04-14', 1),
-(56, 'Lila Tanner', 'BXK63SBW5CO', '1975-11-08', 3),
-(57, 'Sybil Hoover', 'ZLU03WUB5ST', '1978-01-05', 1),
-(58, 'Vance Sanders', 'RSO14RBU9LK', '1956-04-15', 1),
-(59, 'Noelani Manning', 'UOT43NNF5NA', '1993-06-14', 3),
-(60, 'Brody Richmond', 'SEX76WWT6KG', '1984-10-16', 2),
-(61, 'Cody Kidd', 'TGC87QUU2KB', '1968-04-05', 2),
-(62, 'Juliet Soto', 'NIJ43OOO2SF', '1974-06-25', 1),
-(63, 'Alice Flynn', 'UYQ27PEU7VB', '1984-09-01', 3),
-(64, 'Eve Garza', 'HTB71WGF4BN', '1980-12-24', 1),
-(65, 'Finn Larsen', 'FFP05FKJ8CP', '1984-06-07', 2),
-(66, 'Jacqueline Atkinson', 'JON24VVB2HT', '1954-12-15', 2),
-(67, 'Christian Perkins', 'MNW78STT3RH', '1977-08-17', 2),
-(68, 'Diana Riggs', 'YTB80OLS5OI', '1965-04-23', 3),
-(69, 'Jarrod Short', 'QBQ83WIL8LW', '1967-09-01', 2),
-(70, 'Madaline Calhoun', 'EUI33UAQ2HA', '1974-05-04', 3),
-(71, 'Chaim Stanley', 'YHH17VED7BX', '1969-08-28', 2),
-(72, 'Maile Stone', 'QLH18KXI8BF', '1959-03-21', 2),
-(73, 'Kareem Guzman', 'HWJ88WIQ0LO', '1991-10-05', 2),
-(74, 'Hasad Cook', 'HOU71OZV4WG', '1955-10-30', 2),
-(75, 'Clark Banks', 'FEK62EKP1XO', '1954-09-12', 2),
-(76, 'Kimberley Tate', 'JFH66VMY3WL', '1969-01-13', 2),
-(77, 'Bianca Ramos', 'ZTJ43VFA1HR', '1984-10-13', 2),
-(78, 'Fritz Wong', 'XGO80SIP1EN', '1976-02-10', 3),
-(79, 'Oliver Merrill', 'CDM38LAM2DC', '1970-12-16', 3),
-(80, 'Carson Snow', 'HGG01FPF8YR', '1961-06-14', 2),
-(81, 'Gannon Santos', 'COG11HDL4WQ', '1989-04-18', 2),
-(82, 'Porter Craig', 'AKY18CXO3FR', '1970-01-20', 3),
-(83, 'Nita Knight', 'RXV18JYN6JB', '1981-02-20', 2),
-(84, 'Buckminster Shaw', 'LSW35QWW5LB', '1960-01-23', 2),
-(85, 'Ciaran Ware', 'KZJ52THM3QF', '1979-01-04', 3),
-(86, 'Mechelle Mercado', 'QVR14TQN7DW', '1992-06-26', 2),
-(87, 'Aristotle Bishop', 'GJX42ONF2LH', '1980-09-08', 1),
-(88, 'Yoshio Figueroa', 'AZY66QZX4TD', '1973-12-15', 2),
-(89, 'Ann Ruiz', 'QNI61IMT3AW', '1958-08-01', 2),
-(90, 'Coby Sullivan', 'KKV78UKU5JI', '1986-02-23', 1),
-(91, 'Maryam Garner', 'QIS38NRP8SP', '1978-01-06', 1),
-(92, 'Mary Franklin', 'NIG80AJN4JF', '1969-07-28', 2),
-(93, 'Tanner Boyd', 'HCT15EFH3FT', '1960-08-17', 3),
-(94, 'Edward Price', 'VVK30TNT6YX', '1958-08-03', 3),
-(95, 'Inez Rowe', 'BQI20RQL1GW', '1964-12-08', 2),
-(96, 'Gareth Cox', 'KDK75NDQ3BE', '1980-08-11', 1),
-(97, 'Reed Henry', 'LPJ83WQD7MS', '1983-03-18', 2),
-(98, 'Dacey Mercado', 'VLF69KOC8MJ', '1967-11-09', 2),
-(99, 'Meredith Sosa', 'JGT68NWC4CU', '1953-11-30', 1),
-(100, 'Louis Bird', 'DJZ54SDY3QR', '1952-02-16', 2),
-(101, 'Christian Barber', 'RAW15YBL8RG', '1987-09-17', 3),
-(102, 'Eagan Henderson', 'DQR86JEP4II', '1964-05-10', 1),
-(103, 'Camilla Roach', 'ZOF40EVL8GR', '1973-10-22', 3),
-(104, 'Clio Solis', 'IPN22TYY2UL', '1992-11-18', 3),
-(105, 'Elton Curtis', 'LLD94YBC5UC', '1986-06-09', 2),
-(106, 'Philip Bolton', 'BMV10WIE8FF', '1993-06-09', 2),
-(107, 'Basil Young', 'MAF06TBU7ED', '1971-04-23', 2),
-(108, 'Prescott Patton', 'EFN53GKM7CG', '1976-08-07', 2),
-(109, 'Ali Hart', 'ITF52UPO3XE', '1967-06-17', 1),
-(110, 'Galena Wall', 'NIV74CXG1YJ', '1982-09-07', 2),
-(111, 'Travis Luna', 'EDC86LFX8VO', '1981-05-02', 2),
-(112, 'Conan Savage', 'FIK46XEA2SL', '1962-01-08', 1),
-(113, 'Jemima Cervantes', 'SBQ74FCR5SW', '1968-10-12', 1),
-(114, 'Lisandra Stein', 'EBS46SXU2TX', '1953-05-15', 2),
-(115, 'Shoshana Schneider', 'XTG29ZNS4PN', '1951-06-19', 3),
-(116, 'Adria Banks', 'MMO82IVQ2IE', '1971-02-13', 2),
-(117, 'Teagan Mathews', 'NJF48OLB2EN', '1983-01-01', 1),
-(118, 'Kieran Harper', 'PQL22UEP3FP', '1980-01-10', 2),
-(119, 'Shad Reyes', 'YQF42OML8PI', '1988-02-01', 2),
-(120, 'Dustin Dennis', 'ADC83SNP1XM', '1974-05-30', 2),
-(121, 'Brenden Green', 'RPD54ZCC6ST', '1955-06-23', 3),
-(122, 'Mariam Frost', 'SQD96KKQ9NX', '1988-10-15', 2),
-(123, 'Ronan Mcbride', 'DDX71RPJ6UR', '1958-08-18', 2),
-(124, 'Leah Graves', 'XVA44KOY3ST', '1970-05-12', 2),
-(125, 'Jordan Emerson', 'ICT66RDT1TS', '1969-03-17', 2),
-(126, 'Rooney Barber', 'EFS45MMG4PQ', '1993-02-27', 3),
-(127, 'Noel Mendoza', 'PFR73HOQ8ZC', '1973-03-15', 2),
-(128, 'Emi Boyd', 'BUU38TMP3GK', '1954-01-01', 3),
-(129, 'Miriam Robbins', 'LVJ34VPU7UG', '1981-06-05', 1),
-(130, 'Frances Stokes', 'TAJ35USR1SS', '1954-09-13', 1),
-(131, 'Dominic Gaines', 'YBK50WGC8EW', '1960-01-31', 2),
-(132, 'Marah Strickland', 'ZXN45KBH6WR', '1962-12-19', 2),
-(133, 'Lionel Slater', 'PXC87FHY6LH', '1978-05-19', 3),
-(134, 'Helen Bush', 'CQM07LMF5ML', '1961-04-19', 3),
-(135, 'Francesca Duran', 'XMI21CDC3CX', '1990-09-23', 2),
-(136, 'Faith Saunders', 'XLW22KUH6JX', '1969-10-05', 3),
-(137, 'Nelle Weber', 'BJH26PIH4TG', '1962-04-21', 3),
-(138, 'Dane Ramsey', 'OXG67CYU3WP', '1990-07-05', 1),
-(139, 'Candice Hernandez', 'NYT63WJD3WH', '1968-12-15', 2),
-(140, 'Gareth Hobbs', 'UTS54IVS1CG', '1981-02-23', 3),
-(141, 'Dai Pittman', 'OZV48QKR0FY', '1967-01-29', 3),
-(142, 'Sydnee Byers', 'GIO25IZU3TB', '1979-07-30', 3),
-(143, 'Callie Carter', 'NNL71VDU3UX', '1950-11-08', 1),
-(144, 'Elliott Heath', 'SCO50VNT1EU', '1953-12-11', 3),
-(145, 'Carly Jones', 'SNK48HPH8NI', '1950-12-02', 2),
-(146, 'Plato Ramirez', 'HWY53FBU2FE', '1980-12-18', 2),
-(147, 'Cherokee Lane', 'BSE79FWB6LH', '1963-05-16', 1),
-(148, 'Alice Mills', 'CBJ48VDJ2II', '1973-08-16', 3),
-(149, 'Graiden Mcguire', 'ESS75BLE4GM', '1971-02-12', 2),
-(150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3);
+INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascimento`, `cd_estagio`, `cd_genero`, `ds_resumo`) VALUES
+(1, 'Samuel Horn', 'XCO28RGC7HO', '1978-05-03', 3, 2, 'oi pessoal!'),
+(2, 'Adria Glenn', 'NUV73XIU4QA', '1975-10-11', 2, 1, 'oi pessoal!'),
+(3, 'Stacy Compton', 'LLR89ITH8RB', '1987-08-12', 1, 2, 'oi pessoal!'),
+(4, 'Jelani Mayo', 'MHI38BKG4HC', '1979-10-21', 2, 2, 'oi pessoal!'),
+(5, 'Wyoming Daugherty', 'EWF46SIE2FC', '1970-09-30', 2, 1, 'oi pessoal!'),
+(6, 'Valentine Burch', 'WMT74NUE6GT', '1985-03-09', 2, 2, 'oi pessoal!'),
+(7, 'Natalie Conner', 'GHG36RCP4FL', '1993-02-18', 2, 2, 'oi pessoal!'),
+(8, 'Avye Parsons', 'QOO86WTJ4BO', '1972-09-13', 2, 2, 'oi pessoal!'),
+(9, 'Hilel Underwood', 'TND61PMQ4QD', '1958-04-04', 3, 2, 'oi pessoal!'),
+(10, 'Kirby Lawrence', 'EUX05QHO7DB', '1979-05-29', 2, 2, 'oi pessoal!'),
+(11, 'Azalia Wheeler', 'DNX72UFG7LM', '1969-05-28', 3, 1, 'oi pessoal!'),
+(12, 'Alfonso Goodwin', 'XUZ81YQL5XW', '1970-11-06', 3, 1, 'oi pessoal!'),
+(13, 'Michael Alvarez', 'YHF41XKV4JV', '1989-10-14', 3, 1, 'oi pessoal!'),
+(14, 'Solomon O\'connor', 'FPW78QBJ8HU', '1974-11-30', 2, 1, 'oi pessoal!'),
+(15, 'Fuller Graves', 'JDY91MEE6UW', '1984-03-24', 3, 1, 'oi pessoal!'),
+(16, 'Ivan Kelley', 'YHH32GBG0FK', '1985-01-11', 3, 1, 'oi pessoal!'),
+(17, 'Fay Huber', 'YDB77ZPJ5XY', '1977-06-02', 2, 2, 'oi pessoal!'),
+(18, 'Halla Kidd', 'JLQ87TZQ6HN', '1989-11-08', 1, 1, 'oi pessoal!'),
+(19, 'Arthur Parrish', 'IKU54SNJ8PX', '1989-09-20', 1, 1, 'oi pessoal!'),
+(20, 'Leigh Valencia', 'TOO10EWH4LI', '1990-05-21', 2, 1, 'oi pessoal!'),
+(21, 'Isadora Rodriguez', 'RMO33ABP8TR', '1957-12-31', 2, 1, 'oi pessoal!'),
+(22, 'Isaiah Jones', 'QVC67YEM8VH', '1971-11-21', 2, 2, 'oi pessoal!'),
+(23, 'Angela Chase', 'QHP83LFZ0MB', '1971-10-06', 1, 2, 'oi pessoal!'),
+(24, 'Whilemina Petersen', 'LEF72JWO4CU', '1966-06-04', 2, 2, 'oi pessoal!'),
+(25, 'Amena Davis', 'GYP36KXQ5FU', '1989-01-12', 3, 2, 'oi pessoal!'),
+(26, 'Blythe Walsh', 'JPV79QVA3XJ', '1970-05-18', 2, 2, 'oi pessoal!'),
+(27, 'Kennan Lawrence', 'JLZ84KJF1CP', '1952-05-30', 2, 3, 'oi pessoal!'),
+(28, 'Olga Camacho', 'WRC56IHC2KO', '1963-10-23', 2, 3, 'oi pessoal!'),
+(29, 'Karen Tyson', 'DDV68VRJ0BE', '1952-05-09', 1, 1, 'oi pessoal!'),
+(30, 'Gareth Crane', 'FPF13PZR1PE', '1972-03-25', 2, 2, 'oi pessoal!'),
+(31, 'Paki Swanson', 'BRB25AGQ4AL', '1950-05-18', 1, 2, 'oi pessoal!'),
+(32, 'Graham Doyle', 'QGB38XPL5QD', '1982-01-31', 2, 4, 'oi pessoal!'),
+(33, 'Eagan Jensen', 'UKF82RYT3AK', '1971-08-25', 2, 5, 'oi pessoal!'),
+(34, 'Emerson Mcdaniel', 'BOM85FKJ0JX', '1962-05-07', 3, 5, 'oi pessoal!'),
+(35, 'Nolan Cobb', 'RHU49ELI5RU', '1952-03-29', 2, 5, 'oi pessoal!'),
+(36, 'Chandler Pugh', 'LPQ86QRB1NH', '1992-04-18', 1, 5, 'oi pessoal!'),
+(37, 'Kevin England', 'PZY15NEE1ZD', '1961-10-08', 2, 5, 'oi pessoal!'),
+(38, 'Elijah Reilly', 'QHT72JFO6JO', '1978-01-26', 3, 5, 'oi pessoal!'),
+(39, 'Dustin Strong', 'WHP53OWD6VF', '1952-07-25', 1, 5, 'oi pessoal!'),
+(40, 'Carter Tillman', 'WLB21EOQ3EB', '1962-07-01', 2, 2, 'oi pessoal!'),
+(41, 'Kyla Gallagher', 'ZTV13KYM1YP', '1984-05-26', 1, 1, 'oi pessoal!'),
+(42, 'Mona Burt', 'URP51WYV1IX', '1963-12-22', 2, 5, 'oi pessoal!'),
+(43, 'Kaseem Hunter', 'OLN02GYP7YF', '1970-10-15', 3, 5, 'oi pessoal!'),
+(44, 'Melyssa Walters', 'PQV38AXI1TW', '1977-07-04', 3, 5, 'oi pessoal!'),
+(45, 'Stewart House', 'LGE72KIJ3RU', '1961-01-30', 3, 2, 'oi pessoal!'),
+(46, 'David Deleon', 'JJN28ITH6SR', '1958-08-30', 2, 2, 'oi pessoal!'),
+(47, 'Isadora Cooper', 'MHR11FWB5OB', '1972-08-27', 2, 1, 'oi pessoal!'),
+(48, 'Lila Valdez', 'OHY07OXH7XN', '1985-07-30', 2, 2, 'oi pessoal!'),
+(49, 'Desirae Rose', 'ILC08INW3TH', '1982-04-26', 3, 3, 'oi pessoal!'),
+(50, 'Elvis Emerson', 'QPS04RFG2CF', '1975-09-16', 3, 2, 'oi pessoal!'),
+(51, 'Jana Huffman', 'NMD04UOT3II', '1977-05-27', 1, 5, 'oi pessoal!'),
+(52, 'Kelsey Peterson', 'DUC47JOT2DE', '1967-11-13', 3, 2, 'oi pessoal!'),
+(53, 'Rae Moran', 'SAY73IWJ0XL', '1970-09-07', 1, 2, 'oi pessoal!'),
+(54, 'Quamar Buchanan', 'ZBX38PSM0YL', '1950-05-21', 2, 2, 'oi pessoal!'),
+(55, 'Bradley Calderon', 'VYL68FCC3BK', '1958-04-14', 1, 2, 'oi pessoal!'),
+(56, 'Lila Tanner', 'BXK63SBW5CO', '1975-11-08', 3, 2, 'oi pessoal!'),
+(57, 'Sybil Hoover', 'ZLU03WUB5ST', '1978-01-05', 1, 1, 'oi pessoal!'),
+(58, 'Vance Sanders', 'RSO14RBU9LK', '1956-04-15', 1, 1, 'oi pessoal!'),
+(59, 'Noelani Manning', 'UOT43NNF5NA', '1993-06-14', 3, 1, 'oi pessoal!'),
+(60, 'Brody Richmond', 'SEX76WWT6KG', '1984-10-16', 2, 1, 'oi pessoal!'),
+(61, 'Cody Kidd', 'TGC87QUU2KB', '1968-04-05', 2, 1, 'oi pessoal!'),
+(62, 'Juliet Soto', 'NIJ43OOO2SF', '1974-06-25', 1, 2, 'oi pessoal!'),
+(63, 'Alice Flynn', 'UYQ27PEU7VB', '1984-09-01', 3, 3, 'oi pessoal!'),
+(64, 'Eve Garza', 'HTB71WGF4BN', '1980-12-24', 1, 4, 'oi pessoal!'),
+(65, 'Finn Larsen', 'FFP05FKJ8CP', '1984-06-07', 2, 4, 'oi pessoal!'),
+(66, 'Jacqueline Atkinson', 'JON24VVB2HT', '1954-12-15', 2, 4, 'oi pessoal!'),
+(67, 'Christian Perkins', 'MNW78STT3RH', '1977-08-17', 2, 4, 'oi pessoal!'),
+(68, 'Diana Riggs', 'YTB80OLS5OI', '1965-04-23', 3, 4, 'oi pessoal!'),
+(69, 'Jarrod Short', 'QBQ83WIL8LW', '1967-09-01', 2, 4, 'oi pessoal!'),
+(70, 'Madaline Calhoun', 'EUI33UAQ2HA', '1974-05-04', 3, 5, 'oi pessoal!'),
+(71, 'Chaim Stanley', 'YHH17VED7BX', '1969-08-28', 2, 2, 'oi pessoal!'),
+(72, 'Maile Stone', 'QLH18KXI8BF', '1959-03-21', 2, 3, 'oi pessoal!'),
+(73, 'Kareem Guzman', 'HWJ88WIQ0LO', '1991-10-05', 2, 5, 'oi pessoal!'),
+(74, 'Hasad Cook', 'HOU71OZV4WG', '1955-10-30', 2, 5, 'oi pessoal!'),
+(75, 'Clark Banks', 'FEK62EKP1XO', '1954-09-12', 2, 5, 'oi pessoal!'),
+(76, 'Kimberley Tate', 'JFH66VMY3WL', '1969-01-13', 2, 5, 'oi pessoal!'),
+(77, 'Bianca Ramos', 'ZTJ43VFA1HR', '1984-10-13', 2, 5, 'oi pessoal!'),
+(78, 'Fritz Wong', 'XGO80SIP1EN', '1976-02-10', 3, 5, 'oi pessoal!'),
+(79, 'Oliver Merrill', 'CDM38LAM2DC', '1970-12-16', 3, 5, 'oi pessoal!'),
+(80, 'Carson Snow', 'HGG01FPF8YR', '1961-06-14', 2, 2, 'oi pessoal!'),
+(81, 'Gannon Santos', 'COG11HDL4WQ', '1989-04-18', 2, 2, 'oi pessoal!'),
+(82, 'Porter Craig', 'AKY18CXO3FR', '1970-01-20', 3, 2, 'oi pessoal!'),
+(83, 'Nita Knight', 'RXV18JYN6JB', '1981-02-20', 2, 2, 'oi pessoal!'),
+(84, 'Buckminster Shaw', 'LSW35QWW5LB', '1960-01-23', 2, 2, 'oi pessoal!'),
+(85, 'Ciaran Ware', 'KZJ52THM3QF', '1979-01-04', 3, 1, 'oi pessoal!'),
+(86, 'Mechelle Mercado', 'QVR14TQN7DW', '1992-06-26', 2, 1, 'oi pessoal!'),
+(87, 'Aristotle Bishop', 'GJX42ONF2LH', '1980-09-08', 1, 2, 'oi pessoal!'),
+(88, 'Yoshio Figueroa', 'AZY66QZX4TD', '1973-12-15', 2, 1, 'oi pessoal!'),
+(89, 'Ann Ruiz', 'QNI61IMT3AW', '1958-08-01', 2, 3, 'oi pessoal!'),
+(90, 'Coby Sullivan', 'KKV78UKU5JI', '1986-02-23', 1, 2, 'oi pessoal!'),
+(91, 'Maryam Garner', 'QIS38NRP8SP', '1978-01-06', 1, 3, 'oi pessoal!'),
+(92, 'Mary Franklin', 'NIG80AJN4JF', '1969-07-28', 2, 2, 'oi pessoal!'),
+(93, 'Tanner Boyd', 'HCT15EFH3FT', '1960-08-17', 3, 1, 'oi pessoal!'),
+(94, 'Edward Price', 'VVK30TNT6YX', '1958-08-03', 3, 5, 'oi pessoal!'),
+(95, 'Inez Rowe', 'BQI20RQL1GW', '1964-12-08', 2, 5, 'oi pessoal!'),
+(96, 'Gareth Cox', 'KDK75NDQ3BE', '1980-08-11', 1, 5, 'oi pessoal!'),
+(97, 'Reed Henry', 'LPJ83WQD7MS', '1983-03-18', 2, 2, 'oi pessoal!'),
+(98, 'Dacey Mercado', 'VLF69KOC8MJ', '1967-11-09', 2, 2, 'oi pessoal!'),
+(99, 'Meredith Sosa', 'JGT68NWC4CU', '1953-11-30', 1, 3, 'oi pessoal!'),
+(100, 'Louis Bird', 'DJZ54SDY3QR', '1952-02-16', 2, 2, 'oi pessoal!'),
+(101, 'Christian Barber', 'RAW15YBL8RG', '1987-09-17', 3, 1, 'oi pessoal!'),
+(102, 'Eagan Henderson', 'DQR86JEP4II', '1964-05-10', 1, 2, 'oi pessoal!'),
+(103, 'Camilla Roach', 'ZOF40EVL8GR', '1973-10-22', 3, 3, 'oi pessoal!'),
+(104, 'Clio Solis', 'IPN22TYY2UL', '1992-11-18', 3, 2, 'oi pessoal!'),
+(105, 'Elton Curtis', 'LLD94YBC5UC', '1986-06-09', 2, 5, 'oi pessoal!'),
+(106, 'Philip Bolton', 'BMV10WIE8FF', '1993-06-09', 2, 5, 'oi pessoal!'),
+(107, 'Basil Young', 'MAF06TBU7ED', '1971-04-23', 2, 5, 'oi pessoal!'),
+(108, 'Prescott Patton', 'EFN53GKM7CG', '1976-08-07', 2, 5, 'oi pessoal!'),
+(109, 'Ali Hart', 'ITF52UPO3XE', '1967-06-17', 1, 2, 'oi pessoal!'),
+(110, 'Galena Wall', 'NIV74CXG1YJ', '1982-09-07', 2, 2, 'oi pessoal!'),
+(111, 'Travis Luna', 'EDC86LFX8VO', '1981-05-02', 2, 2, 'oi pessoal!'),
+(112, 'Conan Savage', 'FIK46XEA2SL', '1962-01-08', 1, 3, 'oi pessoal!'),
+(113, 'Jemima Cervantes', 'SBQ74FCR5SW', '1968-10-12', 1, 3, 'oi pessoal!'),
+(114, 'Lisandra Stein', 'EBS46SXU2TX', '1953-05-15', 2, 3, 'oi pessoal!'),
+(115, 'Shoshana Schneider', 'XTG29ZNS4PN', '1951-06-19', 3, 3, 'oi pessoal!'),
+(116, 'Adria Banks', 'MMO82IVQ2IE', '1971-02-13', 2, 3, 'oi pessoal!'),
+(117, 'Teagan Mathews', 'NJF48OLB2EN', '1983-01-01', 1, 2, 'oi pessoal!'),
+(118, 'Kieran Harper', 'PQL22UEP3FP', '1980-01-10', 2, 1, 'oi pessoal!'),
+(119, 'Shad Reyes', 'YQF42OML8PI', '1988-02-01', 2, 2, 'oi pessoal!'),
+(120, 'Dustin Dennis', 'ADC83SNP1XM', '1974-05-30', 2, 2, 'oi pessoal!'),
+(121, 'Brenden Green', 'RPD54ZCC6ST', '1955-06-23', 3, 2, 'oi pessoal!'),
+(122, 'Mariam Frost', 'SQD96KKQ9NX', '1988-10-15', 2, 1, 'oi pessoal!'),
+(123, 'Ronan Mcbride', 'DDX71RPJ6UR', '1958-08-18', 2, 1, 'oi pessoal!'),
+(124, 'Leah Graves', 'XVA44KOY3ST', '1970-05-12', 2, 1, 'oi pessoal!'),
+(125, 'Jordan Emerson', 'ICT66RDT1TS', '1969-03-17', 2, 1, 'oi pessoal!'),
+(126, 'Rooney Barber', 'EFS45MMG4PQ', '1993-02-27', 3, 2, 'oi pessoal!'),
+(127, 'Noel Mendoza', 'PFR73HOQ8ZC', '1973-03-15', 2, 4, 'oi pessoal!'),
+(128, 'Emi Boyd', 'BUU38TMP3GK', '1954-01-01', 3, 1, 'oi pessoal!'),
+(129, 'Miriam Robbins', 'LVJ34VPU7UG', '1981-06-05', 1, 4, 'oi pessoal!'),
+(130, 'Frances Stokes', 'TAJ35USR1SS', '1954-09-13', 1, 4, 'oi pessoal!'),
+(131, 'Dominic Gaines', 'YBK50WGC8EW', '1960-01-31', 2, 4, 'oi pessoal!'),
+(132, 'Marah Strickland', 'ZXN45KBH6WR', '1962-12-19', 2, 4, 'oi pessoal!'),
+(133, 'Lionel Slater', 'PXC87FHY6LH', '1978-05-19', 3, 3, 'oi pessoal!'),
+(134, 'Helen Bush', 'CQM07LMF5ML', '1961-04-19', 3, 3, 'oi pessoal!'),
+(135, 'Francesca Duran', 'XMI21CDC3CX', '1990-09-23', 2, 3, 'oi pessoal!'),
+(136, 'Faith Saunders', 'XLW22KUH6JX', '1969-10-05', 3, 3, 'oi pessoal!'),
+(137, 'Nelle Weber', 'BJH26PIH4TG', '1962-04-21', 3, 3, 'oi pessoal!'),
+(138, 'Dane Ramsey', 'OXG67CYU3WP', '1990-07-05', 1, 1, 'oi pessoal!'),
+(139, 'Candice Hernandez', 'NYT63WJD3WH', '1968-12-15', 2, 1, 'oi pessoal!'),
+(140, 'Gareth Hobbs', 'UTS54IVS1CG', '1981-02-23', 3, 2, 'oi pessoal!'),
+(141, 'Dai Pittman', 'OZV48QKR0FY', '1967-01-29', 3, 2, 'oi pessoal!'),
+(142, 'Sydnee Byers', 'GIO25IZU3TB', '1979-07-30', 3, 2, 'oi pessoal!'),
+(143, 'Callie Carter', 'NNL71VDU3UX', '1950-11-08', 1, 3, 'oi pessoal!'),
+(144, 'Elliott Heath', 'SCO50VNT1EU', '1953-12-11', 3, 2, 'oi pessoal!'),
+(145, 'Carly Jones', 'SNK48HPH8NI', '1950-12-02', 2, 1, 'oi pessoal!'),
+(146, 'Plato Ramirez', 'HWY53FBU2FE', '1980-12-18', 2, 2, 'oi pessoal!'),
+(147, 'Cherokee Lane', 'BSE79FWB6LH', '1963-05-16', 1, 5, 'oi pessoal!'),
+(148, 'Alice Mills', 'CBJ48VDJ2II', '1973-08-16', 3, 5, 'oi pessoal!'),
+(149, 'Graiden Mcguire', 'ESS75BLE4GM', '1971-02-12', 2, 5, 'oi pessoal!'),
+(150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3, 5, 'oi pessoal!'),
+(152, 'Daniel Alvarez ', '$2y$10$VU9FNOl/Zf.La35Ox7wuze5Ij2Y4yeRaMhVXsowXMTZUf6HicFqBC', '1989-11-22', 1, 1, 'oi gente! meu nome é Daniel'),
+(161, NULL, NULL, NULL, NULL, 5, 'oi pessoal!'),
+(162, 'Gustavo Ferreria da Silva', '$2y$10$1Gzt/A1QI/3mI0SAnn8uuOzoU/xHr7OyAcDfuChdBQ65hYY3iDRdC', '1966-11-08', NULL, 1, 'asasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasa'),
+(163, 'Gabreil Souza Ribeiro', '$2y$10$r9dTV3nN79Lw.Zg05n1Ytug.ZcmGFqHzg17RxeF1uiy.90vLKSOli', '1962-12-20', NULL, 5, 'oi pessoal!'),
+(164, 'Yuri Afonso Pena', '$2y$10$cSGN9LkdgIDtMZq35YJaeu2JMeZ/S8Y9CrCRyOjbG2ndvY/dtYJO6', '1960-02-09', NULL, 5, 'oi pessoal!'),
+(165, 'Kayle da Silva', '$2y$10$UmkKEQu3rbG8PWBbk/3K1.Pzjk23Bmqs4e31HN3R2my1X6wFtK4CO', '2022-04-15', NULL, 5, 'oi pessoal');
 
 -- --------------------------------------------------------
 
@@ -1166,6 +1322,12 @@ ALTER TABLE `tb_familiar`
   ADD KEY `fk_paciente_idx` (`cd_paciente`);
 
 --
+-- Índices para tabela `tb_genero`
+--
+ALTER TABLE `tb_genero`
+  ADD PRIMARY KEY (`cd_genero`);
+
+--
 -- Índices para tabela `tb_jogos`
 --
 ALTER TABLE `tb_jogos`
@@ -1192,7 +1354,8 @@ ALTER TABLE `tb_notes`
 --
 ALTER TABLE `tb_paciente`
   ADD PRIMARY KEY (`cd_paciente`),
-  ADD KEY `fk_estagio_idx` (`cd_estagio`);
+  ADD KEY `fk_estagio_idx` (`cd_estagio`),
+  ADD KEY `tb_paciente_ibfk_1` (`cd_genero`);
 
 --
 -- Índices para tabela `tb_parentesco`
@@ -1214,7 +1377,7 @@ ALTER TABLE `tb_tipo_jogo`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=160;
+  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estagio`
@@ -1227,6 +1390,12 @@ ALTER TABLE `tb_estagio`
 --
 ALTER TABLE `tb_familiar`
   MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+
+--
+-- AUTO_INCREMENT de tabela `tb_genero`
+--
+ALTER TABLE `tb_genero`
+  MODIFY `cd_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tb_jogos`
@@ -1250,7 +1419,7 @@ ALTER TABLE `tb_notes`
 -- AUTO_INCREMENT de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
-  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=166;
 
 --
 -- AUTO_INCREMENT de tabela `tb_parentesco`
@@ -1304,7 +1473,8 @@ ALTER TABLE `tb_notes`
 -- Limitadores para a tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
-  ADD CONSTRAINT `fk_estagio` FOREIGN KEY (`cd_estagio`) REFERENCES `tb_estagio` (`cd_estagio`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_estagio` FOREIGN KEY (`cd_estagio`) REFERENCES `tb_estagio` (`cd_estagio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `tb_paciente_ibfk_1` FOREIGN KEY (`cd_genero`) REFERENCES `tb_genero` (`cd_genero`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
