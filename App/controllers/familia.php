@@ -30,8 +30,9 @@ class familia extends controller
             $this->name=addslashes($_POST['name']);
             $this->email=addslashes($_POST['email']);
             $this->date=addslashes($_POST['dt']);
-            $this->senha=addslashes($_POST['senha']);
+            $this->senha=addslashes($_POST['s1']);
             $family_model=$this->model('family_model');
+            $family_model->cadastrar_familiar($this->name,$this->email,$this->date,$this->senha);
         }
     }
 }
