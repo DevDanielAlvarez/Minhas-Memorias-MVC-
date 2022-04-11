@@ -11,6 +11,6 @@
     <a href="/games/jogo_da_memoria" class="btn btn-primary">JOGAR</a>
   </div>
 
-</div>
+</div> 
 </div>
 

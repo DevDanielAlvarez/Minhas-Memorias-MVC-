@@ -1,10 +1,14 @@
 body
 {
-    background-color: #cd13e6;
-    
+    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    font-family: 'amatic sc', cursive;
 }
 .title
 {
     text-align: center;
     color: seashell;
+}
+.container{
+    height: 100px;
+    width: 700px;
 }
