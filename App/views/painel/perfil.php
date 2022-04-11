@@ -7,7 +7,7 @@
 
         
    <!-- porque o texto só vai se eu colocar um name????????????-->
-        <textarea name="resume" style="background-color: #1178DB; color: aliceblue;" class="form-control"> <?php echo $data2['ds_resumo']?> </textarea>
+        <textarea name="resume" style="background-color: #1178DB; color: aliceblue; resize: none" class="form-control"> <?php echo $data2['ds_resumo']?> </textarea>
       </div>
 
       <input style="background-color:#1178DB; color: aliceblue;margin: 30px 0px 10px 0px;;" class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
