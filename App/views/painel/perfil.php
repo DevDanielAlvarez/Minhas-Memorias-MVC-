@@ -20,7 +20,7 @@
 
       <input style="background-color:#d6b4d6; color: #141414; margin: 10px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Genêro: <?php echo $data2['nm_genero'] ?>" aria-label="Disabled input example" disabled readonly>
       
-      <a href="/painel/editar"><button style=" background: ; margin: 10px 0px 10px 0px;" type="button" class="btn "><i class="bi bi-gear"></i> Editar </button></a>
+      <a href="/painel/editar"><button style=" background: purple; color:#fff; margin: 10px 0px 10px 0px;" type="button" class="btn "><i class="bi bi-gear"></i> Editar </button></a>
       
    
     </div>
