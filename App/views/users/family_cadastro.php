@@ -81,7 +81,7 @@
 
 
                         
-                           <div style="margin: 0px 0px 0px 70%;"><button id="btn" class="btn btn--radius-2 btn--green" >Cadastrar</button> </div>
+                           <div style="margin: 0px 0px 0px 70%;"><button id="btn" onclick="up()" class="btn btn--radius-2 btn--green" >Cadastrar</button> </div>
                         </div>
                     
                 </div>
@@ -90,5 +90,10 @@
     </div>
     
     <script src="<?php echo URL_BASE ?>/js/form_family/register.js"></script>
+    <script>
+        function up() {
+    window.scrollTo(0, 0);
+};
+    </script>
  
   

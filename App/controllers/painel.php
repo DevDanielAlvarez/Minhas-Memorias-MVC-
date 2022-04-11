@@ -13,10 +13,10 @@ class painel extends controller
     #Index padrão PAINEL
     public function index()
     {
-        $this->nav_bar=html_components::nav_bar();
+  
            #verifica se o user está realemnte logado ($_SESSION['logado']==True?)
         Auth::CheckLogin();
-        $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.php"],$components=['nav_bar'=>$this->nav_bar]);
+        $this->view('painel/home',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/painel_index.css"]);
     }
     public function logout()
     {
@@ -24,6 +24,7 @@ class painel extends controller
     }
     public function perfil()
     {
+        Auth::CheckLogin();
         // call components
         $this->nav_bar=html_components::nav_bar();
         
@@ -42,6 +43,7 @@ class painel extends controller
     }
     public function editar_save()
     {
+        Auth::CheckLogin();
         if(isset($_POST['name']) && !empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['genero']) && !empty($_POST['resume'])  )
         {
             
@@ -66,6 +68,7 @@ class painel extends controller
 
     public function deletar_acount_action()
     {
+        Auth::CheckLogin();
         if (isset($_POST['senha']))
         {
             //logic for call verify password
