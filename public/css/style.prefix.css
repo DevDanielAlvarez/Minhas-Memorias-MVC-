@@ -6,9 +6,11 @@
 }
 
 body {
-  margin: 20px 0;
-  background: #993399;
+  
+  background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+
 }
+
 
 .grid {
   max-width: 960px;
@@ -17,10 +19,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+          
 }
 
 .card {
@@ -29,8 +32,8 @@ body {
   -o-transition: all .4s linear;
   transition: all .4s linear;
   -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
-  margin: 5px;
+  transform-style: preserve-3d;
+  margin: 40px;
 }
 
 .card,
@@ -48,13 +51,14 @@ body {
 }
 
 .front {
-  background-image: url('http://localhost:8080/img/Untitled (3).png');
+  background-image: url('http://localhost:8080/img/Untitled (4).png');
+
 }
 
 .back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
-  background-color: #ff66c4;
+  background-color: #4a1942;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
@@ -66,5 +70,5 @@ body {
 }
 
 .match .front {
-  background: #6589F9 !important;
+  background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3) !important;
 }

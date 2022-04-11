@@ -10,7 +10,7 @@
         <textarea name="resume" style="background-color: #1178DB; color: aliceblue; resize: none" class="form-control"> <?php echo $data2['ds_resumo']?> </textarea>
       </div>
 
-      <input style="background-color:#1178DB; color: aliceblue;margin: 30px 0px 10px 0px;;" class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
+      <input style="background-color:#1178DB; color: aliceblue;margin: 30px 0px 10px 0px;" class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
 
       <input style="background-color: #1178DB; color: aliceblue;margin:10px 0px 10px 0px;" class="form-control" type="text" value="Email: <?php echo $data2['nm_email'] ?>" aria-label="Disabled input example" disabled readonly>
 
