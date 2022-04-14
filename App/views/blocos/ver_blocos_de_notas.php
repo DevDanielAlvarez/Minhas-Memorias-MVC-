@@ -1,5 +1,20 @@
-<h1>aqui estão seus blocos de notas</h1>
+<h1 style="text-align: center;">aqui estão seus blocos de notas</h1>
 
-<!-- APENAS UM EXEMPLO DE BLOCO-->
-<h3>title of notepad</h3>
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A natus beatae, ipsam ipsa sint molestiae consequatur amet, nesciunt fuga voluptatibus quaerat pariatur minima totam sit repellendus officia unde dicta harum!</p>
+<?php  
+
+echo '<div class="container-sm">';
+foreach ($data2 as $k ) {
+    
+    echo '<h3>'.$k['nm_titulo'].'</h3>';
+    echo substr($k['txt_note'],0,90);
+    echo'<br>';
+    echo '<button type="button" class="btn btn-primary">Editar</button>';
+ 
+    echo '<hr>';
+
+}
+echo '<div>';
+
+?>
+
+
