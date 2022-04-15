@@ -1,5 +1,6 @@
 'use strict';
 var contador=0;
+var contador_erros=0;
 var contator_screen= document.getElementById('contador');
 var cardsArray = [{
   'name': 'img2',
@@ -105,6 +106,10 @@ grid.addEventListener('click', function (event) {
         setTimeout(match, delay);
         contador++;
         document.getElementById("contador").innerHTML ='Acertos:'+contador;
+      }
+      else{
+        contador_erros++;
+        document.getElementById("contador_erros").innerHTML ='Erros:'+contador_erros;
       }
       setTimeout(resetGuesses, delay);
 
