@@ -16,7 +16,7 @@ class html_components
                 <a class="nav-link active" style="color: #fff !important;"aria-current="page" href="/games">Jogos</a>
               </li>
               <li class="nav-item">
-              <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="#">Blocos de notas</a>
+              <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/bloco">Blocos de notas</a>
             </li>
             </ul>
            
