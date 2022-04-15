@@ -16,6 +16,32 @@ body {
 
 /* Header */
 
+.img_cabecalho{
+    
+    height: 80%;
+    width: 80%;
+    position: absolute;
+    margin-top: -20%;
+    margin-left: -20%;
+    top: 0;
+    left: 0;
+     
+
+}
+
+.img_cabecalho img{
+     
+    width: 100%;
+    height: 100%;
+    margin: 20px 20px;
+    padding: 20px 20px 20px 20px;
+    objetfit: cover;
+    
+
+}
+    
+
+
 .header-wrapper {
     height: 100vh;
     width: 100%;
@@ -56,6 +82,7 @@ body {
 h1 {
     text-transform: uppercase;
     letter-spacing: 4px;
+   
 }
 
 h2 {
@@ -102,7 +129,7 @@ a:hover {
         background-position: 0% 90%;
     }
 }
-.menu_imagem {
+/*.menu_imagem {
 
     height: 100px;
     width: 100px;
@@ -117,9 +144,13 @@ a:hover {
     color: #7a52b3;
     align-items: flex-start;
     
-}
+}*/
 
 /* Main */
+.checkbox-wrapper{
+    height:0;
+    width:0;
+}
 
 .checkbox-container {
     display: flex;
@@ -445,6 +476,7 @@ a:hover {
         width: 75%;
         margin-top: 2rem;
         text-align: center;
+        border: 1px solid #black;
     }
 
     .card-wrapper h2{
