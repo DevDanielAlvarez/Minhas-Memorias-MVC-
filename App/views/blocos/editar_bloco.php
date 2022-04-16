@@ -5,15 +5,15 @@
 
 
 <h1>Titulo</h1>
-<input type="text">
+<input value="<?php if(isset($data2['nm_titulo'])) echo $data2['nm_titulo']; ?>" type="text" id="title">
 
 <h2>Texto</h2>
 
-<div class="container">
-        <textarea id="editor_area" title="editor_area"></textarea>
-    </div>
 
-    <button onclick="d()"></button>
+        <textarea  id="editor_area" title="editor_area"> <?php if(isset($data2['txt_note'])) {echo $data2['txt_note'];} ?></textarea>
+    
+
+    <button id="create_note"> <?php if(!isset($data2['nm_titulo'])) echo 'Criar Bloco';else{echo'Salvar mudanças';} ?></button>
 
 
 <script>
@@ -57,11 +57,4 @@ $(document).ready(function() {
  
 </script>
 
-
-    <script>
-        function d(){   
-            var txt=document.querySelector('textarea#editor_area').value;
-            alert(txt);
-        }
-     
-    </script>
+      <script src="<?php echo URL_BASE ?>/js/notes/create_note.js"></script>

@@ -34,8 +34,24 @@ class bloco extends controller
     
     }
 
-    public function editar_bloco()
+    public function editar_bloco($cd_bloco='')
     {
-        $this->view('blocos/editar_bloco',$data=['sty'=>"s",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"]);
+        if($cd_bloco!='')
+        {
+            $model_bloco=$this->model('bloco_model');
+            $result=$model_bloco->get_single_info_for_notepad($cd_bloco);
+            $this->view('blocos/editar_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"],$result);
+            
+        }
+        else{ $this->view('blocos/editar_bloco',$data=['sty'=>"s",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"]);}
+       
+    }
+
+    public function criar_bloco()
+    {
+        //logica para criar um bloco novo
+        $model_bloco= $this->model('bloco_model');
+        $model_bloco->create_bloco_model($_POST['title'],$_POST['text']);
+        echo 'funcionou';
     }
 }

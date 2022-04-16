@@ -26,8 +26,18 @@ Class bloco_model extends Controller
         $stmt->execute();
         $datas=$stmt->fetch(PDO::FETCH_ASSOC);
         return $datas;
-        
-        
 
     }
+
+    public function create_bloco_model($title,$text)
+    {
+        $stmt=Model::getConn()->prepare('INSERT into tb_notes (nm_titulo,txt_note,cd_paciente,dt_criacao) VALUES(?,?,?,NOW())');
+        $stmt->bindValue(1,$title);
+        $stmt->bindValue(2,$text);
+        $stmt->bindValue(3,$_SESSION['id_paciente']);
+        $stmt->execute();
+       
+    }
+
+    
 }
