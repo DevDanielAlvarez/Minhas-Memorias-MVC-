@@ -5,7 +5,8 @@ use App\Auth;
 use App\components\html_components;
 
 Class bloco_model extends Controller
-{   //pega todas as infos dos blocos do user
+{
+    //pega todas as infos dos blocos do user
     public function get_all_notepads_for_user()
     {
         Auth::CheckLogin();
@@ -19,7 +20,7 @@ Class bloco_model extends Controller
     {
         
         Auth::CheckLogin();
-        html_components::nav_bar();
+       
         $stmt=Model::getConn()->prepare('select * from tb_notes where cd_notes=? and cd_paciente=?');
         $stmt->bindValue(1,$cd_notes);
         $stmt->bindValue(2,$_SESSION['id_paciente']);
@@ -39,5 +40,34 @@ Class bloco_model extends Controller
        
     }
 
+    public function update_notepad($title,$text,$cd_notes)
+    {
+        $stmt=Model::getConn()->prepare('update tb_notes set nm_titulo=?,txt_note=? where cd_notes=?');
+        $stmt->bindValue(1,$title);
+        $stmt->bindValue(2,$text);
+        $stmt->bindValue(3,$cd_notes);
+        $stmt->execute();
+
+        //caso precise da information of success 
+        return true;
+    }
+
+    public function verify_notepad($title,$text,$cd_notes)
+    {
+        //verifi ambuiguis,
+        $stmt=Model::getConn()->prepare('select * from tb_notes where nm_titulo=? and txt_note=? and cd_notes=?');
+        $stmt->bindValue(1,$title);
+        $stmt->bindValue(2,$text);
+        $stmt->bindValue(3,$cd_notes);
+        $stmt->execute();
+        
+
+        $result= $stmt->rowCount();
+        if($result==1)
+        {
+            return 1;
+        }
+        else{return 0;}
+    }
     
 }

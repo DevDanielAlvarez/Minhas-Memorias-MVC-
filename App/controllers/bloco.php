@@ -36,14 +36,36 @@ class bloco extends controller
 
     public function editar_bloco($cd_bloco='')
     {
+            //start model
+        $model_bloco=$this->model('bloco_model');
+        // se existe um param
         if($cd_bloco!='')
-        {
-            $model_bloco=$this->model('bloco_model');
+        {        //se o post existe significa q o button foi acionado
+            if(isset($_POST['title']) )
+            {
+
+                //virify if exists any change
+                 $return=$model_bloco->verify_notepad($_POST['title'],$_POST['text'],$cd_bloco);
+                 
+                 if($return==1){echo '0';}
+                 
+               else{
+                //execute model
+                $update['title']= addslashes( $_POST['title']);
+                $update['text']=  $_POST['text'];
+                $model_bloco->update_notepad($update['title'],$update['text'],$cd_bloco);
+                    echo '1';
+               }
+              
+            }
+            else{
             $result=$model_bloco->get_single_info_for_notepad($cd_bloco);
-            $this->view('blocos/editar_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"],$result);
+            $this->view('blocos/editar_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"],$result,$components=['cd_bloco'=>$cd_bloco]);
+            }
+            
             
         }
-        else{ $this->view('blocos/editar_bloco',$data=['sty'=>"s",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"]);}
+        else{ $this->view('blocos/editar_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/notes/jquery.cleditor.php"]);}
        
     }
 

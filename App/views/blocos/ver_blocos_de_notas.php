@@ -14,15 +14,16 @@
 echo '<div class="container-sm">';
 foreach ($data2 as $k ) {
     
-    echo '<h4>'.$k['nm_titulo'].'</h3>';
-    echo substr($k['txt_note'],0,90).'...';
+    echo '<h1>'.$k['nm_titulo'].'</h1>';
+    echo'<br>';
+    echo  $k['txt_note'];
     echo'<br>';
     echo '<a href=/bloco/ver_bloco/'.$k['cd_notes'].'><button type=button class="btn btn-primary">Ver</button></a>';
- 
+    
     echo '<hr>';
-
+    
 }
-echo '<div>';
+echo '</div>';
 
 ?>
 

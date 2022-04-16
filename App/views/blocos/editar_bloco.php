@@ -1,4 +1,4 @@
-
+<div  id="alert"></div>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <script src="http://localhost:8080/js/notes/jquery.cleditor.js"></script>
@@ -10,12 +10,12 @@
 <h2>Texto</h2>
 
 
-        <textarea  id="editor_area" title="editor_area"> <?php if(isset($data2['txt_note'])) {echo $data2['txt_note'];} ?></textarea>
+        <textarea  id="editor_area" title="editor_area"><?php if(isset($data2['txt_note'])){echo $data2['txt_note'];} ?></textarea>
     
 
-    <button id="create_note"> <?php if(!isset($data2['nm_titulo'])) echo 'Criar Bloco';else{echo'Salvar mudanças';} ?></button>
+    <button id="<?php if(!isset($data2['nm_titulo'])) echo 'create_note'; else{ echo "update_note";} ?>"> <?php if(!isset($data2['nm_titulo'])) echo 'Criar Bloco';else{echo'Salvar mudanças';} ?></button>
 
-
+<input hidden id="cd_bloco"  value="<?php echo $components['cd_bloco']; ?>"></input>
 <script>
     
 $(document).ready(function() {
@@ -54,7 +54,7 @@ $(document).ready(function() {
          })
          });
 
- 
+
 </script>
 
-      <script src="<?php echo URL_BASE ?>/js/notes/create_note.js"></script>
+      <script src="<?php echo URL_BASE ?>/js/notes/crud_note.js"></script>
