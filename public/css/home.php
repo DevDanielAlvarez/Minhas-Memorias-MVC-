@@ -147,6 +147,7 @@ a:hover {
 }*/
 
 /* Main */
+ 
 .checkbox-wrapper{
     height:0;
     width:0;

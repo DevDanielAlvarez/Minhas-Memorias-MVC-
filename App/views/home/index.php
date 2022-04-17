@@ -1,6 +1,4 @@
-
-
-    <header class="header-wrapper">
+<header class="header-wrapper">
         <div class="header">
         <!--<div class="menu_imagem" style="content: url('<?php "URL_BASE" ?>/img/logo.png');"></div> "laço roxo"-->
         <div class="img_cabecalho">
@@ -40,7 +38,7 @@
            <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
         </div>
     </header> 
-    <main class="container">
+    <main class="container carrossel">
         <div class="card-container">
             <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
                Nosso sistema conta com jogos incríveis, para que nosso amado úsuario possa treinar suas capacidades cognitivas
@@ -79,3 +77,4 @@
     <footer class="footer">
         Minhas Memórias cada vez mais lembradas
     </footer>
+    
