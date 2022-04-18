@@ -70,4 +70,19 @@ Class bloco_model extends Controller
         else{return 0;}
     }
     
+    public function search_notepad($title,$text)
+    {
+        $stmt=Model::getConn()->prepare("select cd_notes from tb_notes where nm_titulo=? and txt_note=? and cd_paciente=?");
+        $stmt->bindValue(1,$title);
+        $stmt->bindValue(2,$text);
+        $stmt->bindValue(3,$_SESSION['id_paciente']);
+        $row=$stmt->execute();
+        if($row->rowCount()==1)
+        {
+            $data_of_note=$stmt->fetch(PDO::FETCH_ASSOC);
+            return $data_of_note;
+        }
+        else{return false;}
+
+    }
 }

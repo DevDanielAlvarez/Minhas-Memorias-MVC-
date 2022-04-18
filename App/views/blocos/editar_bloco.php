@@ -14,6 +14,7 @@
     
 
     <button id="<?php if(!isset($data2['nm_titulo'])) echo 'create_note'; else{ echo "update_note";} ?>"> <?php if(!isset($data2['nm_titulo'])) echo 'Criar Bloco';else{echo'Salvar mudanças';} ?></button>
+    <?php if(isset($data2['nm_titulo'])) echo ' <button id="delete_note">Deletar</button>'; else{echo ' <a href="/bloco"><button id="delete_note">Cancelar</button>';} ?>
 
 <input hidden id="cd_bloco"  value="<?php echo $components['cd_bloco']; ?>"></input>
 <script>
