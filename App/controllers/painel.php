@@ -1,12 +1,12 @@
 <?php
 #chamando classes padrão para manipulação de dados
-use App\Core\controller;
-use App\Core\Model;
 use App\Auth;
+use App\Core\Model;
+use App\Core\controller;
 use App\components\html_components;
 use LDAP\Result;
 
-class painel extends controller
+class painel extends Controller
 {
     public $nav_bar;
 
@@ -26,7 +26,7 @@ class painel extends controller
     {
         Auth::CheckLogin();
         // call components
-        $this->nav_bar=html_components::nav_bar();
+        $this->nav_bar=html_components::nav_bar(); 
         
         // call model
         $dados=$this->model('user');

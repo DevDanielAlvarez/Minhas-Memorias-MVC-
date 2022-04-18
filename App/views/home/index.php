@@ -1,8 +1,8 @@
-
-
-    <header class="header-wrapper">
+<header class="header-wrapper">
         <div class="header">
-        <div class="menu_imagem" style="content: url('<?php "URL_BASE" ?>/img/logo.png');"></div>
+        <!--<div class="menu_imagem" style="content: url('<?php "URL_BASE" ?>/img/logo.png');"></div> "laço roxo"-->
+        <div class="img_cabecalho">
+            <img src="<?php "URL_BASE" ?>/img/ramos.png" > </div> 
             <div class="checkbox-container">
                 <div class="checkbox-wrapper">
                     <input type="checkbox" id="toggle">
@@ -38,9 +38,9 @@
            <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
         </div>
     </header> 
-    <main class="container">
+    <main class="container carrossel">
         <div class="card-container">
-            <div class="card-text" style="font-size: 20px;">
+            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
                Nosso sistema conta com jogos incríveis, para que nosso amado úsuario possa treinar suas capacidades cognitivas
             </div>
             <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/cube.jpg');">
@@ -58,12 +58,12 @@
                     <p>Toda minha vida em um só lugar</p>
                 </div>
             </div>
-            <div class="card-text" style="font-size: 20px;">
+            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
                Também contamos com uma maravilhosa galeria, onde nosso usuário poderá  guardar suas amadas fotos, com segurança e modestia.
             </div>
         </div>
         <div class="card-container">
-            <div class="card-text" style="font-size: 20px;">
+            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
              Sua família sempre estará com você nessa jornada! Sendo sempre um ombro amigo quando precisar.
             </div>
             <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/family.jpg');">
@@ -77,3 +77,4 @@
     <footer class="footer">
         Minhas Memórias cada vez mais lembradas
     </footer>
+    

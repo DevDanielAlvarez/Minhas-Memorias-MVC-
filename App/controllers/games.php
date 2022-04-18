@@ -6,7 +6,7 @@ use App\Core\Controller;
 use App\components\html_components;
 class games extends Controller
 {
-    public function index()
+    public function index() 
     {
        Auth::CheckLogin();
        html_components::nav_bar();
