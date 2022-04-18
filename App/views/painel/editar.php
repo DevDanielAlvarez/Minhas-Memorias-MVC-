@@ -1,19 +1,19 @@
-
-<div class="container" style="margin-top: 3%;background-color: #5224FA;border-radius: 9px;">
-<h1 style="text-align: center;color:aliceblue">Configurações</h1>
-<hr style="color: aliceblue;">
-    <div class="input-group mb-3">
+<!--o controller de css deste arquivo chama em controllers/painel.php, tanto editar.php e perfil.php-->
+<div class="container caixa" >
+<h1 class="title">Dados Pessoais</h1>
+<hr><!--linha-->
+    <div class="input-group mb-3 size">
     <span class="input-group-text" id="basic-addon1">Seu nome</span>
     <input type="text" class="form-control" id="name-edit" value="<?php echo $data2['nm_paciente']?>" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 size">
     <span class="input-group-text" id="basic-addon1">Seu Email</span>
-    <input type="text" class="form-control" id="email-edit" value="<?php echo $data2['nm_email']?>" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="text" class="form-control " id="email-edit" value="<?php echo $data2['nm_email']?>" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
     </div>
 
 
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 size">
         <label class="input-group-text" for="inputGroupSelect02">Genêro</label>
     <select class="form-select"  class="gender-edit" id="inputGroupSelect02">
         <option selected>Selecione</option>
@@ -27,18 +27,17 @@
     </div>
 
 
-    <div class="form-floating">
-    <textarea name="resume-edit" class="form-control" placeholder="Leave a comment here" id="txt-edit-area" ><?php echo $data2['ds_resumo']?></textarea>
-    <label for="floatingTextarea">Resumo</label>
+    <div class="form-floating size">
+       <textarea name="resume-edit" class="form-control" placeholder="Leave a comment here" id="txt-edit-area" ><?php echo $data2['ds_resumo']?></textarea>
+       <label for="floatingTextarea ">Resumo</label>
     </div>
-    <div style="text-align: center;padding-bottom: 30px;padding-top: 10px;"><a  ><button  type="button" id="save" style="font-size: 16pt;" class="btn btn-success">salvar</button></a></div>
 
-    <h1 style="text-align: center;color:aliceblue">Mais opções</h1>
-    <hr style="color:aliceblue">
-    <div style="text-align: center;padding-bottom: 30px;"><a href="/familia/cadastro"  ><button  type="button" class="btn btn-primary">Adicionar Familiar</button></a></div>
-    <div style="text-align: center;padding-bottom: 30px;"><a  ><button  type="button" class="btn btn-danger">Deletar conta</button></a></div>
+    <div class="alinha">
+       <div  ><a  ><button  type="button" id="save"  class="btn btn-success form">salvar</button></a></div>
+       <div class="form"><a href="/familia/cadastro"  ><button  type="button" class="btn btn-primary">Adicionar Familiar</button></a></div>
+       <div class="form"><a  ><button  type="button" class="btn btn-danger">Deletar conta</button></a></div>
+    </div>
 </div>
-
 <script src="<?php echo URL_BASE ?>/js/save_edit.js"></script>
 
 

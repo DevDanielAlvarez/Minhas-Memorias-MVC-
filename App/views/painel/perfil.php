@@ -1,6 +1,6 @@
 
 
-    <div  class="container" style="border: solid rgb(173, 28, 202);font-family: 'amatic sc', cursive; border-radius: 9px;padding: 9px;background-color: #FFF;margin-top:3%; width:600px;">
+    <div  class="container caixa" >
        
     <div class="input-group mb-3">
         <img style="height: 180px;" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">
@@ -10,15 +10,15 @@
         <textarea disabled name="resume" style="background-color:#d6b4d6; border-radius:4.5%; color: #141414; width:550px; height: 350px; resize: none" class="form-control"> <?php echo $data2['ds_resumo']?> </textarea>
       </div>
 
-      <input style="background-color:#d6b4d6; color: #141414; margin: 30px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
+      <input  class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
 
-      <input style="background-color:#d6b4d6; color: #141414; margin:10px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Email: <?php echo $data2['nm_email'] ?>" aria-label="Disabled input example" disabled readonly>
+      <input  class="form-control" type="text" value="Email: <?php echo $data2['nm_email'] ?>" aria-label="Disabled input example" disabled readonly>
 
-      <input style="background-color:#d6b4d6; color: #141414; margin: 10px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Familiar: <?php echo $_SESSION['nome_familiar'] ?>" aria-label="Disabled input example" disabled readonly>
+      <input  class="form-control" type="text" value="Familiar: <?php echo $_SESSION['nome_familiar'] ?>" aria-label="Disabled input example" disabled readonly>
 
-      <input style="background-color:#d6b4d6; color: #141414; margin: 10px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Record: 31 (Jogo da Memória)" aria-label="Disabled input example" disabled readonly>
+      <input  class="form-control" type="text" value="Record: 31 (Jogo da Memória)" aria-label="Disabled input example" disabled readonly>
 
-      <input style="background-color:#d6b4d6; color: #141414; margin: 10px 0px 10px 0px; width:550px;" class="form-control" type="text" value="Genêro: <?php echo $data2['nm_genero'] ?>" aria-label="Disabled input example" disabled readonly>
+      <input  class="form-control" type="text" value="Genêro: <?php echo $data2['nm_genero'] ?>" aria-label="Disabled input example" disabled readonly>
       
       <a href="/painel/editar"><button style=" background: purple; color:#fff; margin: 10px 0px 10px 0px;" type="button" class="btn "><i class="bi bi-gear"></i> Editar </button></a>
       
