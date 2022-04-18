@@ -39,6 +39,17 @@ body {
     
 
 }
+
+
+
+.card{
+    background-image: url('<?php "URL_BASE" ?>/img/family.jpg');
+    width: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: flex;
+}
     
 
 
@@ -347,6 +358,10 @@ a:hover {
     font-family: sans-serif;
     letter-spacing: 1px;
     color: rgb(109,109,109);
+    font-size: 20px;
+   border:10px double #141414;
+   box-shadow:4px 4px 15px;
+   border-radius: 5% 10% 10% 10%;
 
 }
 
@@ -413,6 +428,48 @@ a:hover {
     justify-content: center;
     align-items: center;
     background-color: #4a1942;
+}
+.rede{
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-left: 20px;
+        transition: all 0.4s ease-out;
+        border-radius: 50%;
+        position:relative;
+}
+.rede:hover{
+        cursor: pointer;
+        transform: translateY(-20px);
+        box-shadow: 4px 30px 16px 0px rgba(50,50,50, 0.45);
+}
+.rede#facebook{
+        background-color: #2372a3;
+        
+}
+.rede#twitter{
+        background-color: #0084b4;
+}
+.rede#instagram{
+        background-color: #3f729b;
+}
+.rede#snap{
+        background-color: #fc0;
+}
+.rede#plus{
+        background-color: #dd4b39;
+}
+.rede#youtube{
+        background-color: #b00;
+}
+.icone{
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-left: auto;
+        padding: 10px;
+        display: flex;
+        position:absolute;
 }
 
 /*responsivo*/

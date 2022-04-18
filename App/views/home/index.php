@@ -40,7 +40,7 @@
     </header> 
     <main class="container carrossel">
         <div class="card-container">
-            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
+            <div class="card-text" >
                Nosso sistema conta com jogos incríveis, para que nosso amado úsuario possa treinar suas capacidades cognitivas
             </div>
             <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/cube.jpg');">
@@ -58,15 +58,15 @@
                     <p>Toda minha vida em um só lugar</p>
                 </div>
             </div>
-            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
+            <div class="card-text">
                Também contamos com uma maravilhosa galeria, onde nosso usuário poderá  guardar suas amadas fotos, com segurança e modestia.
             </div>
         </div>
         <div class="card-container">
-            <div class="card-text" style="font-size: 20px;border:1px solid #141414; box-shadow:4px 4px 15px; background: #grey; border-radius: 5% 10% 10% 10%;">
+            <div class="card-text" >
              Sua família sempre estará com você nessa jornada! Sendo sempre um ombro amigo quando precisar.
             </div>
-            <div class="card" style="background-image: url('<?php "URL_BASE" ?>/img/family.jpg');">
+            <div class="card" >
                 <div class="card-wrapper">
                     <h2>Minha Família</h2>
                     <p>Minha família sempre ao meu lado</p>
@@ -75,6 +75,23 @@
         </div>
     </main> 
     <footer class="footer">
-        Minhas Memórias cada vez mais lembradas
+    <div class="rede img-fluid" id="facebook">
+              <img class="icone" src="img/images/facebook.png">
+            </div>                
+            <div class="rede img-fluid" id="twitter">
+              <img class="icone" src="img/images/twitter.png">
+            </div>                
+            <div class="rede img-fluid" id="instagram">
+              <img class="icone" src="img/images/instagram.png">
+            </div>
+            <div class="rede img-fluid" id="snap">
+              <img class="icone" src="img/images/snap.png">
+            </div>
+            <div class="rede img-fluid" id="plus">
+              <img class="icone" src="img/images/plus.png">
+            </div>
+            <div class="rede img-fluid" id="youtube">
+              <img class="icone" src="img/images/youtube.png">
+            </div>
     </footer>
     
