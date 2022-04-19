@@ -31,18 +31,24 @@
       {
           var title= document.querySelector('input#title').value;
           var text= document.querySelector('textarea#editor_area').value;
-          var cd_bloco= document.querySelector('input#cd_bloco').value;
+          
+
+          //teste
+          var url=window.location.href;
+          var cd_bloco=url.split('/');
+
+          //
           if(title=='' || text==''){alert('campos vazios');return false;}
         $.ajax({
         
             method:"POST",
-            data:{title,text,cd_bloco},
-            url:'/bloco/editar_bloco/'+cd_bloco,
+            data:{title,text},
+            url:'/bloco/editar_bloco/'+cd_bloco[5],
         
             
             success: function(retorno)
             {
-              
+              alert(cd_bloco[5]);
               if(retorno=='1'){
                $('#alert').removeClass("alert alert-danger");
               $('#alert').html('Seu bloco de notas foi alterado com sucesso')
@@ -52,7 +58,7 @@
               else
               {
                 $('#alert').removeClass("alert alert-success");
-                $('#alert').html('nada foi mudado')
+                $('#alert').html('nem uma alteração foi feita')
                 $('#alert').addClass("alert alert-danger")
               }
             }
