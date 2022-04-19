@@ -17,7 +17,7 @@ class bloco extends controller
       $result= $model_bloco->get_all_notepads_for_user();
 
         //view
-        $this->view('blocos/ver_blocos_de_notas',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"],$result); 
+        $this->view('blocos/ver_blocos_de_notas',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/editar.php"],$result); 
     }
     public function ver_bloco($id='')
     {
@@ -28,9 +28,9 @@ class bloco extends controller
         {
            
             
-            $this->view('blocos/ver_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"]); 
+            $this->view('blocos/ver_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/editar.php"],$result,$components=['nav-bar'=>$this->nav_bar]);
         }
-        else{ $this->view('blocos/ver_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"],$result); }
+        else{ $this->view('blocos/ver_bloco',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/editar.php"],$result); }
     
     }
 
