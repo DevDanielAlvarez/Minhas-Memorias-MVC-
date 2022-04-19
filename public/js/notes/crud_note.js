@@ -69,4 +69,33 @@
         });
       
       });
- 
+
+  $(document).on("click","#delete_note", function()
+  {
+
+      
+
+      //teste
+      var url=window.location.href;
+      var cd_bloco=url.split('/');
+
+      //
+      if(cd_bloco==''){return false;}
+    $.ajax({
+    
+        
+        url:'/bloco/delete_notepad/'+cd_bloco[5],
+    
+        
+        success: function(retorno)
+        {
+          alert(retorno);
+          window.location.href="/bloco";
+          
+        }
+        
+    
+                
+            
+    });
+  });

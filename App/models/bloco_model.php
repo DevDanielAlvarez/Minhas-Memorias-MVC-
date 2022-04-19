@@ -52,7 +52,7 @@ Class bloco_model extends Controller
         return true;
     }
 
-    public function verify_notepad($title,$text,$cd_notes)
+    public function verify_change_notepad($title,$text,$cd_notes)
     {
         //verifi ambuiguis,
         $stmt=Model::getConn()->prepare('select * from tb_notes where nm_titulo=? and txt_note=? and cd_notes=?');
@@ -84,5 +84,38 @@ Class bloco_model extends Controller
         }
         else{return false;}
 
+    }
+    
+    public function delete_notepad($cd_notes)
+    {
+        $verify=$this->verify_if_notepad_existis($cd_notes);
+        if($verify==true){
+        $stmt=Model::getConn()->prepare('delete from tb_notes where cd_notes=?');
+        $stmt->bindValue(1,$cd_notes);
+        $stmt->execute();
+        }
+        else
+        {
+            echo 'Error ao deletar';
+        }
+        
+    }
+
+    public function verify_if_notepad_existis($cd_notes)
+    {
+        $stmt=Model::getConn()->prepare('select cd_notes from tb_notes where cd_paciente=? and cd_notes=? ');
+        $stmt->bindValue(1,$_SESSION['id_paciente']);
+        $stmt->bindValue(2,$cd_notes);
+        $stmt->execute();
+        $result=$stmt->rowCount();
+        if($result==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        
     }
 }

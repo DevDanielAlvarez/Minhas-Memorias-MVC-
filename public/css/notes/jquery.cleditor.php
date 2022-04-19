@@ -28,4 +28,10 @@
 .cleditorMsg {background-color:#FDFCEE; width:150px; padding:4px; font-size:8.5pt}
 
 
-
+body 
+{
+    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background-size: cover;
+    font-family: 'amatic sc', cursive;
+   
+}
