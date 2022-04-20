@@ -15,7 +15,6 @@
             
             success: function(retorno)
             {
-              
               alert(retorno);
             }
             
