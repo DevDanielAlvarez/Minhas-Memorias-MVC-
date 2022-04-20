@@ -29,4 +29,19 @@ class games extends Controller
         $result= $game->rankview();
         $this->view("games/rank",$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"],$result);
     }
+    public function save_game()
+    {
+        $model_game=$this->model('gamesmodel');
+        $result=$model_game->model_save_save_game($_POST['cd_jogo'],$_POST['contador'],$_POST['contador_erros']);
+        if($result==1)
+        {
+            echo 'sua pontuação foi salva!';
+        }
+        else
+        {
+            echo 'ocorreu um erro ao salvar';
+        }
+        // save pontuation of played game
+      
+    }
 }

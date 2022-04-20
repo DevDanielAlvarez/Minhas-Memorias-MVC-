@@ -100,8 +100,8 @@ grid.addEventListener('click', function (event) {
         document.getElementById("contador").innerHTML =contador;
         if(contador==4){
            document.getElementById("titulo").innerHTML ='Parabens você venceu!';
-           document.getElementById("contador_text").innerHTML ='Deseja salvar a sua pontuação?';
-           document.getElementById("button").innerHTML ='<button>Salvar</button>';
+           document.getElementById("contador_text").innerHTML ='acertos: '+contador+' erros: '+contador_erros+' Deseja salvar a sua pontuação?';
+           document.getElementById("button").innerHTML ='<button id="save_points">Salvar</button>';
           }
       }
       else{
@@ -114,3 +114,30 @@ grid.addEventListener('click', function (event) {
     previousTarget = clicked;
   }
 });
+
+// btn
+
+  $(document).on("click","#save_points", function()
+    {
+
+      $.ajax({
+      method:"POST",
+      data:{contador,contador_erros,cd_jogo:'1'},
+      url:'/games/save_game',
+          
+         
+          
+          success: function(r)
+          {
+            document.getElementById("contador_text").innerHTML =r+' deseja começar um novo jogo?';
+            
+            document.getElementById("button").innerHTML ='<a href="/games/jogo_da_memoria"><button>Jogar novamente</button></a>';
+          }
+          
+      
+                  
+              
+      });
+    
+    });
+  
