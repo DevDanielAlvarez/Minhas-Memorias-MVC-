@@ -10,7 +10,7 @@ class games extends Controller
     {
        Auth::CheckLogin();
        html_components::nav_bar();
-        $this->view("games/index",$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/games_index.css"],null,);
+        $this->view("games/index",$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/games_index.css"],null);
     }
     public function math()
     {

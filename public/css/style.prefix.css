@@ -72,3 +72,12 @@ body {
 .match .front {
   background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3) !important;
 }
+#pop_up
+{
+  width: 50%;
+  margin:0px auto;
+  background-color:greenyellow;
+  text-align: center;
+  border-radius: 9px;
+  padding: 6px;
+}

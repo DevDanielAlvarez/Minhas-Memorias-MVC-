@@ -15,14 +15,6 @@ var cardsArray = [{
 , {
   'name': 'img4',
   'img': 'http://localhost:8080/img/img4_memoria.jpg'
-},
-{
-  'name': 'img5',
-  'img': 'http://localhost:8080/img/img5_memoria.jpg'
-},
-{
-  'name': 'img6',
-  'img': 'http://localhost:8080/img/img6_memoria.png'
 }
 ];
 
@@ -105,11 +97,16 @@ grid.addEventListener('click', function (event) {
       if (firstGuess === secondGuess) {
         setTimeout(match, delay);
         contador++;
-        document.getElementById("contador").innerHTML ='Acertos:'+contador;
+        document.getElementById("contador").innerHTML =contador;
+        if(contador==4){
+           document.getElementById("titulo").innerHTML ='Parabens você venceu!';
+           document.getElementById("contador_text").innerHTML ='Deseja salvar a sua pontuação?';
+           document.getElementById("button").innerHTML ='<button>Salvar</button>';
+          }
       }
       else{
         contador_erros++;
-        document.getElementById("contador_erros").innerHTML ='Erros:'+contador_erros;
+        document.getElementById("contador_erros").innerHTML =contador_erros;
       }
       setTimeout(resetGuesses, delay);
 
