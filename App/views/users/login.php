@@ -37,7 +37,12 @@
                         
                         <a href="#" class="text">Esqueceu sua senha?</a>
                     </div>
-
+                    <label for="">Escolha</label><br>
+                    <label>usuário</label>
+                    <input type="radio" name="perfilCliente" id="radio_user">
+                    <label>familiar</label>
+                    <input type="radio" name="perfilCliente" id="opcao1">
+                        
                     <div class="input-field button">
                         <input type="button" id="logar" value="Entrar">
                     </div>

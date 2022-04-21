@@ -55,7 +55,7 @@ class users extends controller
         $user->senha_login=addslashes($_POST['senha']);
         
         
-        Auth::login($user->email_login,$user->senha_login);
+        Auth::login($user->email_login,$user->senha_login,$_POST['tipo_user']);
           
       
 

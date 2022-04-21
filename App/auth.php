@@ -4,8 +4,9 @@ use App\Core\Model;
 class Auth
 {
     #realiza o login (método chamado pelo App/Controllers/users.php)
-    public static function login($email,$senha)
+    public static function login($email,$senha,$tipo_user)
     {
+        if($tipo_user=="user"){
         $sql="select nm_email,nm_senha,nm_paciente,tb_pac.cd_paciente from tb_contato tb_ctt inner join tb_paciente tb_pac on tb_ctt.cd_paciente=tb_pac.cd_paciente where nm_email= ?";
         $stmt= Model::getConn()->prepare($sql);
         $stmt->bindValue(1,$email);
@@ -25,6 +26,7 @@ class Auth
 
         else: echo "usuário não encontrado";
     endif;
+    }
         
     }
     #destroi todas as sessões (desloga o user)

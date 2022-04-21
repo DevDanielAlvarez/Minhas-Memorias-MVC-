@@ -93,7 +93,7 @@ Class user extends Controller
             $stmt->execute();
     }
 
-    public function delete_user_system()
+    public function delete_user_of_system()
     {
         //delete all information user in system
 
