@@ -65,6 +65,11 @@ class painel extends Controller
             echo "Erro ao atualizar";
         }
     }
+    public function familiar()
+    {
+        Auth::check_if_is_family();
+        $this->view('painel/painel_familiar');
+    }
 
     public function deletar_acount_action()
     {
@@ -76,6 +81,7 @@ class painel extends Controller
             //logic for call method  delete()
 
         }
+
     }
 }
     

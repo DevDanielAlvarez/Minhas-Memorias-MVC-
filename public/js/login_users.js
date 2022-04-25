@@ -13,7 +13,7 @@
           {
             var tipo_user="familiar";
           }
-    alert(tipo_user)
+   
       
         $.ajax({
         
@@ -25,9 +25,13 @@
             success: function(retorno)
             {
               
-              if(retorno==="true")
+              if(retorno==="true_paciente" )
               {
                 window.location.href="/painel/index"
+              }
+              else if(retorno=="true_familiar")
+              {
+                window.location.href="/painel/familiar";
               }
               else{alert(retorno)}
               
