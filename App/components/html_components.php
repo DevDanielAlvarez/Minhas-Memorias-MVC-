@@ -6,7 +6,7 @@ class html_components
     {
         echo   '<nav style="background-color: #7a52b3 !important;" class="navbar navbar-expand-md navbar-light ">
         <div  class="container-fluid">
-          <a class="navbar-brand" style="color: #fff !important;" href="/painel">Minhas Memórias</a>
+          <a class="navbar-brand" style="color: #fff !important;" href="/">Minhas Memórias</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -18,6 +18,9 @@ class html_components
               <li class="nav-item">
               <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/bloco">Blocos de notas</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/galeria">Galeria</a>
+          </li>
             </ul>
            
             
