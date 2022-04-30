@@ -29,11 +29,13 @@
 
 				<!-- Main -->
 					<div id="main">
-						<article class="thumb">
+						<?php foreach($data2 as $k){} 
+						/*<article class="thumb">
 							<a href="images/fulls/01.jpg" class="image"><img src="images/thumbs/01.jpg" alt="" /></a>
 							<h2>Magna feugiat lorem</h2>
 							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
 						</article>
+						*/?>
 						<article class="thumb">
 							<a href="images/fulls/02.jpg" class="image"><img src="images/thumbs/02.jpg" alt="" /></a>
 							<h2>Nisl adipiscing</h2>

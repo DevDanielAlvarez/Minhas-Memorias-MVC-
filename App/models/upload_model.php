@@ -16,4 +16,13 @@ Class upload_model extends Controller
                 return true;
             }
         }
+
+    public function get_all_info_for_photos_galery_for_user()
+    {
+        $stmt=Model::getConn()->prepare('select nm_titulo,nm_caminho from tb_galeria where cd_paciente=?');
+        $stmt->bindValue(1,$_SESSION['id_paciente']);
+        $stmt->execute();
+        $result=$stmt->fetchall(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
