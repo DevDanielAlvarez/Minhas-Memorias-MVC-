@@ -18,7 +18,7 @@ class galeria extends controller
     {
         $model_upload=$this->model('upload_model');
         $data_photos=$model_upload->get_all_info_for_photos_galery_for_user();
-        var_dump ($data_photos);
+       
 
         html_components::nav_bar();
         $this->view('galery/galeria',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/galery_css/main.css"],$data2=$data_photos);
