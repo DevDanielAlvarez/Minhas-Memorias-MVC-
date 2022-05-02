@@ -15,7 +15,8 @@
 
 		<!-- Scripts -->
 		
-            <script src="<?php echo URL_BASE ?>/js/home_painel/main.js"></script>
+            <script src="<?php echo URL_BASE ?>/js/home_painel/main.js"></script> 
+           
 
 			<script>
 				function games()

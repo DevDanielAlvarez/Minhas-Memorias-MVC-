@@ -16,7 +16,7 @@ body
     padding: 9px;
     background-color: #FFF;
     margin-top:3%; 
-    width:600px;
+    width:600px; 
    
         
 }
@@ -69,4 +69,42 @@ hr{
     margin:10px 0px 10px 0px;
     width:550px;
     opacity: 1;
+}
+
+/*Ver_bloco, editar_bloco, ver_blocos_de_notas*/
+
+.diario_bloco{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    
+}
+.title_editar_bloco{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+
+    
+}
+.title_ver_bloco{
+    font-size: 30px;
+    color: #fff;
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    
+}
+
+/*botoes*/
+
+/*painel, perfil.php, ver_bloco_notas*/
+
+.btn{
+    background: purple; 
+    color:#fff; 
+    margin: 10px 0px 10px 0px;
 }

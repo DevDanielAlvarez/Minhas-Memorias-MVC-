@@ -1,10 +1,10 @@
 
 
-<h1 style="text-align: center;">aqui estão seus blocos de notas</h1>
+<h1 class="diario_bloco" >Diário de <?php echo $_SESSION['nome'];?></h1> 
 
-<div class="container" style="border: solid 2px; border-color: green;">
-<h1>criar novo bloco</h1>
-<a href="/bloco/editar_bloco"><button type="button" class="btn btn-success">Criar</button></a>
+<div class="container" style="border: solid 2px; border-color: white;">
+<h1 class="diario_bloco ">Criar Diário</h1>
+<a href="/bloco/editar_bloco"><button type="button" class="btn">Criar</button></a>
 
 </div>
 <hr>

@@ -7,5 +7,6 @@ class home extends Controller
     public function index()
     {
         $this->view('home/index',$data=['sty'=>URL_BASE."/css/home.php"]);
+       
     }
 }
