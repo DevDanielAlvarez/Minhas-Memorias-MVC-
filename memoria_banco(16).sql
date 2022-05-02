@@ -3,14 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26-Abr-2022 às 00:16
+-- Tempo de geração: 02-Maio-2022 às 04:40
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
+SET FOREIGN_KEY_CHECKS=0;
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -520,6 +520,28 @@ INSERT INTO `tb_familiar` (`cd_familiar`, `nm_familiar`, `nm_senha`, `dt_nascime
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `tb_galeria`
+--
+
+CREATE TABLE `tb_galeria` (
+  `cd_galeria` int(11) NOT NULL,
+  `nm_titulo` varchar(90) DEFAULT NULL,
+  `nm_caminho` varchar(110) DEFAULT NULL,
+  `cd_paciente` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `tb_galeria`
+--
+
+INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`) VALUES
+(1, 'coringa', 'http://localhost:8080/uploads/626c9abd8da19.jpg', 152),
+(2, 'velinha', 'http://localhost:8080/uploads/626c9cf23bd15.jpg', 152),
+(3, 'batman o cavaleiro das trevas', 'http://localhost:8080/uploads/626dbf9c3532f.jpg', 152);
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `tb_genero`
 --
 
@@ -768,7 +790,8 @@ INSERT INTO `tb_jogo_paciente` (`cd_jogo_paciente`, `cd_jogo`, `cd_paciente`, `n
 (216, 1, 152, 4, '2022-04-20', 4),
 (217, 1, 152, 4, '2022-04-20', 3),
 (218, 1, 152, 4, '2022-04-20', 12),
-(219, 1, 152, 4, '2022-04-21', 2);
+(219, 1, 152, 4, '2022-04-21', 2),
+(220, 1, 152, 4, '2022-04-30', 3);
 
 -- --------------------------------------------------------
 
@@ -922,7 +945,8 @@ INSERT INTO `tb_notes` (`cd_notes`, `nm_titulo`, `txt_note`, `dt_criacao`, `cd_p
 (136, 'oi', '<font color=\"#ff6600\"><u>oi</u></font>', '2022-04-16', 152),
 (137, '123fdddddfv', '123jdd', '2022-04-16', 152),
 (138, '741', '52222<span style=\"background-color: rgb(255, 0, 0);\">222<span style=\"\\&quot;background-color:\" rgb(255,=\"\" 255,=\"\" 102);\\\"=\"\">2</span><u>2</u></span>', '2022-04-16', 152),
-(139, 'asd', 'asd', '2022-04-18', 152);
+(139, 'asd', 'asd', '2022-04-18', 152),
+(141, 'Listinha de compras do mês', '<ol><li><div align=\"center\">arroz</div></li><li><font color=\"#ff9900\">Feijão</font></li><li><span style=\"background-color: rgb(255, 255, 102);\">Café</span><br></li></ol>', '2022-04-30', 152);
 
 -- --------------------------------------------------------
 
@@ -1349,6 +1373,13 @@ ALTER TABLE `tb_familiar`
   ADD KEY `fk_paciente_idx` (`cd_paciente`);
 
 --
+-- Índices para tabela `tb_galeria`
+--
+ALTER TABLE `tb_galeria`
+  ADD PRIMARY KEY (`cd_galeria`),
+  ADD KEY `fk_pac_galery` (`cd_paciente`);
+
+--
 -- Índices para tabela `tb_genero`
 --
 ALTER TABLE `tb_genero`
@@ -1419,6 +1450,12 @@ ALTER TABLE `tb_familiar`
   MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 
 --
+-- AUTO_INCREMENT de tabela `tb_galeria`
+--
+ALTER TABLE `tb_galeria`
+  MODIFY `cd_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `tb_genero`
 --
 ALTER TABLE `tb_genero`
@@ -1434,13 +1471,13 @@ ALTER TABLE `tb_jogos`
 -- AUTO_INCREMENT de tabela `tb_jogo_paciente`
 --
 ALTER TABLE `tb_jogo_paciente`
-  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=220;
+  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
 
 --
 -- AUTO_INCREMENT de tabela `tb_notes`
 --
 ALTER TABLE `tb_notes`
-  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=141;
+  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=142;
 
 --
 -- AUTO_INCREMENT de tabela `tb_paciente`
@@ -1476,6 +1513,12 @@ ALTER TABLE `tb_contato`
 --
 ALTER TABLE `tb_familiar`
   ADD CONSTRAINT `fk_parentesco` FOREIGN KEY (`cd_parentesco`) REFERENCES `tb_parentesco` (`cd_parentesco`);
+
+--
+-- Limitadores para a tabela `tb_galeria`
+--
+ALTER TABLE `tb_galeria`
+  ADD CONSTRAINT `fk_pac_galery` FOREIGN KEY (`cd_paciente`) REFERENCES `tb_paciente` (`cd_paciente`);
 
 --
 -- Limitadores para a tabela `tb_jogos`
