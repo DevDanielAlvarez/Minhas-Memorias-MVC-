@@ -4,10 +4,10 @@
 <script src="http://localhost:8080/js/notes/jquery.cleditor.js"></script>
 
 
-<h1>Titulo</h1>
+<h1 class="title_editar_bloco">Titulo</h1>
 <input value="<?php if(isset($data2['nm_titulo'])) echo $data2['nm_titulo']; ?>" type="text" id="title">
 
-<h2>Texto</h2>
+<h2 class="title_editar_bloco">Texto</h2>
 
 
         <textarea  id="editor_area" title="editor_area"><?php if(isset($data2['txt_note'])){echo $data2['txt_note'];} ?></textarea>

@@ -445,6 +445,7 @@ a:hover {
 }
 .rede#facebook{
         background-color: #2372a3;
+        background-image: url('<?php echo"http://localhost:8080"?>'/img/images/facebook.png);
         
 }
 .rede#twitter{
