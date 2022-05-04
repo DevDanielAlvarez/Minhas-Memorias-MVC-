@@ -27,7 +27,7 @@
 						echo '<article class="thumb">
 							<a href='.$k['nm_caminho'].' class="image"><img src='.$k['nm_caminho'].' alt="" /></a>
 							<h2>'.$k['nm_titulo'].'</h2>
-							<p>Nunc blandit nisi ligula magna sodales lectus elementum non. Integer id venenatis velit.</p>
+							<p>'.$k['ds_resumo'].'</p>
 						</article>
 						'; }?>
 					
