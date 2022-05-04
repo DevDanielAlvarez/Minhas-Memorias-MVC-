@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Maio-2022 às 04:40
+-- Tempo de geração: 04-Maio-2022 às 03:47
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.1
 
@@ -11,6 +11,7 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 SET FOREIGN_KEY_CHECKS=0;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -527,17 +528,18 @@ CREATE TABLE `tb_galeria` (
   `cd_galeria` int(11) NOT NULL,
   `nm_titulo` varchar(90) DEFAULT NULL,
   `nm_caminho` varchar(110) DEFAULT NULL,
-  `cd_paciente` int(11) DEFAULT NULL
+  `cd_paciente` int(11) DEFAULT NULL,
+  `ds_resumo` varchar(120) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tb_galeria`
 --
 
-INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`) VALUES
-(1, 'coringa', 'http://localhost:8080/uploads/626c9abd8da19.jpg', 152),
-(2, 'velinha', 'http://localhost:8080/uploads/626c9cf23bd15.jpg', 152),
-(3, 'batman o cavaleiro das trevas', 'http://localhost:8080/uploads/626dbf9c3532f.jpg', 152);
+INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`, `ds_resumo`) VALUES
+(1, 'coringa', 'http://localhost:8080/uploads/626c9abd8da19.jpg', 152, NULL),
+(2, 'velinha', 'http://localhost:8080/uploads/626c9cf23bd15.jpg', 152, 'minha netinha querida S2'),
+(3, 'batman o cavaleiro das trevas', 'http://localhost:8080/uploads/626dbf9c3532f.jpg', 152, NULL);
 
 -- --------------------------------------------------------
 
