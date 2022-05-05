@@ -1,8 +1,8 @@
 
-
+<div class="conteiner">
 <h1 class="diario_bloco" >Diário de <?php echo $_SESSION['nome'];?></h1> 
 
-<div class="container" style="border: solid 2px; border-color: white;">
+<div class="caixa_bloco" >
 <h1 class="diario_bloco ">Criar Diário</h1>
 <a href="/bloco/editar_bloco"><button type="button" class="btn">Criar</button></a>
 
@@ -11,14 +11,14 @@
 
 <?php  
 
-echo '<div class="container-sm">';
+echo '<div class="container-sm caixa_bloco">';
 foreach ($data2 as $k ) {
     
     echo '<h1>'.$k['nm_titulo'].'</h1>';
     echo'<br>';
     echo  $k['txt_note'];
     echo'<br>';
-    echo '<a href=/bloco/ver_bloco/'.$k['cd_notes'].'><button type=button class="btn btn-primary">Ver</button></a>';
+    echo '<a href=/bloco/ver_bloco/'.$k['cd_notes'].'><button type=button class="btn">Ver</button></a>';
     
     echo '<hr>';
     
@@ -26,5 +26,5 @@ foreach ($data2 as $k ) {
 echo '</div>';
 
 ?>
-
+</div>
 

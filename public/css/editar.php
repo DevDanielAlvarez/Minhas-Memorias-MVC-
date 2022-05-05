@@ -3,11 +3,38 @@
 
 body 
 {
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    background-size: cover;
-    font-family: 'amatic sc', cursive;
-   
+   magin:0;
+   padding:0;
+  
 }
+.conteiner{
+    
+    width: 100vw;
+    height: 100vh;
+    background: #6C7A89;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    font-family: 'amatic sc', cursive;
+    
+}
+.container-sm{
+    background: #6C7A89;
+}
+.caixa_bloco{
+    
+    border: solid rgb(173, 28, 202);
+    font-family: 'amatic sc', cursive;
+    text-color:black;
+    border-color: white;
+    margin-top:3%; 
+    width:600px; 
+    border-radius: 9px;
+    padding: 9px;
+}
+
 
 .caixa{
     border: solid rgb(173, 28, 202);
@@ -19,7 +46,7 @@ body
     width:600px; 
    
         
-}
+} 
 
 .title,
  .subtitle{
