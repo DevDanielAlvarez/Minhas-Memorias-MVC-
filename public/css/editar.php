@@ -5,6 +5,7 @@ body
 {
    magin:0;
    padding:0;
+   overflow-x: hidden;
   
 }
 .conteiner{

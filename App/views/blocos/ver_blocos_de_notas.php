@@ -12,6 +12,11 @@
 <?php  
 
 echo '<div class="container-sm caixa_bloco">';
+if(empty($data2))
+{
+    echo '<h1 style="text-align: center">não há blocos de notas</h1>';
+}
+else{
 foreach ($data2 as $k ) {
     
     echo '<h1>'.$k['nm_titulo'].'</h1>';
@@ -22,6 +27,7 @@ foreach ($data2 as $k ) {
     
     echo '<hr>';
     
+}
 }
 echo '</div>';
 
