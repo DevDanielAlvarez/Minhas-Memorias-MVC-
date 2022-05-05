@@ -1,5 +1,5 @@
 
-<div class="conteiner">
+<div class="conteiner col-3">
 <h1 class="diario_bloco" >Diário de <?php echo $_SESSION['nome'];?></h1> 
 
 <div class="caixa_bloco" >
@@ -20,7 +20,7 @@ foreach ($data2 as $k ) {
     echo'<br>';
     echo '<a href=/bloco/ver_bloco/'.$k['cd_notes'].'><button type=button class="btn">Ver</button></a>';
     
-    echo '<hr>';
+    echo '<hr " />';
     
 }
 echo '</div>';
