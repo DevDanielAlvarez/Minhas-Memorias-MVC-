@@ -1,6 +1,6 @@
 
 
-    <div  class="container caixa" >
+    <div  class="container conteiner caixa" >
        
     <div class="input-group mb-3">
         <img style="height: 180px;" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">

@@ -5,9 +5,9 @@ body
 {
    magin:0;
    padding:0;
-   overflow-x: hidden;
-  
+   background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
 }
+
 .conteiner{
     
     width: 100vw;
@@ -19,6 +19,8 @@ body
     align-items: center;
     background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
     font-family: 'amatic sc', cursive;
+    background-size:cover;
+    position: relative;
     
 }
 .container-sm{
@@ -44,7 +46,7 @@ body
     padding: 9px;
     background-color: #FFF;
     margin-top:3%; 
-    width:600px; 
+    width:1028px; 
    
         
 } 
@@ -135,4 +137,37 @@ hr{
     background: purple; 
     color:#fff; 
     margin: 10px 0px 10px 0px;
+}
+@media (max-width:480px){
+    .container{
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: flex;
+        background-size:cover;
+       
+    }
+    .caixa_bloco{
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position:relative;
+    }
+    .caixa{
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .conteiner,
+    .conteiner-fluid{
+        width: 230px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
 }
