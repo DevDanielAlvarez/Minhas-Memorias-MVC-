@@ -19,7 +19,7 @@ class html_components
               <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/bloco">Blocos de notas</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/galeria">Galeria</a>
+            <a class="nav-link active"style="color: #fff !important;" aria-current="page" href="/galeria/ver">Galeria</a>
           </li>
             </ul>
            

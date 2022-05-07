@@ -6,6 +6,12 @@ body
    magin:0;
    padding:0;
    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    font-family: 'amatic sc', cursive;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .conteiner{

@@ -9,6 +9,10 @@ use LDAP\Result;
 
 class galeria extends controller
 {
+    public function index()
+    {
+        $this->ver();
+    }
     public function upload()
     {
         $this->view('galery/upload',$data=['sty'=>"https://cdn.jsdelivrt/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/galery_css/upload.scss"]);
@@ -41,7 +45,7 @@ class galeria extends controller
                     $upload_model= $this->model('upload_model');
                    if($upload_model->save_file_upload($_POST['title'],'http://localhost:8080/uploads/'.$new_name))
                    {
-                    echo "sucesso";
+                       header('Location: /galeria/ver');
                    }
                     
                 }

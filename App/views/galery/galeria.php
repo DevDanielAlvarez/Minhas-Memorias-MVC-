@@ -13,7 +13,9 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
-<?php var_dump($data2)?>
+		<br>
+<div style=" width: 250px;margin: 0 auto;"><a href="/galeria/upload"><button >Adicionar arquivo</button></a></div>
+<br>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
