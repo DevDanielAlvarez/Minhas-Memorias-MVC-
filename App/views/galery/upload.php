@@ -14,7 +14,7 @@
 
   <input type="file" class="form-control" id="inputGroupFile01"  name="arquivo">
 </div>
-    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="submit" class="btn btn-success">Salvar</button>
 </form>
 </div>
 
