@@ -10,7 +10,7 @@
 				<input onclick="games()" type="submit" value="Jogos" />
 			
 				<input onclick="perfil()" type="submit" value="Perfil" />
-				<input onclick="sair()" type="submit" value="Sair" />
+			
 			</form>
 
 		<!-- Scripts -->
@@ -27,8 +27,5 @@
 				{
 					location.href="/painel/perfil";
 				}
-				function sair()
-				{
-					location.href="/painel/logout";
-				}
+				
 			</script>
