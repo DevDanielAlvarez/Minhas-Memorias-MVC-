@@ -52,10 +52,18 @@ body
     padding: 9px;
     background-color: #FFF;
     margin-top:3%; 
-    width:1028px; 
-   
+    width:max-content;  
         
-} 
+}
+.ver_bloco {
+    border: solid rgb(173, 28, 202);
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
+    border-radius: 9px;
+    padding: 9px;
+    background-color: #FFF;
+    margin-top:3%; 
+    width:600px;  
+}
 
 .title,
  .subtitle{
