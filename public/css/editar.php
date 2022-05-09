@@ -24,13 +24,15 @@ body
     justify-content: top;
     align-items: center;
     background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    
     background-size:cover;
     position: relative;
     
 }
+
+
+
 .container-sm{
-    background: #6C7A89;
+    background: bisque;
 }
 .caixa_bloco{
     

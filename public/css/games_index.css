@@ -17,3 +17,8 @@ body
     height: 100px;
     width: 700px;
 }
+.card-body{
+    background:linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    color:white;
+    border: black 5px solid;
+}
