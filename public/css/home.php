@@ -2,13 +2,13 @@
 
 
 
-@import url('https://fonts.googleapis.com/css2? família=Amatic+SC&display=swap');
+
 
 body {
     padding: 0;
     margin: 0;
     color: #ffffff;
-    font-family: 'amatic sc', cursive;
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
 }
 
 
@@ -355,13 +355,12 @@ a:hover {
 
 .card-text{
     width: 40%;
-    font-family: sans-serif;
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     letter-spacing: 1px;
     color: rgb(109,109,109);
-    font-size: 20px;
-   border:10px double #141414;
-   box-shadow:4px 4px 15px;
-   border-radius: 5% 10% 10% 10%;
+    font-size: 30px;
+   
+    
 
 }
 
@@ -398,7 +397,7 @@ a:hover {
     font-size: 0;
     visibility: hidden;
     opacity: 0;
-    font-weight: bold;
+  
     text-transform: uppercase;
     transition: 0.3s;
 }

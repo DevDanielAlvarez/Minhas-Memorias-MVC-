@@ -35,7 +35,7 @@
     <div class="alinha">
        <div  ><a  ><button  type="button" id="save"  class="btn btn-success form">salvar</button></a></div>
        <div class="form"><a href="/familia/cadastro"  ><button  type="button" class="btn btn-primary">Adicionar Familiar</button></a></div>
-       <div class="form"><a href="/painel/logout"  ><button  type="button" class="btn btn-primary">Sair</button></a></div>
+       <div class="form"><a href="/painel/logout"  ><button  type="button" class="btn btn-primary">Logout</button></a></div>
       
        <div class="form"><a  ><button  type="button" class="btn btn-danger">Deletar conta</button></a></div>
     </div>

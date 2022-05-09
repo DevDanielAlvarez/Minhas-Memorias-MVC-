@@ -1,12 +1,12 @@
 <?php header("Content-type:text/css"); ?>
-@import url('https://fonts.googleapis.com/css2? família=Amatic+SC&display=swap');
+
 
 body 
 {
    magin:0;
    padding:0;
    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    font-family: 'amatic sc', cursive;
+    
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,7 +24,7 @@ body
     justify-content: top;
     align-items: center;
     background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    font-family: 'amatic sc', cursive;
+    
     background-size:cover;
     position: relative;
     
@@ -35,7 +35,7 @@ body
 .caixa_bloco{
     
     border: solid rgb(173, 28, 202);
-    font-family: 'amatic sc', cursive;
+    
     text-color:black;
     border-color: white;
     margin-top:3%; 
@@ -47,15 +47,23 @@ body
 
 .caixa{
     border: solid rgb(173, 28, 202);
-    font-family: 'amatic sc', cursive;
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     border-radius: 9px;
     padding: 9px;
     background-color: #FFF;
     margin-top:3%; 
-    width:1028px; 
-   
+    width:max-content;  
         
-} 
+}
+.ver_bloco {
+    border: solid rgb(173, 28, 202);
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
+    border-radius: 9px;
+    padding: 9px;
+    background-color: #FFF;
+    margin-top:3%; 
+    width:600px;  
+}
 
 .title,
  .subtitle{

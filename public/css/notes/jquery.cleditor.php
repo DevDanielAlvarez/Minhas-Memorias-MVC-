@@ -47,7 +47,7 @@ body
     justify-content: top;
     align-items: center;
     background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    font-family: 'amatic sc', cursive;
+    font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     
 }
 
