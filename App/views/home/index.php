@@ -19,10 +19,10 @@
                                 <a href="./quem/quem_somos.html">Quem Somos</a>
                             </li>
                             <li>
-                                <a href="./galeria/galeria.html">Galeria</a>
+                                <a href="/galeria/ver">Galeria</a>
                             </li>
                             <li>
-                                <a href="./jogos/jogos.html">Jogos</a>
+                                <a href="/games">Jogos</a>
                             </li>
                             
                         </ul>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <h1>Minhas Memórias</h1>
-        <h2>Toda vida vale a pena!</h2>
+        <h2>É um prazer lembrar de você!</h2>
         <div class="social-media">
             <a href="/users/logar">Entrar</a>
            <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
