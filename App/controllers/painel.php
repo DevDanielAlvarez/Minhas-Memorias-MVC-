@@ -67,7 +67,7 @@ class painel extends Controller
     }
     public function familiar()
     {
-        Auth::check_if_is_family();
+        #ler comentário na view abaixo(PELO AMOR DE DEUS!)
         $this->view('painel/painel_familiar');
     }
 
