@@ -68,7 +68,7 @@ class painel extends Controller
     public function familiar()
     {
         #ler comentário na view abaixo(PELO AMOR DE DEUS!)
-        $this->view('painel/painel_familiar');
+        $this->view('painel/painel_familiar',$data=['sty' =>URL_BASE."/css/painel_familiar/style.css"]);
     }
 
     public function deletar_acount_action()
