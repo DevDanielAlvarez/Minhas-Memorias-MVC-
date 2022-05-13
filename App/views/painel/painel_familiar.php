@@ -12,7 +12,7 @@
     <!----===== Iconscout CSS ===== -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
-    <title>Admin Dashboard Panel</title> 
+    <title>Área do Familiar</title> 
 </head>
 <body>
     <nav>
@@ -21,7 +21,7 @@
                 <img src="images/logo.png" alt="">
             </div>
 
-            <span class="logo_name">CodingLab</span>
+            <span class="logo_name">Minhas Memórias</span>
         </div>
 
         <div class="menu-items">
@@ -30,38 +30,18 @@
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Dahsboard</span>
                 </a></li>
-                <li><a href="#">
-                    <i class="uil uil-files-landscapes"></i>
-                    <span class="link-name">Content</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-chart"></i>
-                    <span class="link-name">Analytics</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-thumbs-up"></i>
-                    <span class="link-name">Like</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-comments"></i>
-                    <span class="link-name">Comment</span>
-                </a></li>
-                <li><a href="#">
-                    <i class="uil uil-share"></i>
-                    <span class="link-name">Share</span>
-                </a></li>
-            </ul>
+               
             
             <ul class="logout-mode">
                 <li><a href="#">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
+                    <span class="link-name">Sair</span>
                 </a></li>
 
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
+                    <span class="link-name">Modo Escuro</span>
                 </a>
 
                 <div class="mode-toggle">
@@ -88,23 +68,23 @@
             <div class="overview">
                 <div class="title">
                     <i class="uil uil-tachometer-fast-alt"></i>
-                    <span class="text">Dashboard</span>
+                    <span class="text">Dashboard do $nome do fulano</span>
                 </div>
 
                 <div class="boxes">
                     <div class="box box1">
                         <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total Likes</span>
+                        <span class="text">Total de bloco de notas</span>
                         <span class="number">50,120</span>
                     </div>
                     <div class="box box2">
                         <i class="uil uil-comments"></i>
-                        <span class="text">Comments</span>
+                        <span class="text">Total de Partidas Jogadas</span>
                         <span class="number">20,120</span>
                     </div>
                     <div class="box box3">
                         <i class="uil uil-share"></i>
-                        <span class="text">Total Share</span>
+                        <span class="text">Total de fotos na galeria</span>
                         <span class="number">10,120</span>
                     </div>
                 </div>
@@ -113,7 +93,7 @@
             <div class="activity">
                 <div class="title">
                     <i class="uil uil-clock-three"></i>
-                    <span class="text">Recent Activity</span>
+                    <span class="text">Atividade Recente</span>
                 </div>
 
                 <div class="activity-data">
