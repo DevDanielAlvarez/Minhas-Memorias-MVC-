@@ -56,7 +56,7 @@ body {
 .header-wrapper {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
     background-size: 400% 400%;
     display: flex;
     flex-direction: column;

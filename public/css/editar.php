@@ -32,7 +32,7 @@ body
 
 
 .container-sm{
-    background: bisque;
+    background: #d6b4d6;
 }
 .caixa_bloco{
     

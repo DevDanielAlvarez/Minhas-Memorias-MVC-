@@ -1,0 +1,165 @@
+
+body{
+    margin: 0;
+    background-color: #141414;
+    background: #b916eb;
+    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+}
+.main-game{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    padding: 10px 0;
+} 
+
+h1{
+    text-align: center;
+}
+/*posição da explicação do jogo*/
+.informativo{
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    min-height: 90px;
+    flex-wrap:wrap;
+}
+.count{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 190px;
+}
+
+.main-game{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.regras{
+    max-width: 300px;
+}
+
+.genius{
+    display: grid;
+    grid-template-areas: 'verde vermelho' 'amarelo azul';
+    grid-gap:10px;
+    border: 10px solid #141414;
+    background-color: #141414;
+    border-radius: 100%;
+    width: 550px;
+    height: 550px;
+}
+
+.blue{
+    grid-area: azul;
+    background-color: #141414;
+    border-bottom-right-radius: 100%;
+    background: radial-gradient(circle 1px at -5% 0%,transparent 120px, blue 100px);
+    background-size: 100% 100%;
+    background-position: 0 0, 100% 0;
+}
+
+.red{
+    grid-area: vermelho;
+    background-color: #141414;
+    background: radial-gradient(circle 1px at -5% 105%,transparent 120px, red 100px);
+    background-size: 100% 100%;
+    background-position: 0 0, 100% 0;
+    border-top-right-radius: 100%;
+    background-repeat: no-repeat;
+}
+
+.yellow{
+    grid-area: amarelo;
+    background-color: #141414;
+    border-bottom-left-radius: 100%;
+    background: radial-gradient(circle 1px at -5% 105%,transparent 120px, yellow 100px);
+    background-size: 100% 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+}
+
+.green{
+    grid-area: verde;
+    background-color: #141414;
+    border-top-left-radius: 100%;
+    background: radial-gradient(circle 1px at -5% 105%,transparent 120px, green 100px);
+    background-size: 100% 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+}
+
+.selected{
+    opacity: 0.8;
+}
+
+@media screen and (mid-width: 1330px){}
+
+@media screen and (max-width: 992px){
+    .genius p.center {
+        top: 16%;
+        left: 0;
+        bottom: 0;
+        right: 32%;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:991px) {
+    .genius {
+        width: 375px;
+        height: 375px;
+    }
+    
+    .blue {
+        background: radial-gradient(circle 1px at -20% -20%, transparent, transparent 120px, blue 100px);
+    }
+    .red {
+        background: radial-gradient(circle 1px at -20% 120%, transparent, transparent 120px, red 100px);
+    }
+    .yellow {
+        background: radial-gradient(circle 1px at 120% -20%, transparent, transparent 120px, yellow 100px);
+    }
+    .green {
+        background: radial-gradient(circle 1px at 120% 120%, transparent, transparent 120px, green 100px);
+    }
+}
+
+@media screen and (max-width:767px) {
+    .main-game {
+        flex-direction: column;
+        height: 100%;
+    }
+    .genius {
+        width: 45vh;
+        height: 45vh;
+    }
+    .regras {
+        margin-top: 20px;
+    }
+    
+}
+
+@media screen and (max-width:480px) {
+    
+    .blue {
+        background: radial-gradient(circle 1px at -30% -30%, transparent, transparent 120px, blue 100px);
+    }
+    .red {
+        background: radial-gradient(circle 1px at -30% 130%, transparent, transparent 120px, red 100px);
+    }
+    .yellow {
+        background: radial-gradient(circle 1px at 130% -30%, transparent, transparent 120px, yellow 100px);
+    }
+    .green {
+        background: radial-gradient(circle 1px at 130% 130%, transparent, transparent 120px, green 100px);
+    }
+}
