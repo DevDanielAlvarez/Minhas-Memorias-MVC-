@@ -1,6 +1,6 @@
 body
 {
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     background-attachment: scroll;
     background-repeat: no-repeat;
@@ -18,7 +18,13 @@ body
     width: 700px;
 }
 .card-body{
-    background:linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
-    color:white;
-    border: black 5px solid;
+    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+    color:#edeee9;
+    border: #343333 5px solid;
+}
+.line
+{
+    border-bottom: #343333 5px solid;
+    background: #d6b4d6;
+    
 }

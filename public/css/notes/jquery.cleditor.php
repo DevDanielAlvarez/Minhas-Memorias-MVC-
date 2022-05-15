@@ -46,10 +46,22 @@ body
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
-    
+   
 }
+.container-sm{
+    width: max-content;
+    height: max-content;
+    background: #6C7A89;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+    border-radius:4%;
+}
+
 
 
 .title_editar_bloco{
@@ -83,4 +95,5 @@ body
     margin: 10px 0px 10px 0px;
     border-radius:1.25rem;
 }
+
 
