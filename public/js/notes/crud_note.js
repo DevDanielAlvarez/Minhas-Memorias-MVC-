@@ -15,7 +15,7 @@
             
             success: function(retorno)
             {
-              alert(retorno);
+              window.location.href="/bloco";
             }
             
         
@@ -47,11 +47,9 @@
             
             success: function(retorno)
             {
-              alert(cd_bloco[5]);
+              
               if(retorno=='1'){
-               $('#alert').removeClass("alert alert-danger");
-              $('#alert').html('Seu bloco de notas foi alterado com sucesso')
-              $('#alert').addClass("alert alert-success")
+            window.location.href="/bloco"
               }
 
               else

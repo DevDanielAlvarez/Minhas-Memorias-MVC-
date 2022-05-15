@@ -3,14 +3,15 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Maio-2022 às 22:41
+-- Tempo de geração: 11-Maio-2022 às 04:18
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.1.1
+-- versão do PHP: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 SET FOREIGN_KEY_CHECKS=0;
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -345,7 +346,9 @@ INSERT INTO `tb_contato` (`cd_contato`, `tel_contato`, `nm_email`, `cd_paciente`
 (167, 'não cadastrado', 'kayle@gmail.com', 165, NULL),
 (168, 'não cadastrado', 'fer2@gmail.com', NULL, 151),
 (169, 'não cadastrado', 'luizfernando@gmail.com', 166, NULL),
-(170, 'não cadastrado', 'gabriel.gusto@gmail.com', 167, NULL);
+(170, 'não cadastrado', 'gabriel.gusto@gmail.com', 167, NULL),
+(171, 'não cadastrado', 'rafa@gmail.com', 168, NULL),
+(172, 'não cadastrado', 'gabs@gmail.com', NULL, 152);
 
 -- --------------------------------------------------------
 
@@ -537,7 +540,8 @@ INSERT INTO `tb_familiar` (`cd_familiar`, `nm_familiar`, `nm_senha`, `dt_nascime
 (148, 'Chadwick Kirk', 'NKS58TMV3EK', '1975-02-02', 1, 148),
 (149, 'Daquan Floyd', 'FRK72BGU8EU', '1986-06-26', 2, 149),
 (150, 'Kenyon Nieves', 'CNJ15FTH0WO', '1951-04-20', 1, 150),
-(151, 'Fernando Alavrez', '$2y$10$1WOQ9Uj/5WEuN/2HFH10durrkO2O.aLy/2W93C7Gki78HrYpjLyG2', '1991-04-09', 1, 152);
+(151, 'Fernando Alavrez', '$2y$10$1WOQ9Uj/5WEuN/2HFH10durrkO2O.aLy/2W93C7Gki78HrYpjLyG2', '1991-04-09', 1, 152),
+(152, 'Gabreil souza', '$2y$10$VTyHMZVfOTrQQPYnxxqF7uY5bQ8JgvzLQ5xfkoV7G/b5tWAfWFQBS', '1996-03-06', 2, 168);
 
 -- --------------------------------------------------------
 
@@ -558,18 +562,8 @@ CREATE TABLE `tb_galeria` (
 --
 
 INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`, `ds_resumo`) VALUES
-(1, 'coringa', 'http://localhost:8080/uploads/626c9abd8da19.jpg', 152, NULL),
-(2, 'velinha', 'http://localhost:8080/uploads/626c9cf23bd15.jpg', 152, 'minha netinha querida S2'),
-(3, 'batman o cavaleiro das trevas', 'http://localhost:8080/uploads/626dbf9c3532f.jpg', 152, NULL),
-(4, 'Viagem para a China', 'http://localhost:8080/uploads/62744f74b7e41.jpg', 167, NULL),
-(5, 'Minhas mãozinhas', 'http://localhost:8080/uploads/62744feab7e8d.jpg', 167, NULL),
-(6, 'Amor', 'http://localhost:8080/uploads/62745018c3ef5.jpg', 167, NULL),
-(7, 'Flores', 'http://localhost:8080/uploads/6274504539cb4.jpg', 167, NULL),
-(8, 'Família', 'http://localhost:8080/uploads/62745096132a6.jpg', 167, NULL),
-(9, 'café', 'http://localhost:8080/uploads/62745141c26e5.jpg', 167, NULL),
-(10, 'teste', 'http://localhost:8080/uploads/6276d76ba9c16.png', 152, NULL),
-(11, 'teste2', 'http://localhost:8080/uploads/6276db42122c3.png', 152, 'testando a descrição'),
-(12, 'Hoje', 'http://localhost:8080/uploads/627736d08c0f5.png', 152, 'classe de uml do curso');
+(14, 'Meus Amores', 'http://localhost:8080/uploads/6279c76e0d3b7.jpg', 165, 'Os amores da minha maravilhosa vida'),
+(15, 'Meus amores', 'http://localhost:8080/uploads/627a9eb67dd66.jpg', 168, 'obrigado Deus');
 
 -- --------------------------------------------------------
 
@@ -828,7 +822,8 @@ INSERT INTO `tb_jogo_paciente` (`cd_jogo_paciente`, `cd_jogo`, `cd_paciente`, `n
 (222, 1, 167, 4, '2022-05-05', 2),
 (223, 1, 167, 4, '2022-05-05', 1),
 (224, 1, 167, 4, '2022-05-05', 2),
-(225, 1, 167, 4, '2022-05-05', 3);
+(225, 1, 167, 4, '2022-05-05', 3),
+(226, 1, 168, 4, '2022-05-10', 2);
 
 -- --------------------------------------------------------
 
@@ -986,7 +981,10 @@ INSERT INTO `tb_notes` (`cd_notes`, `nm_titulo`, `txt_note`, `dt_criacao`, `cd_p
 (141, 'Listinha de compras do mês', '<ol><li><div align=\"center\">arroz</div></li><li><font color=\"#ff9900\">Feijão</font></li><li><span style=\"background-color: rgb(255, 255, 102);\">Café</span><br></li></ol>', '2022-04-30', 152),
 (142, 'compras', '<div align=\"center\"><b>Comprar hoje:</b></div><ul><li><u>arroz;</u><i>feijão;</i></li></ul>', '2022-05-04', 166),
 (143, 'fazer hoje', '<div align=\"left\"><ul><li><b>arrumar minha cama;</b></li></ul></div><ul><li><i>fazer</i> <u>almoço;</u></li></ul>', '2022-05-04', 166),
-(150, 'Meu primeiro bloco', '<div align=\"center\"><u><i><b>Oi pessoal!</b></i></u><br></div>', '2022-05-05', 167);
+(150, 'Meu primeiro bloco', '<div align=\"center\"><u><i><b>Oi pessoal!</b></i></u><br></div>', '2022-05-05', 167),
+(151, 'Meu dia', 'Hoje o dia foi lindo', '2022-05-09', 165),
+(152, 'Meu dia a dia', '<div style=\"text-align: center;\">MEU DIA</div><div style=\"text-align: left;\">OI PES</div>', '2022-05-10', 168),
+(153, 'Meu ', '<div style=\"text-align: left;\"><font color=\"#ff0000\"><u>oi pessoal</u></font></div>', '2022-05-10', 168);
 
 -- --------------------------------------------------------
 
@@ -1166,7 +1164,8 @@ INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascime
 (164, 'Yuri Afonso Pena', '$2y$10$cSGN9LkdgIDtMZq35YJaeu2JMeZ/S8Y9CrCRyOjbG2ndvY/dtYJO6', '1960-02-09', NULL, 5, 'oi pessoal!'),
 (165, 'Kayle da Silva', '$2y$10$UmkKEQu3rbG8PWBbk/3K1.Pzjk23Bmqs4e31HN3R2my1X6wFtK4CO', '2022-04-15', NULL, 5, 'oi pessoal'),
 (166, 'Luiz', '$2y$10$eY.UbNHUr98F1qvS/IvU8eDfHFf3qP3S/IlK5iMsopojFsOhsPMlC', '1972-05-02', NULL, 5, 'oi pessoal!'),
-(167, 'Gabriel Augusto', '$2y$10$qYLXrlQYtBrsUunajtV.yOCal9qEcHisSrwhz/DjNGTlkVs6Y0pz2', '1970-05-05', NULL, 5, 'oi pessoal!');
+(167, 'Gabriel Augusto', '$2y$10$qYLXrlQYtBrsUunajtV.yOCal9qEcHisSrwhz/DjNGTlkVs6Y0pz2', '1970-05-05', NULL, 5, 'oi pessoal!'),
+(168, 'Rafaela Alves da Silva', '$2y$10$D1bBjnkfocLWu5Gds9pLgO/g6FTb1t8jkac1qhWMf1olUXPpw1J1.', '1956-06-11', NULL, 2, 'oi pessoal!');
 
 -- --------------------------------------------------------
 
@@ -1477,7 +1476,7 @@ ALTER TABLE `tb_tipo_jogo`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=171;
+  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estagio`
@@ -1489,13 +1488,13 @@ ALTER TABLE `tb_estagio`
 -- AUTO_INCREMENT de tabela `tb_familiar`
 --
 ALTER TABLE `tb_familiar`
-  MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
+  MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
 
 --
 -- AUTO_INCREMENT de tabela `tb_galeria`
 --
 ALTER TABLE `tb_galeria`
-  MODIFY `cd_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cd_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `tb_genero`
@@ -1513,19 +1512,19 @@ ALTER TABLE `tb_jogos`
 -- AUTO_INCREMENT de tabela `tb_jogo_paciente`
 --
 ALTER TABLE `tb_jogo_paciente`
-  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=226;
+  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
 -- AUTO_INCREMENT de tabela `tb_notes`
 --
 ALTER TABLE `tb_notes`
-  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
+  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
-  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=168;
+  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
 
 --
 -- AUTO_INCREMENT de tabela `tb_parentesco`

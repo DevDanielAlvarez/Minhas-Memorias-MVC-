@@ -22,6 +22,7 @@
 </head>
 <body>
   <!-- Ajax-->
+<script src="<?php ECHO 'http://localhost:8080/js/galery_js/jquery.min.js'?> "></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
   <!-- fim do menu bar -->
