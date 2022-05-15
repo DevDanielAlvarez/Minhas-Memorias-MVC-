@@ -32,6 +32,7 @@ class Auth
                 endif;
            
         }
+        //precisa-se criar a session user pra saber qual e o usuario desse carinha
         else if($tipo_user=="familiar")
         {
             $stmt= Model::getConn()->prepare("select tb_fam.cd_paciente,nm_email,nm_senha,nm_familiar,tb_fam.cd_familiar from tb_contato tb_ctt inner join tb_familiar tb_fam on tb_ctt.cd_familiar=tb_fam.cd_familiar where nm_email= ?");
@@ -45,6 +46,7 @@ class Auth
                     {
                         unset( $_SESSION['id_paciente']);
                     }
+                  
                     $_SESSION['logado']=true;
                     $_SESSION['nome']=$resultado['nm_familiar'];
                     $_SESSION['id_familiar']=$resultado['cd_familiar'];
