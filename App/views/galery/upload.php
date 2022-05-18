@@ -1,4 +1,5 @@
 <div class="container_form">
+    <div class="container">
 <form action="/galeria/upload_archive" method="post" enctype="multipart/form-data">
     <h1 id="title_form">Inserir Foto</h1>
     <div class="form-floating mb-3">
@@ -16,6 +17,7 @@
 </div>
     <button type="submit" class="btn btn-success">Salvar</button>
 </form>
+</div>
 </div>
 
 <!--
