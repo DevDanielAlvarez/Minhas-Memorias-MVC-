@@ -165,7 +165,16 @@ input, select, textarea {
 	}
 
 	body {
-		background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+		margin:0;
+		padding:0;
+		background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+		 
+		 background-attachment: fixed;
+		 background-repeat: no-repeat;
+		 background-size: cover;
+		 height: 100%;
+		 overflow-x: hidden;
+
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
