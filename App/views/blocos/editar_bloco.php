@@ -3,8 +3,8 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <script src="http://localhost:8080/js/notes/jquery.cleditor.js"></script>
-
-   <div class="title_editar_bloco">
+<div class="container-sm">
+   <div class="title_editar_bloco ">
        <h1>Titulo</h1>
        <input value="<?php if(isset($data2['nm_titulo'])) echo $data2['nm_titulo']; ?>" type="text" id="title">
     </div>
@@ -45,10 +45,13 @@ $(document).ready(function() {
              docCSSFile: // CSS file used to style the document contained within the editor
                  "",
              bodyStyle: // style to assign to document body contained within the editor
-                 "margin:4px; font:10pt Arial,Verdana; cursor:text;background-image: url('http://localhost:8080/img/notes/memoria.png');background-position:center;background-attachment: fixed;"
+
+                 "border-radius:4% 0 0 4%; margin:4px; font:10pt Arial,Verdana; cursor:text; width: max-content; display: flex;flex-direction: column;justify-content: center;align-items: center;background: #d6b4d6;border-radius: 10px;border: 30px solid #d6b4d6;",
+
          })
          });
         </script>
+        </div>
     </div>
 <div class="button">
     <button class="bnt" id="<?php 
@@ -74,4 +77,5 @@ $(document).ready(function() {
     ?>
     </div>
 </div>
+
       <script src="<?php echo URL_BASE ?>/js/notes/crud_note.js"></script>
