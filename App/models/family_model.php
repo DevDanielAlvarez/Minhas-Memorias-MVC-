@@ -74,7 +74,7 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
     }   
     public function count_avg_in_games()
     {
-        $sql=Model::getConn()->prepare("select avg(num_pontuacao) as media from tb_jogo_paciente where cd_paciente=?");
+        $sql=Model::getConn()->prepare("select format(avg(num_pontuacao),1) as media from tb_jogo_paciente where cd_paciente=?");
         $sql->bindValue(1,$_SESSION['id_paciente_do_familiar']);
         $sql->execute();
         $result=$sql->fetch(PDO::FETCH_ASSOC);
@@ -92,7 +92,7 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
     public function Model_get_information_of_family_dashboard_menu()
     {
         $sql=Model::getConn()->prepare('select nm_paciente,nm_jogo,num_pontuacao,num_erros,dt_partida
-        from tb_jogo_paciente tb_jp join tb_paciente pac on pac.cd_paciente=tb_jp.cd_paciente join tb_jogos jg on jg.cd_jogo= tb_jp.cd_jogo where tb_jp.cd_paciente = ? limit 7');
+        from tb_jogo_paciente tb_jp join tb_paciente pac on pac.cd_paciente=tb_jp.cd_paciente join tb_jogos jg on jg.cd_jogo= tb_jp.cd_jogo where tb_jp.cd_paciente = ? order by dt_partida limit 7');
         $sql->bindValue(1,$_SESSION['id_paciente_do_familiar']);
         $sql->execute();
         $result=$sql->fetchAll(PDO::FETCH_ASSOC);

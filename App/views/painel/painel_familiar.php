@@ -96,7 +96,7 @@
                     <div class="box box1">
                    
                         <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total de bloco de notas</span>
+                        <span class="text">Total de Diários</span>
                         <span class="number"><?php echo$data2["notes"]["count(cd_notes)"] ?></span>
                         <button class="btn btn-primary">clique para visualizar</button>
                         
@@ -107,7 +107,7 @@
                     <div class="box box2">
                     
                         <i class="uil uil-comments"></i>
-                        <span class="text">Média de pontos nos jogos</span>
+                        <span class="text">Média de Pontos nos Jogos</span>
                         <span class="number"><?php echo $data2['games']['media']?></span>
                         <button class="btn btn-primary">clique para visualizar</button>
                         
@@ -117,7 +117,7 @@
                     <div class="box box3">
                     
                         <i class="uil uil-share"></i>
-                        <span class="text">Total de fotos na galeria</span>
+                        <span class="text">Total de Fotos na Galeria</span>
                         <span class="number"><?php echo $data2['galery']['fotos'] ?></span>
                          <button class="btn btn-primary">clique para visualizar</button>
                         
