@@ -98,4 +98,41 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
         $result=$sql->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function Model_get_information_of_analytics_dasborad_family_menu()
+    {
+        /* Start First Graphic*/ 
+        // get_info_mount_january
+        $january=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-01-01','2022-01-30',?);");
+        $january->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $january->execute();
+        
+        $fevereiro=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-02-01','2022-01-28',?);");
+        $fevereiro->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $fevereiro->execute();
+
+        $marco=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-03-01','2022-03-30',?);");
+        $marco->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $marco->execute();
+
+        $abril=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-04-01','2022-04-30',?);");
+        $abril->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $abril->execute();
+
+        $maio=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',?);");
+        $maio->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $maio->execute();
+
+
+
+        $mounts=[
+            'janeiro'=> $january->fetchAll(PDO::FETCH_ASSOC),
+            'fevereiro'=> $fevereiro->fetchAll(PDO::FETCH_ASSOC),
+            'março'=>$marco->fetchAll(PDO::FETCH_ASSOC),
+            'abril'=>$abril->fetchAll(PDO::FETCH_ASSOC),
+            'maio'=>$maio->fetchAll(PDO::FETCH_ASSOC),
+        ];
+       
+        return $mounts;
+    }
 }

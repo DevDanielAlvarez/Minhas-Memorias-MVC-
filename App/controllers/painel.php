@@ -72,7 +72,7 @@ class painel extends Controller
        $result_galery=$this->get_all_number_of_galery();
        $result_table=$this->get_information_of_family_dashboard_menu();
         #ler comentário na view abaixo(PELO AMOR DE DEUS!)
-        $this->view('painel/painel_familiar',$data=['sty' =>URL_BASE."/css/painel_familiar/style.css",'sty2' =>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"],$data2=[
+        $this->view('painel/painel_familiar',$data=['sty' =>URL_BASE."/css/painel_familiar/style.css"],$data2=[
             
             'notes'=>$result_notes,
             'games' =>$result_avg_games,
@@ -125,6 +125,23 @@ class painel extends Controller
 
         }
 
+    }
+
+    public function analise_jogos()
+    {
+        $family_model=$this->model('family_model');
+        //1
+        $result=$family_model->Model_get_information_of_analytics_dasborad_family_menu();
+        //2
+
+        //3
+
+        //4
+
+        //5
+        
+        $this->view('painel/analise-jogos',$data=['sty' =>URL_BASE."/css/painel_familiar/style.css"],$data2=$result);
+        
     }
 }
     
