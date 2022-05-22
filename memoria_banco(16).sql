@@ -3,15 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Maio-2022 às 04:18
+-- Tempo de geração: 22-Maio-2022 às 17:33
 -- Versão do servidor: 10.4.22-MariaDB
--- versão do PHP: 8.0.13
+-- versão do PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 SET FOREIGN_KEY_CHECKS=0;
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -146,21 +145,92 @@ end$$
 --
 -- Funções
 --
-CREATE DEFINER=`root`@`localhost` FUNCTION `sfFat` (`n` INT) RETURNS INT(11) begin
-	declare fator, i int;
-    set fator=1;
-    set i=1;
-    if(n<=1 ) then
-    
-		return fator;
-    
-    else
-    calculo: while(i <=n) do
-    set fator = fator* i;
-    set i=i + 1;
-    end while calculo;
+CREATE DEFINER=`root`@`localhost` FUNCTION `get_media_comparacao` (`codigo_pac` INT(11)) RETURNS VARCHAR(20) CHARSET utf8mb4 begin
+/* declare variavies*/
+declare media_geral decimal(9,2);
+declare media_individual decimal(9,2);
+declare count decimal(9,2);
+
+/* geral*/
+select avg(num_pontuacao) into media_geral from tb_jogo_paciente tb_game inner join tb_paciente pac on pac.cd_paciente=tb_game.cd_paciente;
+/* indiv*/
+select avg(num_pontuacao) into media_individual from tb_jogo_paciente tb_game inner join tb_paciente pac on pac.cd_paciente=tb_game.cd_paciente where pac.cd_paciente=codigo_pac;
+
+set count = media_individual-media_geral;
+
+if count>0 then
+return  "Acima da média";
+else
+ return "abaixo da média";
+ end if;
+
+
+end$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `get_media_intermed` (`codigo_pac` INT(11)) RETURNS VARCHAR(35) CHARSET utf8mb4 begin
+
+/*DECLARANDO VARIAVEIS*/
+declare media_intermediario decimal (9,2);
+declare media_individual decimal (9,2);
+declare conta decimal (9,2);
+/*SELECT INTERMEDIARIO*/
+select avg (num_pontuacao) into media_intermediario from tb_jogo_paciente pacgame join 
+tb_paciente pac on pac.cd_paciente = pacgame.cd_paciente
+join tb_estagio est on pac.cd_estagio = est.cd_estagio
+where pac.cd_estagio = 1;
+/*SELECT INDIVIDUAL*/
+select avg (num_pontuacao) into media_individual from tb_jogo_paciente pacgame
+join tb_paciente pac on pac.cd_paciente = 
+pacgame.cd_paciente
+where pac.cd_paciente = codigo_pac;
+set conta = media_individual - media_intermediario;
+/*IF*/
+if conta>0 then
+return  "Acima da média dos intermediários";
+else
+ return "abaixo da média dos intermediários";
+ end if;
+end$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `QTD_NOTES_APOS` (`datanote` DATE, `cod_pac` INT(11)) RETURNS VARCHAR(50) CHARSET utf8mb4 begin 
+	/* declare */
+    declare count_notes int(11);
+   select count(cd_notes) into count_notes from tb_notes nt join tb_paciente pac on nt.cd_paciente=pac.cd_paciente where nt.cd_paciente=cod_pac and dt_criacao>=datanote;
+   if count_notes>1 then
+   return count_notes;
+   
+   else 
+   return "Não existe nem um bloco de notas após esta data";
+   end if;
+
+end$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `QTD_NOTES_ENTRE` (`data_inicial` DATE, `data_final` DATE, `cod_pac` INT(11)) RETURNS VARCHAR(50) CHARSET utf8mb4 begin 
+	/* declare */
+    declare count_notes int(11);
+   select count(cd_notes) into count_notes from tb_notes nt join tb_paciente pac on nt.cd_paciente=pac.cd_paciente where nt.cd_paciente=cod_pac and dt_criacao>=data_inicial and dt_criacao<=data_final;
+ 
+    if count_notes>1 then
+   return count_notes;
+   
+   else 
+   return "Não existe nem um bloco de notas entre estas data";
+   end if;
+   
+
+end$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `QTD_PONTOS_ENTRE` (`data_inicial` DATE, `data_final` DATE, `cod_pac` INT(11)) RETURNS INT(7) begin 
+	/* declare */
+    declare count_points int(11);
+    SELECT SUM(num_pontuacao) into count_points from tb_jogo_paciente jp join tb_paciente pac on pac.cd_paciente=jp.cd_paciente where pac.cd_paciente=cod_pac and dt_partida>=data_inicial and dt_partida<=data_final;
+	
+    if count_points>0 then
+    return count_points;
+    else return 0;
     end if;
-    return fator;
+   
+
 end$$
 
 DELIMITER ;
@@ -554,16 +624,61 @@ CREATE TABLE `tb_galeria` (
   `nm_titulo` varchar(90) DEFAULT NULL,
   `nm_caminho` varchar(110) DEFAULT NULL,
   `cd_paciente` int(11) DEFAULT NULL,
-  `ds_resumo` varchar(120) DEFAULT NULL
+  `ds_resumo` varchar(120) DEFAULT NULL,
+  `dt_galeria` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `tb_galeria`
 --
 
-INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`, `ds_resumo`) VALUES
-(14, 'Meus Amores', 'http://localhost:8080/uploads/6279c76e0d3b7.jpg', 165, 'Os amores da minha maravilhosa vida'),
-(15, 'Meus amores', 'http://localhost:8080/uploads/627a9eb67dd66.jpg', 168, 'obrigado Deus');
+INSERT INTO `tb_galeria` (`cd_galeria`, `nm_titulo`, `nm_caminho`, `cd_paciente`, `ds_resumo`, `dt_galeria`) VALUES
+(14, 'Meus Amores', 'http://localhost:8080/uploads/6279c76e0d3b7.jpg', 165, 'Os amores da minha maravilhosa vida', '2022-01-15'),
+(15, 'Meus amores', 'http://localhost:8080/uploads/627a9eb67dd66.jpg', 168, 'obrigado Deus', '2022-02-17'),
+(16, 'Filhinho querido', 'http://localhost:8080/uploads/627fef9239347.jpg', 152, 'meu amado filho', '2022-03-05'),
+(17, 'teste', 'http://localhost:8080/uploads/62813f202c166.jpg', 152, 'teste', '2022-02-16'),
+(18, 'Coringa', 'http://localhost:8080/uploads/6281a2e090101.jpg', 152, 'vilão do batman, do filme que vi hoje', '2022-01-19'),
+(19, 'Meu carro', 'http://localhost:8080/uploads/43702375204726.jpg', 132, 'meu carro lindo', '2022-04-13'),
+(20, 'celular novo', 'http://localhost:8080/uploads/98324nh324oiug.jpg', 16, 'meu novo celular', '2002-03-26'),
+(21, 'céu hoje', 'http://localhost:8080/uploads/29384h324u3290.jpg', 164, 'hoje o céu estava lindo', '2022-05-29'),
+(22, 'futebol', 'http://localhost:8080/uploads/873214h24uhsdhf.jpg', 133, 'jogo de futebol', '2022-05-07'),
+(23, 'musica', 'http://localhost:8080/uploads/98edsfhdskj65ds4f.jpg', 124, 'minha musica favorita', '2022-01-06'),
+(24, 'meu filho', 'http://localhost:8080/uploads/ds987fysdfd654fds.jpg', 14, 'meu querido filho', '2022-04-19'),
+(25, 'moto', 'http://localhost:8080/uploads/98uewrnewrjsd098.jpg', 17, 'moto muito bonita', '2022-04-25'),
+(26, 'casa', 'http://localhost:8080/uploads/98dsayfaljsfdh321.jpg', 64, 'Minha casa', '2022-03-22'),
+(27, 'piscina', 'http://localhost:8080/uploads/563244fes24dasd.jpg', 67, 'dia da piscina', '2022-02-10'),
+(28, 'parque', 'http://localhost:8080/uploads/879sadkjsadh2134.jpg', 125, 'dia que fomos ao parque', '2022-03-05'),
+(29, 'museu', 'http://localhost:8080/uploads/6fd5g49fd87gsd32f.jpg', 124, 'fotos do museu', '2022-01-08'),
+(30, 'pintura', 'http://localhost:8080/uploads/fds564gsfd43532146,jpg', 67, 'pinturas bonitas', '2022-03-14'),
+(31, 'escultura', 'http://localhost:8080/uploads/4325564gfdssdf3249d.jpg', 21, 'esculturas interessantes', '2022-05-09'),
+(32, 'mercado', 'http://localhost:8080/uploads/ds56f43w341sdf6543.jpg', 14, 'dia de compras com minha familia', '2022-05-22'),
+(33, 'amigos', 'http://localhost:8080/uploads/32564fds685f7s3248.jpg', 74, 'dia na casa do meu amigo', '2022-04-19'),
+(34, 'churrasco', 'http://localhost:8080/uploads/83724h32iu4y3287dsi.jpg', 52, 'churrasco em familia', '2022-03-26'),
+(35, 'escola', 'http://localhost:8080/uploads/565434613fds24g654.jpg', 47, 'material escolar do meu filho', '2022-02-21'),
+(36, 'natal', 'http://localhost:8080/uploads/64535744324ds65f7sd.jpg', 26, 'natal com minha familia', '2022-04-29'),
+(37, 'ano novo', 'http://localhost:8080/uploads/65ds4f89ds7435564g.jpg', 21, 'ano novo na praia', '2022-02-02'),
+(38, 'novela', 'http://localhost:8080/uploads/685443589dsgf165f49,jpg', 69, 'assistindo novela com minha familia', '2022-05-06'),
+(39, 'cinema', 'http://localhost:8080/uploads/8574fd65g14h6574fgh.jpg', 54, 'cinema com minha familia', '2022-05-09'),
+(40, 'museu', 'http://localhost:8080/uploads/8747387409273042765.jpg', 32, 'lindo museu que visitei', '2022-04-12'),
+(41, 'computador', 'http://localhost:8080/uploads/5389265392693569865.jpg', 45, 'computador novo que comprei', '2022-05-25'),
+(42, 'amigos', 'http://localhost:8080/uploads/6376543285639784659.jpg', 45, 'eu e meus amigos', '2022-04-06'),
+(43, 'churrasco', 'http://localhost:8080/uploads/5382452386753652468.jpg', 45, 'churrasco na minha casa', '2022-04-06'),
+(44, 'almoço em familia', 'http://localhost:8080/uploads/4655438652658293456.jpg', 45, 'almoço na casa da minha mãe', '2022-04-12'),
+(45, 'jogo novo', 'http://localhost:8080/uploads/dgfksgr7436596396508.jpg', 44, 'jogo novo que comprei para meu neto', '2022-05-19'),
+(46, 'filme', 'http://localhost:8080/uploads/5436536357433278165.jpg', 45, 'assistindo filme durante a tarde', '2022-03-07'),
+(47, 'bolo de cenoura', 'http://localhost:8080/uploads/429769sgt934ht900887.jpg', 45, 'bolo de cenoura muito gostoso', '2022-01-30'),
+(48, 'celular', 'http://localhost:8080/uploads/643576439875639jgkjh.jpg', 45, 'aprendendo a mexer no celular', '2022-05-05'),
+(49, 'matematica', 'http://localhost:8080/uploads/6543206580635032565.jpg', 73, 'ajudando neto nas contas da escola', '2022-04-15'),
+(50, 'viagem', 'http://localhost:8080/uploads/6576943293404368038.jpg', 73, 'viagem ao campo', '2022-02-07'),
+(51, 'academia', 'http://localhost:8080/uploads/7403658076438607380.jpg', 73, 'treino de perna', '2022-03-04'),
+(52, 'bolo de chocolate', 'http://localhost:8080/uploads/gfsg736298562965652.jpg', 89, 'fiz um bolo de chocolate', '2022-04-13'),
+(53, 'musica', 'http://localhost:8080/uploads/gfhdsgjfgwi462564375.jpg', 89, 'ouvindo musicas novas', '2022-05-21'),
+(54, 'leitura', 'http://localhost:8080/uploads/639763297567294365y.jpg', 89, 'lendo um bom livro', '2022-04-23'),
+(55, 'festa', 'http://localhost:8080/uploads/7y4650yheutjhdg40y07.jpg', 78, 'festa da familia', '2022-01-02'),
+(56, 'casa nova', 'http://localhost:8080/uploads/hdsfushg543776548037.jpg', 78, 'minha casa nova', '2022-01-02'),
+(57, 'carro dos sonhos', 'http://localhost:8080/uploads/gfks54w652065026580h.jpg', 78, 'carro que semprei sonhei em ter', '2022-01-14'),
+(58, 'aula de inglês', 'http://localhost:8080/uploads/96275ty32g5gohfh0043.jpg', 34, 'minha primeira aula de inglês', '2022-02-16'),
+(59, 'bolo de banana', 'http://localhost:8080/uploads/3765632706570376525.jpg', 34, 'fiz um bolinho de banana delicioso', '2022-05-21');
 
 -- --------------------------------------------------------
 
@@ -823,7 +938,11 @@ INSERT INTO `tb_jogo_paciente` (`cd_jogo_paciente`, `cd_jogo`, `cd_paciente`, `n
 (223, 1, 167, 4, '2022-05-05', 1),
 (224, 1, 167, 4, '2022-05-05', 2),
 (225, 1, 167, 4, '2022-05-05', 3),
-(226, 1, 168, 4, '2022-05-10', 2);
+(226, 1, 168, 4, '2022-05-10', 2),
+(227, 1, 152, 4, '2022-05-15', 3),
+(228, 1, 152, 4, '2022-05-17', 10),
+(229, 1, 152, 4, '2022-05-17', 2),
+(230, 1, 152, 7, '2022-01-02', 8);
 
 -- --------------------------------------------------------
 
@@ -968,8 +1087,6 @@ INSERT INTO `tb_notes` (`cd_notes`, `nm_titulo`, `txt_note`, `dt_criacao`, `cd_p
 (123, 'ac nulla.', 'Vivamus euismod urna. Nullam lobortis quam a felis ullamcorper viverra. Maecenas iaculis aliquet diam. Sed', '2021-03-20', 97),
 (124, 'ornare, facilisis', 'Donec tincidunt. Donec vitae erat vel pede blandit congue. In scelerisque scelerisque dui. Suspendisse ac', '2021-03-27', 83),
 (125, 'Nunc sollicitudin', 'cursus. Integer mollis. Integer tincidunt aliquam arcu. Aliquam ultrices iaculis odio. Nam interdum enim non', '2021-12-09', 132),
-(126, 'Lista de compras do mes', '<div><span style=\"background-color: rgb(153, 255, 153);\"><font color=\"null\"><u><span><b>Lista :</b></span><span><b><span style=\"\\\" background-color:\"=\"\" rgb(102,=\"\" 51,=\"\" 0);\\\"=\"\"><br></span></b></span></u></font></span></div><div><ol><li><span style=\"background-color: rgb(153, 255, 153);\"><font color=\"null\"><u><span><b>arroz;</b></span></u></font></span></li><li><span style=\"background-color: rgb(153, 255, 153);\"><font color=\"null\"><u><span><b>soja;</b></span></u></font></span></li></ol></div><div><span style=\"background-color: rgb(51, 153, 153);\"><span style=\"\\\" background-color:\"=\"\" rgb(102,=\"\" 51,=\"\" 0);\\\"=\"\"></span></span></div>', '2021-11-12', 152),
-(130, 'Meu terceiro bloco de notas', '<span style=\"background-color: rgb(51, 255, 255);\"><font color=\"#ff0000\"><u>OI pessoal&nbsp; tudo bem?</u></font></span><br>', '2022-04-16', 152),
 (132, 'ssssss', 'ss <br>', '2022-04-16', 152),
 (133, 'feee', ' jeee', '2022-04-16', 152),
 (134, '1', '1', '2022-04-16', 152),
@@ -984,7 +1101,8 @@ INSERT INTO `tb_notes` (`cd_notes`, `nm_titulo`, `txt_note`, `dt_criacao`, `cd_p
 (150, 'Meu primeiro bloco', '<div align=\"center\"><u><i><b>Oi pessoal!</b></i></u><br></div>', '2022-05-05', 167),
 (151, 'Meu dia', 'Hoje o dia foi lindo', '2022-05-09', 165),
 (152, 'Meu dia a dia', '<div style=\"text-align: center;\">MEU DIA</div><div style=\"text-align: left;\">OI PES</div>', '2022-05-10', 168),
-(153, 'Meu ', '<div style=\"text-align: left;\"><font color=\"#ff0000\"><u>oi pessoal</u></font></div>', '2022-05-10', 168);
+(153, 'Meu ', '<div style=\"text-align: left;\"><font color=\"#ff0000\"><u>oi pessoal</u></font></div>', '2022-05-10', 168),
+(154, '2', '22', '2022-05-14', 152);
 
 -- --------------------------------------------------------
 
@@ -1157,7 +1275,7 @@ INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascime
 (148, 'Alice Mills', 'CBJ48VDJ2II', '1973-08-16', 3, 5, 'oi pessoal!'),
 (149, 'Graiden Mcguire', 'ESS75BLE4GM', '1971-02-12', 2, 5, 'oi pessoal!'),
 (150, 'Clarke Watts', 'LUM72ROO3LD', '1975-11-23', 3, 5, 'oi pessoal!'),
-(152, 'Daniel Alvarez ', '$2y$10$VU9FNOl/Zf.La35Ox7wuze5Ij2Y4yeRaMhVXsowXMTZUf6HicFqBC', '1989-11-22', 1, 1, 'oi gente! meu nome é Daniel'),
+(152, 'Daniel Alvarez de Almeida', '$2y$10$VU9FNOl/Zf.La35Ox7wuze5Ij2Y4yeRaMhVXsowXMTZUf6HicFqBC', '1989-11-22', 1, 1, 'oi gente! meu nome é Daniel...'),
 (161, NULL, NULL, NULL, NULL, 5, 'oi pessoal!'),
 (162, 'Gustavo Ferreria da Silva', '$2y$10$1Gzt/A1QI/3mI0SAnn8uuOzoU/xHr7OyAcDfuChdBQ65hYY3iDRdC', '1966-11-08', NULL, 1, 'asasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasasasasasasasasasaasa'),
 (163, 'Gabreil Souza Ribeiro', '$2y$10$r9dTV3nN79Lw.Zg05n1Ytug.ZcmGFqHzg17RxeF1uiy.90vLKSOli', '1962-12-20', NULL, 5, 'oi pessoal!'),
@@ -1494,7 +1612,7 @@ ALTER TABLE `tb_familiar`
 -- AUTO_INCREMENT de tabela `tb_galeria`
 --
 ALTER TABLE `tb_galeria`
-  MODIFY `cd_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `cd_galeria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT de tabela `tb_genero`
@@ -1512,13 +1630,13 @@ ALTER TABLE `tb_jogos`
 -- AUTO_INCREMENT de tabela `tb_jogo_paciente`
 --
 ALTER TABLE `tb_jogo_paciente`
-  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
+  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT de tabela `tb_notes`
 --
 ALTER TABLE `tb_notes`
-  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
+  MODIFY `cd_notes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=157;
 
 --
 -- AUTO_INCREMENT de tabela `tb_paciente`
