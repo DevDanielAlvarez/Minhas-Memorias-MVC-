@@ -108,7 +108,7 @@
                     
                         <i class="uil uil-comments"></i>
                         <span class="text">Média de Pontos nos Jogos</span>
-                        <span class="number"><?php echo $data2['games']['media']?></span>
+                        <span class="number"><?php if($data2["games"]["media"]!=null){echo$data2["games"]["media"];}else {echo 0;}?></span>
                         <button class="btn btn-primary">clique para visualizar</button>
                         
                     </div>

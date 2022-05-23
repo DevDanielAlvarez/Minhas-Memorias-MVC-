@@ -107,7 +107,7 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
         $january->BindValue(1,$_SESSION['id_paciente_do_familiar']);
         $january->execute();
         
-        $fevereiro=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-02-01','2022-01-28',?);");
+        $fevereiro=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-02-01','2022-02-28',?);");
         $fevereiro->BindValue(1,$_SESSION['id_paciente_do_familiar']);
         $fevereiro->execute();
 

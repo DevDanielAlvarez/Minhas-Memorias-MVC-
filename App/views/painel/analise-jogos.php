@@ -91,8 +91,10 @@
                     <span class="text">Dashboard</span>
                 </div>
 
-              
-<?php echo "<pre>";var_dump($data2) ?>
+               
+<?php
+
+echo "<pre>";var_dump($data2) ?>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
@@ -100,11 +102,11 @@
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Element", "Pontos", { role: "style" } ],
-        ["Janeiro", <?php  echo $data2['janeiro'][0]["QTD_PONTOS_ENTRE('2022-01-01','2022-01-30','152')"]; ?>, "#b87333"],
-        ["Fevereiro", <?php  echo $data2['fevereiro'][0]["QTD_PONTOS_ENTRE('2022-02-01','2022-01-28','152')"]; ?>, "silver"],
-        ["Março",  <?php  echo $data2['março'][0]["QTD_PONTOS_ENTRE('2022-03-01','2022-03-30','152')"]; ?>, "gold"],
-        ["Abril", <?php  echo $data2['abril'][0]["QTD_PONTOS_ENTRE('2022-04-01','2022-04-30','152')"]; ?>, "color: #e5e4e2"],
-        ["Abril", <?php  echo $data2['maio'][0]["QTD_PONTOS_ENTRE('2022-05-01','2022-05-30','152')"]; ?>, "color: #e5e4e2"]
+        ["Janeiro", <?php echo $data2['janeiro'][0]["QTD_PONTOS_ENTRE('2022-01-01','2022-01-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "#b87333"],
+        ["Fevereiro", <?php  echo $data2['fevereiro'][0]["QTD_PONTOS_ENTRE('2022-02-01','2022-02-28',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "silver"],
+        ["Março",  <?php echo $data2['março'][0]["QTD_PONTOS_ENTRE('2022-03-01','2022-03-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "gold"],
+        ["Abril", <?php  echo $data2['abril'][0]["QTD_PONTOS_ENTRE('2022-04-01','2022-04-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"],
+        ["Maio", <?php  echo $data2['maio'][0]["QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"]
         
       ]);
 
