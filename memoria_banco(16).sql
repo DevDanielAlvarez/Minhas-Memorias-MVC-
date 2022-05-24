@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22-Maio-2022 às 17:33
+-- Tempo de geração: 24-Maio-2022 às 04:24
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.1
 
@@ -223,7 +223,7 @@ end$$
 CREATE DEFINER=`root`@`localhost` FUNCTION `QTD_PONTOS_ENTRE` (`data_inicial` DATE, `data_final` DATE, `cod_pac` INT(11)) RETURNS INT(7) begin 
 	/* declare */
     declare count_points int(11);
-    SELECT SUM(num_pontuacao) into count_points from tb_jogo_paciente jp join tb_paciente pac on pac.cd_paciente=jp.cd_paciente where pac.cd_paciente=cod_pac and dt_partida>=data_inicial and dt_partida<=data_final;
+    SELECT SUM(num_pontuacao) as points into count_points from tb_jogo_paciente jp join tb_paciente pac on pac.cd_paciente=jp.cd_paciente where pac.cd_paciente=cod_pac and dt_partida>=data_inicial and dt_partida<=data_final;
 	
     if count_points>0 then
     return count_points;
@@ -418,7 +418,9 @@ INSERT INTO `tb_contato` (`cd_contato`, `tel_contato`, `nm_email`, `cd_paciente`
 (169, 'não cadastrado', 'luizfernando@gmail.com', 166, NULL),
 (170, 'não cadastrado', 'gabriel.gusto@gmail.com', 167, NULL),
 (171, 'não cadastrado', 'rafa@gmail.com', 168, NULL),
-(172, 'não cadastrado', 'gabs@gmail.com', NULL, 152);
+(172, 'não cadastrado', 'gabs@gmail.com', NULL, 152),
+(173, 'não cadastrado', 'sah@gmail.com', 169, NULL),
+(174, 'não cadastrado', 'sah2@gmail.com', NULL, 153);
 
 -- --------------------------------------------------------
 
@@ -611,7 +613,8 @@ INSERT INTO `tb_familiar` (`cd_familiar`, `nm_familiar`, `nm_senha`, `dt_nascime
 (149, 'Daquan Floyd', 'FRK72BGU8EU', '1986-06-26', 2, 149),
 (150, 'Kenyon Nieves', 'CNJ15FTH0WO', '1951-04-20', 1, 150),
 (151, 'Fernando Alavrez', '$2y$10$1WOQ9Uj/5WEuN/2HFH10durrkO2O.aLy/2W93C7Gki78HrYpjLyG2', '1991-04-09', 1, 152),
-(152, 'Gabreil souza', '$2y$10$VTyHMZVfOTrQQPYnxxqF7uY5bQ8JgvzLQ5xfkoV7G/b5tWAfWFQBS', '1996-03-06', 2, 168);
+(152, 'Gabreil souza', '$2y$10$VTyHMZVfOTrQQPYnxxqF7uY5bQ8JgvzLQ5xfkoV7G/b5tWAfWFQBS', '1996-03-06', 2, 168),
+(153, 'Jordele Silva', '$2y$10$O7SArflzQjHrAJPEkYSc9uutpzzhxUka1MlnGWGLjTfqippJ6dLFG', '1998-04-07', 1, 169);
 
 -- --------------------------------------------------------
 
@@ -942,7 +945,9 @@ INSERT INTO `tb_jogo_paciente` (`cd_jogo_paciente`, `cd_jogo`, `cd_paciente`, `n
 (227, 1, 152, 4, '2022-05-15', 3),
 (228, 1, 152, 4, '2022-05-17', 10),
 (229, 1, 152, 4, '2022-05-17', 2),
-(230, 1, 152, 7, '2022-01-02', 8);
+(230, 1, 152, 7, '2022-01-02', 8),
+(231, 1, 152, 9, '2022-02-02', 6),
+(232, 1, 169, 4, '2022-02-22', 3);
 
 -- --------------------------------------------------------
 
@@ -1283,7 +1288,8 @@ INSERT INTO `tb_paciente` (`cd_paciente`, `nm_paciente`, `nm_senha`, `dt_nascime
 (165, 'Kayle da Silva', '$2y$10$UmkKEQu3rbG8PWBbk/3K1.Pzjk23Bmqs4e31HN3R2my1X6wFtK4CO', '2022-04-15', NULL, 5, 'oi pessoal'),
 (166, 'Luiz', '$2y$10$eY.UbNHUr98F1qvS/IvU8eDfHFf3qP3S/IlK5iMsopojFsOhsPMlC', '1972-05-02', NULL, 5, 'oi pessoal!'),
 (167, 'Gabriel Augusto', '$2y$10$qYLXrlQYtBrsUunajtV.yOCal9qEcHisSrwhz/DjNGTlkVs6Y0pz2', '1970-05-05', NULL, 5, 'oi pessoal!'),
-(168, 'Rafaela Alves da Silva', '$2y$10$D1bBjnkfocLWu5Gds9pLgO/g6FTb1t8jkac1qhWMf1olUXPpw1J1.', '1956-06-11', NULL, 2, 'oi pessoal!');
+(168, 'Rafaela Alves da Silva', '$2y$10$D1bBjnkfocLWu5Gds9pLgO/g6FTb1t8jkac1qhWMf1olUXPpw1J1.', '1956-06-11', NULL, 2, 'oi pessoal!'),
+(169, 'Sah', '$2y$10$IK6jekcrullX01kByOqnDegtpRWRcIOckWgBHB6dNIAN1wuVEt0FO', '1938-05-03', NULL, 5, 'oi pessoal!');
 
 -- --------------------------------------------------------
 
@@ -1594,7 +1600,7 @@ ALTER TABLE `tb_tipo_jogo`
 -- AUTO_INCREMENT de tabela `tb_contato`
 --
 ALTER TABLE `tb_contato`
-  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `cd_contato` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
 -- AUTO_INCREMENT de tabela `tb_estagio`
@@ -1606,7 +1612,7 @@ ALTER TABLE `tb_estagio`
 -- AUTO_INCREMENT de tabela `tb_familiar`
 --
 ALTER TABLE `tb_familiar`
-  MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=153;
+  MODIFY `cd_familiar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=154;
 
 --
 -- AUTO_INCREMENT de tabela `tb_galeria`
@@ -1630,7 +1636,7 @@ ALTER TABLE `tb_jogos`
 -- AUTO_INCREMENT de tabela `tb_jogo_paciente`
 --
 ALTER TABLE `tb_jogo_paciente`
-  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+  MODIFY `cd_jogo_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
 -- AUTO_INCREMENT de tabela `tb_notes`
@@ -1642,7 +1648,7 @@ ALTER TABLE `tb_notes`
 -- AUTO_INCREMENT de tabela `tb_paciente`
 --
 ALTER TABLE `tb_paciente`
-  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=169;
+  MODIFY `cd_paciente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=170;
 
 --
 -- AUTO_INCREMENT de tabela `tb_parentesco`
