@@ -18,13 +18,19 @@ body {
 
 .img_cabecalho{
     
-    height: 80%;
-    width: 80%;
+    height: 140%;
+    width: 60%;
     position: absolute;
     margin-top: -20%;
     margin-left: -20%;
     top: 0;
     left: 0;
+   
+    /*inverter imagem*/   
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1) rotate(-15deg);
      
 
 }
