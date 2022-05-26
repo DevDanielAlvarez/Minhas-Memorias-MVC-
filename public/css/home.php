@@ -242,7 +242,6 @@ a:hover {
     position:absolute;
     opacity:30%;
     justify-content: center;
-   
     background-repeat: no-repeat;
     background-size: 100%;
     overflow: hidden;
