@@ -1,33 +1,4 @@
 
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@devMarcoAntonio 
-DanielDevMuitomoney
-/
-Minhas-Memorias-MVC-
-Public
-Code
-Issues
-Pull requests
-1
-Actions
-Projects
-Wiki
-Security
-Insights
-Minhas-Memorias-MVC-/memoria_banco(16).sql
-@DanielDevMuitomoney
-DanielDevMuitomoney Update memoria_banco(16).sql
-Latest commit fd385f5 4 days ago
- History
- 1 contributor
-1717 lines (1538 sloc)  97.2 KB
-   
 -- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
@@ -1745,16 +1716,3 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
