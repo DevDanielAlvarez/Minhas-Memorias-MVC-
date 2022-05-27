@@ -1,0 +1,17 @@
+.content .wp-block-media-text__media img
+ {
+    border-radius: 50%;
+    display: block;
+    width: 100%;
+}
+
+
+@media (max-width: 768px)
+{
+.content .wp-block-media-text__media img {
+    margin: 0 auto;
+    max-width: 300px;
+
+}
+
+}
