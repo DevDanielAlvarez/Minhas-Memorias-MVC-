@@ -53,7 +53,7 @@
             </ul>
             
             <ul class="logout-mode">
-                <li><a href="#">
+                <li><a href="/painel/logout">
                     <i class="uil uil-signout"></i>
                     <span class="link-name">Logout</span>
                 </a></li>
@@ -92,9 +92,7 @@
                 </div>
 
                
-<?php
 
-echo "<pre>";var_dump($data2) ?>
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript">
     google.charts.load("current", {packages:['corechart']});
@@ -120,8 +118,8 @@ echo "<pre>";var_dump($data2) ?>
 
       var options = {
         title: "Pontos feitos em cada mês",
-        width: 900,
-        height: 700,
+        width: 650,
+        height: 500,
         bar: {groupWidth: "95%"},
         legend: { position: "none" },
       };
