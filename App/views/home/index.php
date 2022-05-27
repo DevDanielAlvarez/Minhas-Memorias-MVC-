@@ -87,9 +87,6 @@
             <div class="rede img-fluid" id="snap">
               <img class="icone" src="img/images/snap.png">
             </div>
-            <div class="rede img-fluid" id="plus">
-              <img class="icone" src="img/images/plus.png">
-            </div>
             <div class="rede img-fluid" id="youtube">
               <img class="icone" src="img/images/youtube.png">
             </div>
