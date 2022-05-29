@@ -16,8 +16,8 @@
     
 $(document).ready(function() {
          $("#editor_area").cleditor({
-           width: 550, // width not including margins, borders or padding
-           height: 250, // height not including margins, borders or padding
+           width: 950, // width not including margins, borders or padding
+           height: 350, // height not including margins, borders or padding
            controls: // controls to add to the toolbar
                  "bold italic underline strikethrough subscript superscript | font size " +
                  "style | color highlight removeformat | bullets numbering | outdent " +
@@ -45,11 +45,9 @@ $(document).ready(function() {
              docCSSFile: // CSS file used to style the document contained within the editor
                  "",
              bodyStyle: // style to assign to document body contained within the editor
-<<<<<<< HEAD
+
                  "border-radius:4% 0 0 4%; margin:4px; font:10pt Arial,Verdana; cursor:text; width: max-content; display: flex;flex-direction: column;justify-content: center;align-items: center;background: #d6b4d6;border-radius: 10px;border: 30px solid #d6b4d6;",
-=======
-                 "margin:4px; font:10pt Arial,Verdana; cursor:text;"
->>>>>>> e93b855f10323062b4a835bfd4bb7b3be812ac7e
+
          })
          });
         </script>

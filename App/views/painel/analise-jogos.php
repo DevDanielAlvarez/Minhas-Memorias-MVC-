@@ -91,37 +91,50 @@
                     <span class="text">Dashboard</span>
                 </div>
 
-                <div class="boxes">
-                   
-                    <div class="box box1">
-                   
-                        <i class="uil uil-thumbs-up"></i>
-                        <span class="text">Total de Diários</span>
-                        <span class="number"><?php echo$data2["notes"]["count(cd_notes)"] ?></span>
-                        <button class="btn btn-primary">clique para visualizar</button>
-                        
-                      
-                    </div>
-                    
-                    
-                    <div class="box box2">
-                    
-                        <i class="uil uil-comments"></i>
-                        <span class="text">Média de Pontos nos Jogos</span>
-                        <span class="number"><?php if($data2["games"]["media"]!=null){echo$data2["games"]["media"];}else {echo 0;}?></span>
-                        <button class="btn btn-primary">clique para visualizar</button>
-                        
-                    </div>
-                   
                
-                    <div class="box box3">
-                    
-                        <i class="uil uil-share"></i>
-                        <span class="text">Total de Fotos na Galeria</span>
-                        <span class="number"><?php echo $data2['galery']['fotos'] ?></span>
-                         <button class="btn btn-primary">clique para visualizar</button>
-                        
-                    </div>
+
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Pontos", { role: "style" } ],
+        ["Janeiro", <?php echo $data2['janeiro'][0]["QTD_PONTOS_ENTRE('2022-01-01','2022-01-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "#b87333"],
+        ["Fevereiro", <?php  echo $data2['fevereiro'][0]["QTD_PONTOS_ENTRE('2022-02-01','2022-02-28',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "silver"],
+        ["Março",  <?php echo $data2['março'][0]["QTD_PONTOS_ENTRE('2022-03-01','2022-03-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "gold"],
+        ["Abril", <?php  echo $data2['abril'][0]["QTD_PONTOS_ENTRE('2022-04-01','2022-04-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"],
+        ["Maio", <?php  echo $data2['maio'][0]["QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"]
+        
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Pontos feitos em cada mês",
+        width: 650,
+        height: 500,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+<div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+
+
+
+
+
+
+
                    
                 </div>
             </div>
@@ -131,33 +144,8 @@
                     <i class="uil uil-clock-three"></i>
                     <span class="text">Partidas jogadas recentimente</span>
                 </div>
-                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-                <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">Nome</th>
-      <th scope="col">Jogo</th>
-      <th scope="col">Acertos</th>
-      <th scope="col">Erros</th>
-      <th scope="col">Data da partida</th>
-    </tr>
-  </thead>
-  <tbody><?php //create and insert into table of dashborad
-   foreach($data2['table'] as $k)
-   {
-       echo '<tr>
-            <td>'.$k['nm_paciente'].'</td>
-            <td>'.$k['nm_jogo'].'</td>
-            <td>'.$k['num_pontuacao'].'</td>
-            <td>'.$k['num_erros'].'</td>
-            <td>'.$k['dt_partida'].'</td>  
-            </tr>';
-   }
-   ?>
-
-
-  </tbody>
-</table>
+                
+              
                 
                   
                
