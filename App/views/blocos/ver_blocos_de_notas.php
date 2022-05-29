@@ -1,5 +1,5 @@
 
-<div class="conteiner col-3">
+<div class="container conteiner caixa col-3">
 <h1 class="diario_bloco" >Diário de <?php echo $_SESSION['nome'];?></h1> 
 
 <div class="caixa_bloco" >

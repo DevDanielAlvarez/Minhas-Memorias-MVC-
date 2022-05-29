@@ -5,7 +5,7 @@ body
 {
    magin:0;
    padding:0;
-   background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+   background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
     
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -16,8 +16,8 @@ body
 
 .conteiner{
     
-    width: 100vw;
-    height: 100vh;
+    
+    height: max-content;
     background: #6C7A89;
     display: flex;
     flex-direction: column;
@@ -37,13 +37,14 @@ body
 .caixa_bloco{
     
     border: solid rgb(173, 28, 202);
-    
+    height: max-content;
     text-color:black;
     border-color: white;
     margin-top:3%; 
     width:600px; 
     border-radius: 9px;
     padding: 9px;
+    display: center;
 }
 
 
