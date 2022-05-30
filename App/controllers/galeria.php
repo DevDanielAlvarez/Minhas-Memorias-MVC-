@@ -11,10 +11,12 @@ class galeria extends controller
 {
     public function index()
     {
+        Auth::CheckLogin();
         $this->ver();
     }
     public function upload()
     {
+        Auth::CheckLogin();
         html_components::nav_bar();
         $this->view('galery/upload',$data=['sty'=>"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css",'sty2'=>URL_BASE."/css/galery_css/upload.css"]);
     }
