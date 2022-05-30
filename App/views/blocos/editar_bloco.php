@@ -46,7 +46,11 @@ $(document).ready(function() {
                  "",
              bodyStyle: // style to assign to document body contained within the editor
 
-                 "border-radius:4% 0 0 4%; margin:4px; font:10pt Arial,Verdana; cursor:text;  display: flex;flex-direction: column;justify-content: center;align-items: center;background: #d6b4d6;border-radius: 10px;border: 30px solid #d6b4d6;",
+
+                 
+
+             
+                 "margin:4px; font:10pt Arial,Verdana; cursor:text;background-image: url('http://localhost:8080/img/notes/memoria.png');background-position:center;background-attachment: fixed;",
 
          })
          });
