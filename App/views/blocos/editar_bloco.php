@@ -46,6 +46,9 @@ $(document).ready(function() {
                  "",
              bodyStyle: // style to assign to document body contained within the editor
 
+
+                 
+
              
                  "margin:4px; font:10pt Arial,Verdana; cursor:text;background-image: url('http://localhost:8080/img/notes/memoria.png');background-position:center;background-attachment: fixed;",
 

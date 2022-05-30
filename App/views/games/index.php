@@ -9,11 +9,11 @@
     <a href="/games/jogo_da_memoria" class="btn btn-primary">JOGAR</a>
   </div>
 <div class="line"><p></p></div>
-<div class="card-body" >
+<!--<div class="card-body" >
     <h5 class="card-title">Genius</h5>
     <p class="card-text">Tente acompanhar a sequencia deste jogo nostalgico!</p>
     <a href="/genius/genius" class="btn btn-primary">JOGAR</a>
-  </div>
+  </div>-->
 </div> 
 </div>
 

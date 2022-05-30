@@ -53,12 +53,11 @@ body
 .container-sm{
     width: max-content;
     height: max-content;
-    background: #6C7A89;
-    display: flex;
+    
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
     border-radius:4%;
 }
 
