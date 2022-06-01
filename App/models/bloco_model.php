@@ -11,7 +11,7 @@ Class bloco_model extends Controller
     {
         Auth::CheckLogin();
         html_components::nav_bar();
-        $stmt=Model::getConn()->query('select * from tb_notes where cd_paciente='.$_SESSION['id_paciente']);
+        $stmt=Model::getConn()->query('select * from tb_notes where cd_paciente='.$_SESSION['id_paciente'].' ORDER BY CD_NOTES DESC');
         $datas=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $datas;
     }

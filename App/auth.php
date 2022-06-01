@@ -47,7 +47,7 @@ class Auth
                         unset( $_SESSION['id_paciente']);
                     }
                   
-                    $_SESSION['logado']=true;
+                    
                     $_SESSION['nome']=$resultado['nm_familiar'];
                     $_SESSION['id_familiar']=$resultado['cd_familiar'];
                     $_SESSION['id_paciente_do_familiar']=$resultado['cd_paciente'];
