@@ -3,15 +3,16 @@
 
 body 
 {
-   magin:0;
-   padding:0;
-   background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
-    
+    magin:0;
+    padding:0;
+    background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
     overflow-x: hidden;
+    animation: backgroundTransition 8s ease-in-out infinite;
 }
 
 .conteiner{
@@ -23,7 +24,8 @@ body
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(206,92,214,1)  19%, rgba(112,9,121,1)39%, rgba(206,92,214,1) 100%);
     background-size:cover;
     position: relative;
     

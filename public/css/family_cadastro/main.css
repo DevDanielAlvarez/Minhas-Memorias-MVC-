@@ -295,11 +295,13 @@
   }
   
   .bg-gra-03 {
-    background: -webkit-gradient(linear, left bottom, right top, from(#857DB1), to(#72418C));
-    background: -webkit-linear-gradient(bottom left, #857DB1 0%, #72418C 100%);
-    background: -moz-linear-gradient(bottom left, #857DB1 0%, #72418C 100%);
-    background: -o-linear-gradient(bottom left, #857DB1 0%, #72418C 100%);
-    background: linear-gradient(to top right, #857DB1 0%, #72418C 100%); 
+    background: -webkit-gradient(linear, left bottom, right top, from (rgba(0,212,255,1)), to (rgb(112,9,121)));
+    background: -webkit-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: -moz-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: -o-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: linear-gradient(to top right, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%); 
+    animation: backgroundTransition 8s ease-in-out infinite;
+   
     
   }
   

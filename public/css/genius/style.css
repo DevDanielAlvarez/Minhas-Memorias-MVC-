@@ -2,8 +2,8 @@
 body{
     margin: 0;
     background-color: #141414;
-    background: #b916eb;
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
 }
 .main-game{
     height: 100vh;
