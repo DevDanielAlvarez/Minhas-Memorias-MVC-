@@ -7,13 +7,27 @@
 
 body {
   
-  background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+  background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
   font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
+    animation: backgroundTransition 8s ease-in-out infinite;
 
+}
+
+@keyframes backgroundTransition {
+  0% {
+      background-position: 0% 80%;
+  }
+  50% {
+      background-position: 80% 100%;
+  }
+  100% {
+      background-position: 0% 90%;
+  }
 }
 
 
@@ -75,7 +89,9 @@ body {
 }
 
 .match .front {
-  background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1) !important;
+  background: rgb(112,9,121);
+  background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%) !important;
+  animation: backgroundTransition 8s ease-in-out infinite;
 }
 #pop_up
 {

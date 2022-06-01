@@ -3,6 +3,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 
 <script src="http://localhost:8080/js/notes/jquery.cleditor.js"></script>
+<div class="espaco"></div>
 <div class="container-sm">
    <div class="title_editar_bloco ">
        <h1>Titulo</h1>
@@ -16,8 +17,8 @@
     
 $(document).ready(function() {
          $("#editor_area").cleditor({
-           width: 950, // width not including margins, borders or padding
-           height: 350, // height not including margins, borders or padding
+           width: 750, // width not including margins, borders or padding
+           height: 250, // height not including margins, borders or padding
            controls: // controls to add to the toolbar
                  "bold italic underline strikethrough subscript superscript | font size " +
                  "style | color highlight removeformat | bullets numbering | outdent " +

@@ -62,7 +62,8 @@ body {
 .header-wrapper {
     height: 100vh;
     width: 100%;
-    background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
+    background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
     background-size: 400% 400%;
     display: flex;
     flex-direction: column;
@@ -431,7 +432,8 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #4a1942;
+    background: rgb(112,9,121);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
 }
 .rede{
         width: 40px;

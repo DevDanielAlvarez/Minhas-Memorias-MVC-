@@ -167,14 +167,27 @@ input, select, textarea {
 	body {
 		margin:0;
 		padding:0;
-		background: linear-gradient(-45deg,#857DB1, #72418C, #8D69A2, #857DB1);
-		 
+		background: rgb(112,9,121);
+		background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
 		 background-attachment: fixed;
 		 background-repeat: no-repeat;
 		 background-size: cover;
 		 height: 100%;
 		 overflow-x: hidden;
+		 animation: backgroundTransition 8s ease-in-out infinite;
 
+	}
+	
+	@keyframes backgroundTransition {
+		0% {
+			background-position: 0% 80%;
+		}
+		50% {
+			background-position: 80% 100%;
+		}
+		100% {
+			background-position: 0% 90%;
+		}
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
