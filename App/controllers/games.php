@@ -17,10 +17,10 @@ class games extends Controller
         Auth::CheckLogin();
         $this->view("games/math");
     }
-    public function jogo_da_memoria()
+    public function jogo_da_memoria($dificult="")
     {
         Auth::CheckLogin();
-        $this->view("games/jogo_da_memoria",$data=['sty'=>URL_BASE."/css/style.prefix.css"]);
+        $this->view("games/jogo_da_memoria",$data=['sty'=>URL_BASE."/css/style.prefix.css"],$dificult);
     }
     public function rank()
     {
@@ -43,8 +43,10 @@ class games extends Controller
         }
 
         // save pontuation of played game
-        
-       
-      
+    }
+
+    public function dificuldade()
+    {
+        $this->view("games/dificuldade",$data=['sty'=>URL_BASE."/css/dificuldade.css"]);
     }
 }

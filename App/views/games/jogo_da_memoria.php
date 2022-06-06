@@ -7,7 +7,23 @@
 <div id="game"></div>
 <br>
 
-<script src="http://localhost:8080/js/script.babel.js"></script>
+<?php if($data2=="facil"){ 
+echo '<script src="http://localhost:8080/js/script.babel.js"></script>';
+
+ } 
+
+ elseif($data2=="medio"){ 
+echo '<script src="http://localhost:8080/js/script.babel_medio.js"></script>';
+
+}
+
+ elseif($data2=="dificil"){ 
+echo '<script src="http://localhost:8080/js/script.babel_dificil.js"></script>';
+ } 
+ else
+ {
+    echo '<script src="http://localhost:8080/js/script.babel.js"></script>';
+ }
 
 
 
