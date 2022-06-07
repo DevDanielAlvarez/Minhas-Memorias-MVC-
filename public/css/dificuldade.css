@@ -3,7 +3,8 @@
     padding: 0;
 }
 body{
-    background: rgba(90, 34, 248, 0.5);
+    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(112,9,121,1) 39%, rgba(191,200,212,1) 100%);
+    background-attachment: fixed;
     overflow-y: hidden;
 }
 div{

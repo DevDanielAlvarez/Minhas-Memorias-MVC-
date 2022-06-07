@@ -20,7 +20,7 @@
 
                 <form action="#">
                     <div class="input-field">
-                        <input type="text" placeholder=" email" required id="email_login">
+                        <input type="text" placeholder=" E-mail" required id="email_login">
                         <i class="uil uil-envelope icon"></i>
                     </div>
                     <div class="input-field">
@@ -38,9 +38,9 @@
                         <a href="#" class="text">Esqueceu sua senha?</a>
                     </div>
                     <label for="">Escolha</label><br>
-                    <label>usuário</label>
+                    <label>Usuário</label>
                     <input type="radio" name="perfilCliente" id="radio_user">
-                    <label>familiar</label>
+                    <label>Familiar</label>
                     <input type="radio" name="perfilCliente" id="opcao1">
                         
                     <div class="input-field button">
@@ -49,7 +49,7 @@
                 </form>
 
                 <div class="login-signup">
-                    <span class="text">ainda não é um membro?
+                    <span class="text">Ainda não é um membro?
                         <a href="#" class="text signup-link">Cadastre-se</a>
                     </span>
                 </div>
@@ -79,7 +79,7 @@
                         <i class="uil uil-lock icon"></i>
                     </div>
                     <div class="input-field">
-                        <input type="password" class="password" placeholder="Confirmar senha" id="senha2_cadastro" required>
+                        <input type="password" class="password" placeholder="Confirmar Senha" id="senha2_cadastro" required>
                         <i class="uil uil-lock icon"></i>
                         <i class="uil uil-eye-slash showHidePw"></i>
                     </div>

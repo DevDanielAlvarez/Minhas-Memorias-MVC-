@@ -5,8 +5,8 @@ body
 {
     magin:0;
     padding:0;
-    background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: rgb(115,3,192);
+background: linear-gradient(90deg, rgba(115,3,192,1) 5%, rgba(236,56,188,1) 25%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
