@@ -23,6 +23,14 @@ body{
     position: relative;
     animation: backgroundTransition 8s ease-in-out infinite;
 }
+.caixa{
+   
+    padding: 25px;
+    text-align:justify;
+}
+.uil-eye-slash, .uil-lock, .uil-envelope, .uil-user{
+    color:rgb(115,3,192)!important;
+}
 .seta{
     
     position: absolute;

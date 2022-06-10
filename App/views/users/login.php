@@ -37,12 +37,12 @@
                         
                         <a href="#" class="text">Esqueceu sua senha?</a>
                     </div>
-                    <label for="">Escolha</label><br>
+                   <div class ="caixa text">
                     <label>Usuário</label>
                     <input type="radio" name="perfilCliente" id="radio_user">
                     <label>Familiar</label>
                     <input type="radio" name="perfilCliente" id="opcao1">
-                        
+                    </div>    
                     <div class="input-field button">
                         <input type="button" id="logar" value="Entrar">
                     </div>

@@ -3,11 +3,11 @@
     <div  class="container conteiner caixa" >
         
     <div class="input-group mb-3">
-        <img style="height: 180px;" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">
+        <img class="image" src="https://cdn-icons-png.flaticon.com/512/1376/1376625.png" class="img-fluid" alt="...">
 
         
    <!-- porque o texto só vai se eu colocar um name????????????-->
-        <textarea disabled name="resume" style="background-color:#d6b4d6; border-radius:4.5%; color: #141414; width:550px; height: 350px; resize: none" class="form-control"> <?php echo $data2['ds_resumo']?> </textarea>
+        <textarea  disabled name="resume"  class="form-control text-area"> <?php echo $data2['ds_resumo']?> </textarea>
       </div>
 
       <input  class="form-control" type="text" value="Nome: <?php echo $data2['nm_paciente'] ?>" aria-label="Disabled input example" disabled readonly>
