@@ -14,14 +14,22 @@ body{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: rgb(115,3,192);
+    background:linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     animation: backgroundTransition 8s ease-in-out infinite;
+}
+.caixa{
+   
+    padding: 25px;
+    text-align:justify;
+}
+.uil-eye-slash, .uil-lock, .uil-envelope, .uil-user{
+    color:rgb(115,3,192)!important;
 }
 .seta{
     
@@ -194,7 +202,7 @@ body{
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 6px;
-    background-color: #f440af;
+    background-color: #7303c0;
     cursor: pointer;
     transition: all 0.3s ease;
 }

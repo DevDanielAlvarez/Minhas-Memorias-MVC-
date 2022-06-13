@@ -14,7 +14,7 @@
 echo '<div class="container-sm caixa_bloco">';
 if(empty($data2))
 {
-    echo '<h1 style="text-align: center">não há blocos de notas</h1>';
+    echo '<h1 class = "texto_aviso">não há blocos de notas</h1>';
 }
 else{
 foreach ($data2 as $k ) {

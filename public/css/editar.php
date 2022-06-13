@@ -5,8 +5,8 @@ body
 {
     magin:0;
     padding:0;
-    background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: rgb(115,3,192);
+    background: linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,6 +14,20 @@ body
     overflow-x: hidden;
     animation: backgroundTransition 8s ease-in-out infinite;
 }
+.texto_aviso{
+    text-align: center;
+    color: #7303c0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #7303c0 !important;
+    border-color: #7303c0 !important;
+}
+
+.navbar-brand, .nav-link.active{
+        font-size:20px!important;
+    }
 
 .conteiner{
     
@@ -25,7 +39,7 @@ body
     justify-content: top;
     align-items: center;
     background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(206,92,214,1)  19%, rgba(112,9,121,1)39%, rgba(206,92,214,1) 100%);
+    background: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%)
     background-size:cover;
     position: relative;
     
@@ -34,14 +48,14 @@ body
 
 
 .container-sm{
-    background: #d6b4d6;
+    background: #bed3db;
 }
 .caixa_bloco{
     
     border: solid rgb(173, 28, 202);
     height: max-content;
     text-color:black;
-    border-color: white;
+    border-color: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%);
     margin-top:3%; 
     width:600px; 
     border-radius: 9px;
@@ -51,11 +65,11 @@ body
 
 
 .caixa{
-    border: solid rgb(173, 28, 202);
+    border: solid #bed3db;
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     border-radius: 9px;
     padding: 9px;
-    background-color: #FFF;
+    background: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%);
     margin-top:3%; 
     width:max-content;  
         
@@ -91,7 +105,7 @@ hr{
 
 .size {
     
-    background-color:#d6b4d6;
+    background-color:#bed3db;
     color: #141414;
     margin: 30px 0px 10px 0px;
     width:550px;
@@ -102,20 +116,34 @@ hr{
     
     margin: 3px 4px 2px 15px;
 }
+.image{
+    height: 180px;
+    border:1px solid #bed3db;
+    border-radius: 50% !important;
+}
 .input-group-text {
-    background-color: #d6b4d6;
-    border: 1px solid #d6b4d6;
+    background-color: #bed3db;
+    border: 1px solid #bed3db;
     border-radius: 4.5%;
+}
+.text-area{
+     background-color:#d6b4d6;
+     border-radius:4% 4% 4% 4% !important; 
+     color: #141414;
+     width:550px;
+     height: 350px;
+     resize: none !important;
 }
 
 .form-control {
-    background-color: #d6b4d6;
-    border: 1px solid #d6b4d6;
+    background-color: #bed3db;
+    border: 1px solid #bed3db;
+    
 }
 .form-control:disabled, .form-control[readonly] {
-    background-color:#d6b4d6;
+    background-color:#bed3db;
     color: #141414; 
-    margin:10px 0px 10px 0px;
+    margin:10px 10px 10px 10px;
     width:550px;
     opacity: 1;
 }
@@ -124,7 +152,7 @@ hr{
 
 .diario_bloco{
     font-size: 30px;
-    color: #fff;
+    color: #7303c0;
     text-align: center;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -153,7 +181,7 @@ hr{
 /*painel, perfil.php, ver_bloco_notas*/
 
 .btn{
-    background: purple; 
+    background: #7303c0; 
     color:#fff; 
     margin: 10px 0px 10px 0px;
 }

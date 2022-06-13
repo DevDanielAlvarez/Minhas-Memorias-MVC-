@@ -62,8 +62,9 @@ body {
 .header-wrapper {
     height: 100vh;
     width: 100%;
-    background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+  
+    background:linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
     background-size: 400% 400%;
     display: flex;
     flex-direction: column;
@@ -100,12 +101,14 @@ body {
 h1 {
     text-transform: uppercase;
     letter-spacing: 4px;
+    color:#7303c0;
    
 }
 
 h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
+    color:#7303c0;
     
 }
 
@@ -119,10 +122,11 @@ h2 {
 .social-media a {
     
     text-decoration: none;
-    color: #fff;
+    color: #7303c0;
     font-size: 24px;
     padding: 1rem 4rem;
-    border: 1px solid #fff;
+    border: 1px solid #7303c0;
+    border-radius: 5px;
     min-width: 4rem;
     display: flex;
     justify-content: center;

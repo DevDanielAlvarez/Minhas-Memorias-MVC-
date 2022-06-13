@@ -1,4 +1,4 @@
-
+<link rel="shotcut icon" ref="https:/localhost:8080/img/logo_MM_2_1.png">
 
 				<h1>Seja Bem Vindo(a)! <?php echo $_SESSION['nome'];?></h1>
 				<p>"O carinho e a assistência adequada são os primeiros passos para manter vivas as memórias daqueles que amamos!"<br>

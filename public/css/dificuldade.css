@@ -3,7 +3,8 @@
     padding: 0;
 }
 body{
-    background: rgba(90, 34, 248, 0.5);
+    background: linear-gradient(125deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background-attachment: fixed;
     overflow-y: hidden;
 }
 div{
@@ -23,25 +24,25 @@ div{
     cursor: pointer;
 }
 #teste1{
-    background: #00D0EC;
+    background: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(128,209,226,1) 100%);
     margin-right: 2.5vw;
     animation-name: div1;
     animation-duration: 1s;
     animation-fill-mode: forwards;
 }
 #teste2{
-    background: #F1AE02;
+    background: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(226,222,96,1) 49%, rgba(226,212,128,1) 100%);
     margin-left: 2.5vw;
     margin-right: 2.5vw;
 }
 #teste3{
-    background: #FF0000;
+    background: linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,211,219,1) 0%, rgba(214,162,169,1) 49%, rgba(226,7,8,1) 100%);
     margin-left: 2.5vw;
 }
 #p1{
     width: 100%;
-    border-bottom: 4px white solid;
-    color: white;
+    border-bottom: 4px #7303c0;
+    color: #7303c0;
     height: 17%;
     padding-top: 10px;
     font: 6.5vmin bolder;
@@ -51,7 +52,7 @@ div{
 #p2{
     height: 20%;
     padding-top: 22%;
-    color: white;
+    color: #7303c0;
     font: 4.5vmin bolder;
     font-weight: bolder;
     font-family: 'Arial', sans-serif;
@@ -70,5 +71,9 @@ div{
 }
 button
 {
-    padding:12px;
+    padding: 12px;
+    color: #FFF;
+    background: #7303c0;
+    border-radius: 4px;
+    border-color: #7303c0;
 }

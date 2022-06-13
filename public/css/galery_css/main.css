@@ -102,6 +102,15 @@ ol, ul {
 	list-style: none;
 }
 
+.btn-primary{
+    color: #fff;
+    background-color: #7303c0 !important;
+    border-color: #7303c0 !important;
+    }
+    .navbar-brand, .nav-link.active{
+        font-size:20px!important;
+    }
+
 blockquote, q {
 	quotes: none;
 }
@@ -168,7 +177,7 @@ input, select, textarea {
 		margin:0;
 		padding:0;
 		background: rgb(112,9,121);
-		background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+		background:linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
 		 background-attachment: fixed;
 		 background-repeat: no-repeat;
 		 background-size: cover;
