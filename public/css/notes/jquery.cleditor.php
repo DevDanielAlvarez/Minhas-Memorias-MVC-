@@ -51,7 +51,7 @@ body
     justify-content: top;
     align-items: center;
     background: rgb(112,9,121);
-    background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
+    background: linear-gradient(234deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
    
 }
@@ -63,7 +63,7 @@ body
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    background: linear-gradient(-45deg,#7a52b3, #2e1c2b, #4a1942, #7a52b3);
+    background: linear-gradient(231deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%);
     border-radius:4%;
 }
 
@@ -71,7 +71,7 @@ body
 
 .title_editar_bloco{
     
-    color: #fff;
+    color: #7303c0;
     text-align: center;
     margin-top: 3%;
     margin-bottom: 3%;
@@ -80,7 +80,7 @@ body
 .texto_bloco{ 
 
     text-align:center;
-    color: #fff;
+    color: #7303c0;
     font-size: 30px;
     width:max-content;
     height: 350px;

@@ -10,7 +10,7 @@
 body {
   
   background: rgb(112,9,121);
-    background: linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(125deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -92,14 +92,14 @@ body {
 
 .match .front {
   background: rgb(112,9,121);
-  background: linear-gradient(-45deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%) !important;
+  background: linear-gradient(125deg,rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%) !important;
   animation: backgroundTransition 8s ease-in-out infinite;
 }
 #pop_up
 {
   width: 50%;
   margin:0px auto;
-  background:linear-gradient(-45deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%);
+  background:linear-gradient(125deg, rgba(212,210,236,1) 0%, rgba(190,190,219,1) 0%, rgba(208,229,233,1) 35%, rgba(192,216,221,1) 100%);
   text-align: center;
   border-radius: 9px;
   padding: 6px;

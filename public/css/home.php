@@ -126,6 +126,7 @@ h2 {
     font-size: 24px;
     padding: 1rem 4rem;
     border: 1px solid #7303c0;
+    border-radius: 5px;
     min-width: 4rem;
     display: flex;
     justify-content: center;

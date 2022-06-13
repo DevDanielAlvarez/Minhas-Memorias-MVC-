@@ -1,7 +1,7 @@
 body
 {
     background: rgb(112,9,121);
-    background:linear-gradient(-45deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background:linear-gradient(125deg, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
     background-attachment: scroll;
     background-repeat: no-repeat;

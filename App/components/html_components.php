@@ -6,7 +6,10 @@ class html_components
     {
         echo   '<nav style="background-color: #7a52b3 !important;" class="navbar navbar-expand-md navbar-light ">
         <div  class="container-fluid">
+            <a class="navbar-brand" href="index.php">
+                <img src="/img/logo_MM_2_2.png" alt="logo" style="width: 100px;">
           <a class="navbar-brand" style="color: #fff !important;" href="/">Minhas Memórias</a>
+          
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
