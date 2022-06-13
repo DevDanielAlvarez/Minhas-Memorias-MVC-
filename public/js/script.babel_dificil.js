@@ -3,34 +3,31 @@ var contador=0;
 var contador_erros=0;
 var contator_screen= document.getElementById('contador');
 var cardsArray = [{
+  'name': 'img1',
+  'img': 'http://localhost:8080/img/memory_img/i1.jpg'
+}, {
   'name': 'img2',
-  'img': 'http://localhost:8080/img/img2_memoria.png'
+  'img': 'http://localhost:8080/img/memory_img/i2.jpg'
 }, {
   'name': 'img3',
-  'img': 'http://localhost:8080/img/img3_memoria.png'
+  'img': 'http://localhost:8080/img/memory_img/i3.jpg'
+}
+, {
+  'name': 'img4',
+  'img': 'http://localhost:8080/img/memory_img/i4.jpg'
 }, {
-  'name': 'tree',
-  'img': 'http://localhost:8080/img/tree.jpg'
+  'name': 'img5',
+  'img': 'http://localhost:8080/img/memory_img/i5.jpg'
+}, {
+  'name': 'img6',
+  'img': 'http://localhost:8080/img/memory_img/i6.jpg'
+}, {
+  'name': 'img7',
+  'img': 'http://localhost:8080/img/memory_img/i7.jpg'
 }
 , {
-  'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
-}
-, {
-  'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
-}
-, {
-  'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
-}
-, {
-  'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
-}
-, {
-  'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
+  'name': 'img8',
+  'img': 'http://localhost:8080/img/memory_img/i8.jpg'
 }
 
 ];
@@ -115,7 +112,7 @@ grid.addEventListener('click', function (event) {
         setTimeout(match, delay);
         contador++;
         document.getElementById("contador").innerHTML =contador;
-        if(contador==4){
+        if(contador==8){
            document.getElementById("titulo").innerHTML ='Parabens você venceu!';
            document.getElementById("contador_text").innerHTML ='acertos: '+contador+' erros: '+contador_erros+' Deseja salvar a sua pontuação?';
            document.getElementById("button").innerHTML ='<button id="save_points">Salvar</button>';
