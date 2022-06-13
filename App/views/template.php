@@ -18,9 +18,11 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     
             
-    <title>Minhas Memórias</title>
+    <title style = "color:#4a1942;">Minhas Memórias</title>
+    <link rel="shortcut icon" href="<?php echo URL_BASE ?>/img/logo_MM_2_1.png">
 </head>
 <body>
+    
   <!-- Ajax-->
 <script src="<?php ECHO 'http://localhost:8080/js/galery_js/jquery.min.js'?> "></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
