@@ -2,7 +2,7 @@
 
 <div class="container">
 <div class="card text-center">
-  
+<div class="image"  style="background-image: url('<?php "URL_BASE" ?>/img/fundo.png');"> </div>
   <div class="card-body" >
     <h5 class="card-title">Jogo da Memória</h5>
     <p class="card-text">Encontre as combinações das imagens</p>
