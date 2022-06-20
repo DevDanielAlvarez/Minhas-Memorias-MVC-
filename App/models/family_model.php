@@ -122,6 +122,10 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
         $maio=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',?);");
         $maio->BindValue(1,$_SESSION['id_paciente_do_familiar']);
         $maio->execute();
+        
+        $junho=Model::getConn()->prepare("select QTD_PONTOS_ENTRE('2022-06-01','2022-06-30',?);");
+        $junho->BindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $junho->execute();
 
 
 
@@ -131,6 +135,7 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
             'março'=>$marco->fetchAll(PDO::FETCH_ASSOC),
             'abril'=>$abril->fetchAll(PDO::FETCH_ASSOC),
             'maio'=>$maio->fetchAll(PDO::FETCH_ASSOC),
+            'junho' =>$junho->fetchAll(PDO::FETCH_ASSOC)
         ];
        
         return $mounts;

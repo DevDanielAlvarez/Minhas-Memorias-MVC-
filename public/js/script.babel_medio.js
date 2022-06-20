@@ -140,7 +140,7 @@ grid.addEventListener('click', function (event) {
           {
             document.getElementById("contador_text").innerHTML =r+' deseja começar um novo jogo?';
             
-            document.getElementById("button").innerHTML ='<a href="/games/jogo_da_memoria"><button>Jogar novamente</button></a>';
+            document.getElementById("button").innerHTML ='<a href="/games/jogo_da_memoria/medio"><button>Jogar novamente</button></a>';
           }
           
       

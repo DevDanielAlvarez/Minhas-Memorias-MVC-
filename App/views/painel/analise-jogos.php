@@ -92,7 +92,7 @@
         ["Fevereiro", <?php  echo $data2['fevereiro'][0]["QTD_PONTOS_ENTRE('2022-02-01','2022-02-28',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "silver"],
         ["Março",  <?php echo $data2['março'][0]["QTD_PONTOS_ENTRE('2022-03-01','2022-03-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "gold"],
         ["Abril", <?php  echo $data2['abril'][0]["QTD_PONTOS_ENTRE('2022-04-01','2022-04-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"],
-        ["Maio", <?php  echo $data2['maio'][0]["QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"]
+        ["Maio", <?php  echo $data2['maio'][0]["QTD_PONTOS_ENTRE('2022-05-01','2022-05-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "color: #e5e4e2"],  ["Junho", <?php echo $data2['junho'][0]["QTD_PONTOS_ENTRE('2022-06-01','2022-06-30',"."'".$_SESSION['id_paciente_do_familiar']."'".")"]; ?>, "#b87333"]
         
       ]);
 
