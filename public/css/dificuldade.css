@@ -16,6 +16,21 @@ div{
     width: 100vw;
     margin-top:10vh;
 }
+.image {
+
+   
+    width: 1080px;
+    height: 525%;
+    position:absolute;
+    opacity:30%;
+    justify-content: right;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+    background-position:bottom right;
+    background-image: url('<?php "URL_BASE" ?>/img/fundo.png');
+    
+}
 .teste{
     height: 40vh;
     width: 25vw;
