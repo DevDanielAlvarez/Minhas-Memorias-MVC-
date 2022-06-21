@@ -108,10 +108,105 @@ h1 {
 h2 {
     text-transform: uppercase;
     letter-spacing: 2px;
-    color:#7303c0;
+    color:#fff;
     
 }
-
+.fraseOficial{
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color:#7303c0;
+    font-size: 22px;
+}
+/*BOTÕES*/
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-3  {
+  background: rgb(115,3,192);
+  background:  rgb(115,3,192) ;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  font-size: 18px;
+  
+}
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  
+}
+.btn-3:before,
+.btn-3:after  {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+   background: rgb(115,3,192);
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3:hover{
+   background: transparent;
+  box-shadow: none;
+}
+.btn-3:hover:before {
+  height: 100%;
+}
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover{
+   color: rgb(115,3,192);
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+   background: rgb(115,3,192);
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
+}
 .social-media{
     
     margin-top: 1rem;
@@ -134,7 +229,11 @@ h2 {
     transition: 0.5s cubic-bezier(0.55, 0.025, 0.675, 0.975);
 
 }
-
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+}
 a:hover {
     color: #7a52b3;
     background-color: #fff;

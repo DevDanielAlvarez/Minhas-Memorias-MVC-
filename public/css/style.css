@@ -23,6 +23,9 @@ body{
     position: relative;
     animation: backgroundTransition 8s ease-in-out infinite;
 }
+.bi-calendar2-week{
+    color: rgb(115,3,192) !important;
+}
 .caixa{
    
     padding: 25px;
