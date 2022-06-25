@@ -1,4 +1,4 @@
-<div class="image"> </div>
+
 <div>
     <div class="teste" id="teste1">
         <p id="p1">Fácil</p>
