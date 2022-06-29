@@ -41,7 +41,7 @@
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <!-- Compiled and minified JavaScript (Materalize) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 <script src="<?php URL_BASE;?>/js/cadastro_users.js"></script>
 <script src="<?php URL_BASE;?>/js/login_users.js"></script>
 <script src="<?php URL_BASE;?>/js/math.js"></script>
