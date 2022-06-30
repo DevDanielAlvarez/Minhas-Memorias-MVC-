@@ -175,6 +175,7 @@
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
     box-sizing: inherit;
+    background-color: #bed3db;
   }
   
   /* ==========================================================================
@@ -296,10 +297,10 @@
   
   .bg-gra-03 {
     background: -webkit-gradient(linear, left bottom, right top, from (rgba(0,212,255,1)), to (rgb(112,9,121)));
-    background: -webkit-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
-    background: -moz-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
-    background: -o-linear-gradient(bottom left, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%);
-    background: linear-gradient(to top right, rgba(0,212,255,1)  19%, rgba(191,200,212,1) 39%, rgba(112,9,121,1) 100%); 
+    background: -webkit-linear-gradient(bottom left, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background: -moz-linear-gradient(bottom left,  rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(bottom left, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to top right, rgba(168,70,235,1) 0%, rgba(215,183,237,1) 22%, rgba(255,255,255,1) 99%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%); 
     animation: backgroundTransition 8s ease-in-out infinite;
    
     
@@ -421,11 +422,11 @@
   }
   
   .btn--green {
-    background: #57b846;
+    background: #7303c0;
   }
   
   .btn--green:hover {
-    background: #4dae3c;
+    background: #7303c0;
   }
   
   .btn--blue {
@@ -727,6 +728,7 @@
     font-weight: 700;
     text-align: center;
     color: #fff;
+    background-color: #1a1a1a;
   }
   
   /* ==========================================================================
@@ -769,6 +771,7 @@
     .card-5 .card-body {
       padding: 40px 30px;
       padding-bottom: 50px;
+      background-color: #bed3db;
     }
   }
 
@@ -795,5 +798,19 @@
     margin-bottom: 24px;
     padding: 20px;
     border-radius: 9px;
+  }
+  @media screen and  (max-width: 600px){
+    body, .card-body, .card-5, .input-group, select, .btn {
+     
+      margin:0px;
+      padding:0px;
+      width:max-content;
+      
+    }
+    .btn{
+      font-size: 12px;
+      
+    }
+    
   }
   

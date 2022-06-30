@@ -185,9 +185,11 @@ hr{
     color:#fff; 
     margin: 10px 0px 10px 0px;
 }
-@media (max-width:480px){
+@media screen and (max-width:600px){
+   
+
     .container{
-        width: 230px;
+        width: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -196,14 +198,14 @@ hr{
        
     }
     .caixa_bloco{
-        width: 230px;
+        width: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
         position:relative;
     }
     .caixa{
-        width: 230px;
+        width: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -211,7 +213,14 @@ hr{
     }
     .conteiner,
     .conteiner-fluid{
-        width: 230px;
+        width: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    .input-group, .form-control{
+        width: max-content;
         display: flex;
         flex-direction: column;
         align-items: center;

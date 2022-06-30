@@ -11,6 +11,11 @@ body {
     font-family: 'Dejavu Sans', 'Arial', 'Verdana', 'sans-serif';
 }
 
+main{
+    padding:20px;
+    margin:auto;
+}
+
 
 
 
@@ -584,7 +589,7 @@ a:hover {
 
 /*responsivo*/
 
-@media (mid-width:480px){
+@media (mid-width:768px){
     .textinit {
         width: 230px;
         display: flex;
@@ -674,5 +679,19 @@ a:hover {
     }
 
 }
-
+@media screen and (max-width:380px){
+     .textinit, .menu-items, .social-media, .container, .card-container,
+    .container .card-container:nth-child(1),
+    .container .card-container:nth-child(3),.card, .card-text,.card-wrapper h2, .card-wrapper p,
+    .card:hover > .card-wrapper::before{
+        float: none;
+        text-align:cemter;
+        width:100%;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: flex;
+    }
+}
    
