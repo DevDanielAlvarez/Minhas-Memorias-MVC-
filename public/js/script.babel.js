@@ -3,18 +3,18 @@ var contador=0;
 var contador_erros=0;
 var contator_screen= document.getElementById('contador');
 var cardsArray = [{
+  'name': 'img1',
+  'img': 'http://localhost:8080/img/memory_img/i1.jpg'
+}, {
   'name': 'img2',
-  'img': 'http://localhost:8080/img/img2_memoria.png'
+  'img': 'http://localhost:8080/img/memory_img/i2.jpg'
 }, {
   'name': 'img3',
-  'img': 'http://localhost:8080/img/img3_memoria.png'
-}, {
-  'name': 'tree',
-  'img': 'http://localhost:8080/img/tree.jpg'
+  'img': 'http://localhost:8080/img/memory_img/i3.jpg'
 }
 , {
   'name': 'img4',
-  'img': 'http://localhost:8080/img/img4_memoria.jpg'
+  'img': 'http://localhost:8080/img/memory_img/i4.jpg'
 }
 ];
 

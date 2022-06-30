@@ -33,9 +33,9 @@
             </div>
         </div>
         <h1>Minhas Memórias</h1>
-        <h2>É um prazer lembrar de você!</h2>
-        <div class="social-media">
-            <a href="/users/logar">Entrar</a>
+        <p class="fraseOficial">É um prazer lembrar de você!</p>
+        <a  href="/users/logar"><button class=" custom-btn  btn-3"><span>Entrar</span></a>
+            <!--<a href="/users/logar">Entrar</a>-->
            <!-- trecho referente ao login ficou redudante por isso nós tiramos <a href="/users/logar">Cadastro</a>-->
         </div>
     </header> 

@@ -1,6 +1,6 @@
 
 <div class="container_form">
-    <div class="container">
+    <div class="container" style="margin-bottom: 12%;">
 <form action="/galeria/upload_archive" method="post" enctype="multipart/form-data">
     <h1 id="title_form">Inserir Foto</h1>
     <div class="form-floating mb-3">

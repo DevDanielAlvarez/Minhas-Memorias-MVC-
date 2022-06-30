@@ -43,13 +43,13 @@
             <ul class="logout-mode">
                 <li><a href="/painel/logout">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
+                    <span class="link-name">Sair</span>
                 </a></li>
 
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
+                    <span class="link-name">Modo Escuro</span>
                 </a>
 
                 <div class="mode-toggle">
@@ -66,7 +66,7 @@
 
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Search here...">
+                <input type="text" placeholder="Procurar">
             </div>
             
             <img src="images/profile.jpg" alt="">
