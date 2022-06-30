@@ -127,6 +127,11 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
         $junho->BindValue(1,$_SESSION['id_paciente_do_familiar']);
         $junho->execute();
 
+        $julho=Model::getConn()->prepare("SELECT SUM(num_pontuacao) from tb_jogo_paciente jp join tb_paciente pac on pac.cd_paciente=jp.cd_paciente where pac.cd_paciente=? and dt_partida>='2022-07-01' and dt_partida<='2022-07-31'");
+        $julho->bindValue(1,$_SESSION['id_paciente_do_familiar']);
+        $julho->execute();
+        
+
 
 
         $mounts=[
@@ -135,7 +140,8 @@ public function cadastrar_familiar($name,$email,$dt,$senha,$cd_parent)
             'março'=>$marco->fetchAll(PDO::FETCH_ASSOC),
             'abril'=>$abril->fetchAll(PDO::FETCH_ASSOC),
             'maio'=>$maio->fetchAll(PDO::FETCH_ASSOC),
-            'junho' =>$junho->fetchAll(PDO::FETCH_ASSOC)
+            'junho' =>$junho->fetchAll(PDO::FETCH_ASSOC),
+            'julho' =>$julho->fetchAll(PDO::FETCH_ASSOC),
         ];
        
         return $mounts;

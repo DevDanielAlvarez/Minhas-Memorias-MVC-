@@ -1,5 +1,5 @@
 <?php
-#chamando classes padrão para manipulação de dados
+#chamando classes padrão para manipulação de dados .
 use App\Core\controller;
 use App\Core\Model;
 use App\Auth;
