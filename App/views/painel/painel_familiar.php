@@ -18,7 +18,7 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="https://lolg-cdn.porofessor.gg/img/d/champion-icons/12.9/64/89.png" alt="">
+                <img src="http://localhost:8080/img/logo_roxa.png" alt="">
             </div>
 
             <span class="logo_name">Minhas Memórias</span>
@@ -46,16 +46,7 @@
                     <span class="link-name">Sair</span>
                 </a></li>
 
-                <li class="mode">
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                    <span class="link-name">Modo Escuro</span>
-                </a>
-
-                <div class="mode-toggle">
-                  <span class="switch"></span>
-                </div>
-            </li>
+               
             </ul>
         </div>
     </nav>
@@ -86,7 +77,7 @@
                         <i class="uil uil-thumbs-up"></i>
                         <span class="text">Total de Diários</span>
                         <span class="number"><?php echo$data2["notes"]["count(cd_notes)"] ?></span>
-                        <button class="btn btn-primary">clique para visualizar</button>
+                        
                         
                       
                     </div>
@@ -97,7 +88,7 @@
                         <i class="uil uil-comments"></i>
                         <span class="text">Média de Pontos nos Jogos</span>
                         <span class="number"><?php if($data2["games"]["media"]!=null){echo$data2["games"]["media"];}else {echo 0;}?></span>
-                        <button class="btn btn-primary">clique para visualizar</button>
+                        
                         
                     </div>
                    
@@ -107,7 +98,7 @@
                         <i class="uil uil-share"></i>
                         <span class="text">Total de Fotos na Galeria</span>
                         <span class="number"><?php echo $data2['galery']['fotos'] ?></span>
-                         <button class="btn btn-primary">clique para visualizar</button>
+                         
                         
                     </div>
                    

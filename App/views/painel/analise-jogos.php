@@ -19,7 +19,7 @@
     <nav>
         <div class="logo-name">
             <div class="logo-image">
-                <img src="https://lolg-cdn.porofessor.gg/img/d/champion-icons/12.9/64/89.png" alt="">
+                <img src="http://localhost:8080/img/logo_roxa.png" alt="">
             </div>
 
             <span class="logo_name">Minhas Memórias</span>
@@ -44,13 +44,13 @@
             <ul class="logout-mode">
                 <li><a href="/painel/logout">
                     <i class="uil uil-signout"></i>
-                    <span class="link-name">Logout</span>
+                    <span class="link-name">Sair</span>
                 </a></li>
 
                 <li class="mode">
                     <a href="#">
                         <i class="uil uil-moon"></i>
-                    <span class="link-name">Dark Mode</span>
+                    <span class="link-name">Modo Escuro</span>
                 </a>
 
                 <div class="mode-toggle">
